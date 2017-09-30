@@ -36,28 +36,28 @@ declare namespace SparkRequests {
     }
     class _SteamConnectResponse extends _Response {
         /**
-         * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
+         * 44b297a8-162a-4220-8c14-dad9a1946ad2
          */
-        doNotLinkToCurrentPlayer: boolean;
+        authToken: string;
         /**
-         * Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
+         * The player’s display name
          */
-        errorOnSwitch: boolean;
+        displayName: string;
         /**
-         * An optional segment configuration for this request.
+         * Indicates whether the player was created as part of this request
          */
-        segments: JSON;
+        newPlayer: boolean;
         /**
-         * The hex encoded UTF-8 string representation of the ticket acquired calling the Steam SDKs GetAuthSessionTicket.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        sessionTicket: string;
+        scriptData: ScriptData;
         /**
-         * Indicates that the server should switch to the supplied profile if it isalready associated to a player. Defaults to false.
+         * A summary of the player that would be switched to.  Only returned as part of an error response for a request where automatic switching is disabled.
          */
-        switchIfPossible: boolean;
+        switchSummary: Player;
         /**
-         * Indicates that the associated players displayName should be kept in syn with this profile when it’s updated by the external provider.
+         * The player’s id
          */
-        syncDisplayName: boolean;
+        userId: string;
     }
 }

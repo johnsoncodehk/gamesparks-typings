@@ -10,8 +10,8 @@ declare namespace SparkRequests {
     }
     class _DismissMessageResponse extends _Response {
         /**
-         * The messageId of the message to dismiss
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        messageId: string;
+        scriptData: ScriptData;
     }
 }

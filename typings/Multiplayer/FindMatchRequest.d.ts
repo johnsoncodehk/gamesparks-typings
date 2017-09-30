@@ -25,20 +25,40 @@ declare namespace SparkRequests {
     }
     class _FindMatchResponse extends _Response {
         /**
-         * The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel’
+         * The accessToken used to authenticate this player for this match
          */
-        action: string;
+        accessToken: string;
         /**
-         * Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
+         * The host to connect to for this match
          */
-        matchGroup: string;
+        host: string;
         /**
-         * The shortCode of the match type this player is registering for
+         * MatchData is arbitrary data that can be stored in a Match instance by a Cloud Code script.
          */
-        matchShortCode: string;
+        matchData: JSON;
         /**
-         * The skill of the player looking for a match
+         * The id for this match instance
          */
-        skill: number;
+        matchId: string;
+        /**
+         * The opponents this player has been matched against
+         */
+        opponents: Player[];
+        /**
+         * The peerId of this player within the match
+         */
+        peerId: number;
+        /**
+         * The id of the current player
+         */
+        playerId: string;
+        /**
+         * The port to connect to for this match
+         */
+        port: number;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

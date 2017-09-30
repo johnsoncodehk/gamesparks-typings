@@ -20,16 +20,12 @@ declare namespace SparkRequests {
     }
     class _FindPendingMatchesResponse extends _Response {
         /**
-         * Optional. The matchGroup of the match this player previously registeredfor
+         * A list of JSON objects containing pending matches
          */
-        matchGroup: string;
+        pendingMatches: PendingMatch[];
         /**
-         * The shortCode of the match this player previously registered for
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        matchShortCode: string;
-        /**
-         * Optional. The maximum number of pending matches to return (default=10)
-         */
-        maxMatchesToFind: number;
+        scriptData: ScriptData;
     }
 }

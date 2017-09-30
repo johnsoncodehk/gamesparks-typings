@@ -10,8 +10,12 @@ declare namespace SparkRequests {
     }
     class _GetUploadUrlResponse extends _Response {
         /**
-         * Optional meta data which is stored against the player’s uploaded content
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        uploadData: JSON[];
+        scriptData: ScriptData;
+        /**
+         * The time sensitive upload URL
+         */
+        url: string;
     }
 }

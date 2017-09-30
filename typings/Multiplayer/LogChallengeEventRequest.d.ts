@@ -16,12 +16,8 @@ declare namespace SparkRequests {
     }
     class _LogChallengeEventResponse extends _Response {
         /**
-         * The ID challenge instance to target
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        challengeInstanceId: string;
-        /**
-         * The short code of the event to trigger
-         */
-        eventKey: string;
+        scriptData: ScriptData;
     }
 }

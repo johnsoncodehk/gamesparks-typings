@@ -14,12 +14,8 @@ declare namespace SparkRequests {
     }
     class _ConsumeVirtualGoodResponse extends _Response {
         /**
-         * The amount of virtual goods to be consumed
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        quantity: number;
-        /**
-         * The short code of the virtual good to be consumed
-         */
-        shortCode: string;
+        scriptData: ScriptData;
     }
 }

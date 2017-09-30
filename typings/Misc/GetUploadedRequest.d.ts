@@ -10,8 +10,16 @@ declare namespace SparkRequests {
     }
     class _GetUploadedResponse extends _Response {
         /**
-         * The system generated id of the uploaded item
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        uploadId: string;
+        scriptData: ScriptData;
+        /**
+         * The size of the file in bytes
+         */
+        size: number;
+        /**
+         * A time sensitive URL to a piece of content
+         */
+        url: string;
     }
 }

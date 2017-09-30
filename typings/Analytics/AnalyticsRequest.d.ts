@@ -28,20 +28,8 @@ declare namespace SparkRequests {
     }
     class _AnalyticsResponse extends _Response {
         /**
-         * Custom data payload
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        data: JSON;
-        /**
-         * Use the value true to indicate it’s an end timer
-         */
-        end: boolean;
-        /**
-         * The key you want to track this analysis with.
-         */
-        key: string;
-        /**
-         * Use the value true to indicate it’s a start timer
-         */
-        start: boolean;
+        scriptData: ScriptData;
     }
 }

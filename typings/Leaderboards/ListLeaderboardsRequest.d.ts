@@ -5,5 +5,13 @@ declare namespace SparkRequests {
     class ListLeaderboardsRequest extends _Request<_ListLeaderboardsResponse> {
     }
     class _ListLeaderboardsResponse extends _Response {
+        /**
+         * A list of JSON object containing leaderboard meta data
+         */
+        leaderboards: Leaderboard[];
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

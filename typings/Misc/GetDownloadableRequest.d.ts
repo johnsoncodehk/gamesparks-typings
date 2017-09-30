@@ -10,8 +10,24 @@ declare namespace SparkRequests {
     }
     class _GetDownloadableResponse extends _Response {
         /**
-         * The short code of the Downloadable item
+         * The date when the downloadable item was last modified
+         */
+        lastModified: date;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The short code of the item
          */
         shortCode: string;
+        /**
+         * The size of the item in bytes
+         */
+        size: number;
+        /**
+         * The download URL
+         */
+        url: string;
     }
 }

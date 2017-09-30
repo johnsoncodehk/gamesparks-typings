@@ -56,48 +56,28 @@ declare namespace SparkRequests {
     }
     class _GameCenterConnectResponse extends _Response {
         /**
-         * The display of the current player from GameCenter. This will be used as the displayName of the gamesparks player if created (or syncDisplayname is true)
+         * 44b297a8-162a-4220-8c14-dad9a1946ad2
+         */
+        authToken: string;
+        /**
+         * The player’s display name
          */
         displayName: string;
         /**
-         * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
+         * Indicates whether the player was created as part of this request
          */
-        doNotLinkToCurrentPlayer: boolean;
+        newPlayer: boolean;
         /**
-         * Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        errorOnSwitch: boolean;
+        scriptData: ScriptData;
         /**
-         * The game center id of the current player. This value obtained be obtained from GKLocalPlayer playerID
+         * A summary of the player that would be switched to.  Only returned as part of an error response for a request where automatic switching is disabled.
          */
-        externalPlayerId: string;
+        switchSummary: Player;
         /**
-         * The url from where we will download the public key. This value should be obtained from generateIdentityVerificationSignatureWithCompletionHandler.
+         * The player’s id
          */
-        publicKeyUrl: string;
-        /**
-         * The salt is needed in order to prevent request forgery. This value should be obtained from generateIdentityVerificationSignatureWithCompletionHandler and should be base64 encoded using [salt base64Encoding]
-         */
-        salt: string;
-        /**
-         * An optional segment configuration for this request.
-         */
-        segments: JSON;
-        /**
-         * The signature is needed to validate that the request is genuine and that we can save the player. This value should be obtained from generateIdentityVerificationSignatureWithCompletionHandler and should be base64 encoded using [signature base64Encoding]
-         */
-        signature: string;
-        /**
-         * Indicates that the server should switch to the supplied profile if it isalready associated to a player. Defaults to false.
-         */
-        switchIfPossible: boolean;
-        /**
-         * Indicates that the associated players displayName should be kept in syn with this profile when it’s updated by the external provider.
-         */
-        syncDisplayName: boolean;
-        /**
-         * The timestamp is needed to validate the request signature. This value should be obtained from generateIdentityVerificationSignatureWithCompletionHandler
-         */
-        timestamp: number;
+        userId: string;
     }
 }

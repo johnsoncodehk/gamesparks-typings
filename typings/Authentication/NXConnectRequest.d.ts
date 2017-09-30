@@ -44,36 +44,28 @@ declare namespace SparkRequests {
     }
     class _NXConnectResponse extends _Response {
         /**
-         * Whether to create one GameSparks player per console login ID
+         * 44b297a8-162a-4220-8c14-dad9a1946ad2
          */
-        accountPerLoginId: boolean;
+        authToken: string;
         /**
-         * The display name of the current player from NX. This will be used as the displayName of the gamesparks player if created (or syncDisplayname is true)
+         * The player’s display name
          */
         displayName: string;
         /**
-         * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
+         * Indicates whether the player was created as part of this request
          */
-        doNotLinkToCurrentPlayer: boolean;
+        newPlayer: boolean;
         /**
-         * Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        errorOnSwitch: boolean;
+        scriptData: ScriptData;
         /**
-         * The NSA ID token obtained from Nintendo
+         * A summary of the player that would be switched to.  Only returned as part of an error response for a request where automatic switching is disabled.
          */
-        nsaIdToken: string;
+        switchSummary: Player;
         /**
-         * An optional segment configuration for this request.
+         * The player’s id
          */
-        segments: JSON;
-        /**
-         * Indicates that the server should switch to the supplied profile if it isalready associated to a player. Defaults to false.
-         */
-        switchIfPossible: boolean;
-        /**
-         * Indicates that the associated players displayName should be kept in syn with this profile when it’s updated by the external provider.
-         */
-        syncDisplayName: boolean;
+        userId: string;
     }
 }

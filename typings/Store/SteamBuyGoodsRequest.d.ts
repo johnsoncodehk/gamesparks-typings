@@ -24,20 +24,60 @@ declare namespace SparkRequests {
     }
     class _SteamBuyGoodsResponse extends _Response {
         /**
-         * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * A JSON object containing details of the bought items
          */
-        currencyCode: string;
+        boughtItems: Boughtitem[];
         /**
-         * Unique 64-bit ID for order
+         * An object containing the short code and amount added for each currency
          */
-        orderId: string;
+        currenciesAdded: JSON;
         /**
-         * The price of this purchase
+         * How much currency type 1 was added
          */
-        subUnitPrice: number;
+        currency1Added: number;
         /**
-         * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * How much currency type 2 was added
          */
-        uniqueTransactionByPlayer: boolean;
+        currency2Added: number;
+        /**
+         * How much currency type 3 was added
+         */
+        currency3Added: number;
+        /**
+         * How much currency type 4 was added
+         */
+        currency4Added: number;
+        /**
+         * How much currency type 5 was added
+         */
+        currency5Added: number;
+        /**
+         * How much currency type 6 was added
+         */
+        currency6Added: number;
+        /**
+         * For a buy with currency request, how much currency was used
+         */
+        currencyConsumed: number;
+        /**
+         * For a buy with currency request, the short code of the currency used
+         */
+        currencyShortCode: string;
+        /**
+         * For a buy with currency request, which currency type was used
+         */
+        currencyType: number;
+        /**
+         * A list of invalid items for this purchase (if any). This field is populated only for store buys
+         */
+        invalidItems: string[];
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
+         */
+        transactionIds: string[];
     }
 }

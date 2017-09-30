@@ -14,12 +14,12 @@ declare namespace SparkRequests {
     }
     class _GetMyTeamsResponse extends _Response {
         /**
-         * Set to true to only get teams owned by the player
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        ownedOnly: boolean;
+        scriptData: ScriptData;
         /**
-         * The type of teams to get
+         * The team data
          */
-        teamTypes: string[];
+        teams: Team[];
     }
 }

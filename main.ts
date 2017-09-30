@@ -81,7 +81,7 @@ async function main() {
 						descriptions: descriptions,
 						parameters: [],
 					};
-					j = toTag(content, "table", j);
+					j = toTag(content, "table", j + 1);
 					data.parameters = readTableNode(content.childNodes[j]);
 					handleData(data);
 				}
@@ -94,9 +94,9 @@ async function main() {
 						requestParameters: [],
 						responseParameters: [],
 					};
-					j = toTag(content, "table", j);
+					j = toTag(content, "table", j + 1);
 					api.requestParameters = readTableNode(content.childNodes[j]);
-					j = toTag(content, "table", j);
+					j = toTag(content, "table", j + 1);
 					api.responseParameters = readTableNode(content.childNodes[j]);
 					handleReurestAPI(api);
 				}

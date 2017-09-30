@@ -18,16 +18,12 @@ declare namespace SparkRequests {
     }
     class _JoinChallengeResponse extends _Response {
         /**
-         * The ID of the challenge
+         * Whether the player successfully joined the challenge
          */
-        challengeInstanceId: string;
+        joined: boolean;
         /**
-         * Optional.  Allows the current player’s eligibility to be overridden by what is provided here.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        eligibility: JSON;
-        /**
-         * An optional message to send with the challenge
-         */
-        message: string;
+        scriptData: ScriptData;
     }
 }

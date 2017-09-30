@@ -40,36 +40,28 @@ declare namespace SparkRequests {
     }
     class _DeviceAuthenticationResponse extends _Response {
         /**
-         * A unique device identifier. Each platform has it’s own method for getting a unique id
+         * 44b297a8-162a-4220-8c14-dad9a1946ad2
          */
-        deviceId: string;
+        authToken: string;
         /**
-         * The device model
-         */
-        deviceModel: string;
-        /**
-         * The device name
-         */
-        deviceName: string;
-        /**
-         * An indicator of the device platform, should be IOS, ANDROID, WP8 or W8
-         */
-        deviceOS: string;
-        /**
-         * The device type
-         */
-        deviceType: string;
-        /**
-         * An optional displayname for the player
+         * The player’s display name
          */
         displayName: string;
         /**
-         * The device type
+         * Indicates whether the player was created as part of this request
          */
-        operatingSystem: string;
+        newPlayer: boolean;
         /**
-         * An optional segment configuration for this request.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        segments: JSON;
+        scriptData: ScriptData;
+        /**
+         * A summary of the player that would be switched to.  Only returned as part of an error response for a request where automatic switching is disabled.
+         */
+        switchSummary: Player;
+        /**
+         * The player’s id
+         */
+        userId: string;
     }
 }

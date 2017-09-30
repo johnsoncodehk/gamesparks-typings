@@ -18,16 +18,12 @@ declare namespace SparkRequests {
     }
     class _RevokePurchaseGoodsResponse extends _Response {
         /**
-         * The playerId for which to revoke the transaction
+         * The map of revoked goods
          */
-        playerId: string;
+        revokedGoods: JSON;
         /**
-         * The store type for which to revoke these transactions
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        storeType: string;
-        /**
-         * The list of transactionIds to revoke
-         */
-        transactionIds: string[];
+        scriptData: ScriptData;
     }
 }

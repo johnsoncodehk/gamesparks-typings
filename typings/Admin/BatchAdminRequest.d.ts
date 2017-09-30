@@ -14,12 +14,12 @@ declare namespace SparkRequests {
     }
     class _BatchAdminResponse extends _Response {
         /**
-         * The players to run the request for.
+         * A map of responses by player ID
          */
-        playerIds: string[];
+        responses: JSON;
         /**
-         * The request to be run for each player.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        request: DBObject;
+        scriptData: ScriptData;
     }
 }

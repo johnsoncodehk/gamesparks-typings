@@ -18,16 +18,8 @@ declare namespace SparkRequests {
     }
     class _DropTeamResponse extends _Response {
         /**
-         * The team owner to find, used in combination with teamType. If not supplied the current players id will be used
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        ownerId: string;
-        /**
-         * The teamId to find (may be null if teamType supplied)
-         */
-        teamId: string;
-        /**
-         * The teamType to find, used in combination with the current player, or the player defined by ownerId
-         */
-        teamType: string;
+        scriptData: ScriptData;
     }
 }

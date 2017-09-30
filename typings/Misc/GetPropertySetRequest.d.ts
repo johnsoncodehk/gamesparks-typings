@@ -10,8 +10,12 @@ declare namespace SparkRequests {
     }
     class _GetPropertySetResponse extends _Response {
         /**
-         * The shortCode of the property set to return.
+         * The property set
          */
-        propertySetShortCode: string;
+        propertySet: JSON;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

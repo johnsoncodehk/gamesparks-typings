@@ -14,12 +14,12 @@ declare namespace SparkRequests {
     }
     class _ListVirtualGoodsResponse extends _Response {
         /**
-         * If true, the returned list will include disabled VirtualVoods
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        includeDisabled: boolean;
+        scriptData: ScriptData;
         /**
-         * A filter to only include goods with the given tags. Each good must have all the provided tags.
+         * A list of JSON objects containing virtual goods data
          */
-        tags: string[];
+        virtualGoods: VirtualGood[];
     }
 }

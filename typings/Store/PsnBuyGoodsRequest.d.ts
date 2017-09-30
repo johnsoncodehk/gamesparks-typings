@@ -37,32 +37,60 @@ declare namespace SparkRequests {
     }
     class _PsnBuyGoodsResponse extends _Response {
         /**
-         * The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
+         * A JSON object containing details of the bought items
          */
-        authorizationCode: string;
+        boughtItems: Boughtitem[];
         /**
-         * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * An object containing the short code and amount added for each currency
          */
-        currencyCode: string;
+        currenciesAdded: JSON;
         /**
-         * Specify the entitlement label of the entitlement to update. (Not an entitlement ID).
+         * How much currency type 1 was added
          */
-        entitlementLabel: string;
+        currency1Added: number;
         /**
-         * When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
+         * How much currency type 2 was added
          */
-        redirectUri: string;
+        currency2Added: number;
         /**
-         * The price of this purchase
+         * How much currency type 3 was added
          */
-        subUnitPrice: number;
+        currency3Added: number;
         /**
-         * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * How much currency type 4 was added
          */
-        uniqueTransactionByPlayer: boolean;
+        currency4Added: number;
         /**
-         * Optional - specify the quantity of the entitlement to use. Default = 1
+         * How much currency type 5 was added
          */
-        useCount: number;
+        currency5Added: number;
+        /**
+         * How much currency type 6 was added
+         */
+        currency6Added: number;
+        /**
+         * For a buy with currency request, how much currency was used
+         */
+        currencyConsumed: number;
+        /**
+         * For a buy with currency request, the short code of the currency used
+         */
+        currencyShortCode: string;
+        /**
+         * For a buy with currency request, which currency type was used
+         */
+        currencyType: number;
+        /**
+         * A list of invalid items for this purchase (if any). This field is populated only for store buys
+         */
+        invalidItems: string[];
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
+         */
+        transactionIds: string[];
     }
 }

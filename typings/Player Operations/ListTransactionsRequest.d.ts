@@ -26,24 +26,12 @@ declare namespace SparkRequests {
     }
     class _ListTransactionsResponse extends _Response {
         /**
-         * Optional date constraint to list transactions from
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        dateFrom: date;
+        scriptData: ScriptData;
         /**
-         * Optional date constraint to list transactions to
+         * A list of JSON objects containing player transactions
          */
-        dateTo: date;
-        /**
-         * The number of items to return in a page (default=50)
-         */
-        entryCount: number;
-        /**
-         * An optional filter that limits the transaction types returned
-         */
-        include: string;
-        /**
-         * The offset (page number) to start from (default=0)
-         */
-        offset: number;
+        transactionList: PlayerTransaction[];
     }
 }

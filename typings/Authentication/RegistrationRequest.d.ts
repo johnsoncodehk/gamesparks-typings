@@ -22,20 +22,28 @@ declare namespace SparkRequests {
     }
     class _RegistrationResponse extends _Response {
         /**
-         * A display name to use
+         * 44b297a8-162a-4220-8c14-dad9a1946ad2
+         */
+        authToken: string;
+        /**
+         * The player’s display name
          */
         displayName: string;
         /**
-         * The previously registered password
+         * Indicates whether the player was created as part of this request
          */
-        password: string;
+        newPlayer: boolean;
         /**
-         * An optional segment configuration for this request.
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        segments: JSON;
+        scriptData: ScriptData;
         /**
-         * The previously registered player name
+         * A summary of the player that would be switched to.  Only returned as part of an error response for a request where automatic switching is disabled.
          */
-        userName: string;
+        switchSummary: Player;
+        /**
+         * The player’s id
+         */
+        userId: string;
     }
 }

@@ -56,52 +56,28 @@ declare namespace SparkRequests {
     }
     class _SocialLeaderboardDataResponse extends _Response {
         /**
-         * The challenge instance to get the leaderboard data for
+         * The leaderboard’s challenge id
          */
         challengeInstanceId: string;
         /**
-         * The default behaviour on a social request is to error if the player has no friends (NOTSOCIAL).  Set this flag to suppress that error and return the player’s leaderboard entry instead.
+         * The leaderboard data
          */
-        dontErrorOnNotSocial: boolean;
+        data: LeaderboardData[];
         /**
-         * The number of items to return in a page (default=50)
+         * The first item in the leaderboard data
          */
-        entryCount: number;
+        first: LeaderboardData[];
         /**
-         * A friend id or an array of friend ids to use instead of the player’s social friends
+         * The last item in the leaderboard data
          */
-        friendIds: string[];
+        last: LeaderboardData[];
         /**
-         * Number of entries to include from head of the list
-         */
-        includeFirst: number;
-        /**
-         * Number of entries to include from tail of the list
-         */
-        includeLast: number;
-        /**
-         * Returns the leaderboard excluding the player’s social friends
-         */
-        inverseSocial: boolean;
-        /**
-         * The short code of the leaderboard
+         * The leaderboard short code
          */
         leaderboardShortCode: string;
         /**
-         * The offset into the set of leaderboards returned
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        offset: number;
-        /**
-         * If True returns a leaderboard of the player’s social friends
-         */
-        social: boolean;
-        /**
-         * The IDs of the teams you are interested in
-         */
-        teamIds: string[];
-        /**
-         * The type of team you are interested in
-         */
-        teamTypes: string[];
+        scriptData: ScriptData;
     }
 }

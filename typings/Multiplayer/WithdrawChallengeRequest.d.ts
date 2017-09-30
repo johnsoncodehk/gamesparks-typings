@@ -15,12 +15,12 @@ declare namespace SparkRequests {
     }
     class _WithdrawChallengeResponse extends _Response {
         /**
-         * The ID of the challenge
+         * A challenge instance id
          */
         challengeInstanceId: string;
         /**
-         * An optional message to send with the challenge
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        message: string;
+        scriptData: ScriptData;
     }
 }

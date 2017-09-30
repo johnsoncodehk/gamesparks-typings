@@ -15,12 +15,12 @@ declare namespace SparkRequests {
     }
     class _PushRegistrationResponse extends _Response {
         /**
-         * The type of id, valid values are ios, android, fcm, wp8, w8, kindle or viber
+         * An identifier for the successful registration.  Clients should store this value to be used in the event the player no longer wants to receive push notifications to this device.
          */
-        deviceOS: string;
+        registrationId: string;
         /**
-         * The push notification identifier for the device
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        pushId: string;
+        scriptData: ScriptData;
     }
 }

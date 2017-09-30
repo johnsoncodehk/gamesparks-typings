@@ -12,8 +12,8 @@ declare namespace SparkRequests {
     }
     class _LogEventResponse extends _Response {
         /**
-         * The short code of the event to trigger
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        eventKey: string;
+        scriptData: ScriptData;
     }
 }

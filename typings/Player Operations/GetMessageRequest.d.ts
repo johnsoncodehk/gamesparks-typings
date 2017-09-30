@@ -10,8 +10,16 @@ declare namespace SparkRequests {
     }
     class _GetMessageResponse extends _Response {
         /**
-         * The messageId of the message retreive
+         * The message data
          */
-        messageId: string;
+        message: JSON;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The message status
+         */
+        status: string;
     }
 }

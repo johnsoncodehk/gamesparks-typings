@@ -26,24 +26,12 @@ declare namespace SparkRequests {
     }
     class _FindChallengeResponse extends _Response {
         /**
-         * The type of challenge to find, either PUBLIC or FRIENDS.  Defaults to FRIENDS
+         * A list of JSON objects representing the challenges.
          */
-        accessType: string;
+        challengeInstances: Challenge[];
         /**
-         * The number of challenges to return (MAX=50)
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        count: number;
-        /**
-         * Optional.  Allows the current player’s eligibility to be overridden by what is provided here.
-         */
-        eligibility: JSON;
-        /**
-         * The offset to start from when returning challenges (used for paging)
-         */
-        offset: number;
-        /**
-         * Optional shortCodes to filter the results by challenge type
-         */
-        shortCode: string[];
+        scriptData: ScriptData;
     }
 }

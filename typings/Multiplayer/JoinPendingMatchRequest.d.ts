@@ -18,16 +18,12 @@ declare namespace SparkRequests {
     }
     class _JoinPendingMatchResponse extends _Response {
         /**
-         * Optional. The matchGroup of the match this player previously registeredfor
+         * A JSON object containing the new pending match
          */
-        matchGroup: string;
+        pendingMatch: PendingMatch;
         /**
-         * The shortCode of the match this player previously registered for
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        matchShortCode: string;
-        /**
-         * The pending match ID to join
-         */
-        pendingMatchId: string;
+        scriptData: ScriptData;
     }
 }

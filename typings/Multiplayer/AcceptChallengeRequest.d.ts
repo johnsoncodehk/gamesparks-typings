@@ -18,8 +18,8 @@ declare namespace SparkRequests {
          */
         challengeInstanceId: string;
         /**
-         * An optional message to send with the challenge
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        message: string;
+        scriptData: ScriptData;
     }
 }

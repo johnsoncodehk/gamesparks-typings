@@ -37,32 +37,8 @@ declare namespace SparkRequests {
     }
     class _MatchmakingResponse extends _Response {
         /**
-         * The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel’
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        action: string;
-        /**
-         * The query that will be applied to the PendingMatch collection
-         */
-        customQuery: JSON;
-        /**
-         * A JSON Map of any data that will be associated to the pending match
-         */
-        matchData: JSON;
-        /**
-         * Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
-         */
-        matchGroup: string;
-        /**
-         * The shortCode of the match type this player is registering for
-         */
-        matchShortCode: string;
-        /**
-         * A JSON Map of any data that will be associated to this user in a pending match
-         */
-        participantData: JSON;
-        /**
-         * The skill of the player looking for a match
-         */
-        skill: number;
+        scriptData: ScriptData;
     }
 }

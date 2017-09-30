@@ -18,15 +18,27 @@ declare namespace SparkRequests {
     }
     class _CreateTeamResponse extends _Response {
         /**
-         * An optional teamId to use
+         * The team members
+         */
+        members: Player[];
+        /**
+         * A summary of the owner
+         */
+        owner: Player;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The Id of the team
          */
         teamId: string;
         /**
-         * A display name to use
+         * The team name
          */
         teamName: string;
         /**
-         * The type of team to be created
+         * The team type
          */
         teamType: string;
     }

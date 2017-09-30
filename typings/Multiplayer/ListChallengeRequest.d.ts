@@ -34,24 +34,12 @@ declare namespace SparkRequests {
     }
     class _ListChallengeResponse extends _Response {
         /**
-         * The number of items to return in a page (default=50)
+         * A list of JSON objects representing the challenges.
          */
-        entryCount: number;
+        challengeInstances: Challenge[];
         /**
-         * The offset (page number) to start from (default=0)
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        offset: number;
-        /**
-         * The type of challenge to return
-         */
-        shortCode: string;
-        /**
-         * The state of the challenged to be returned
-         */
-        state: string;
-        /**
-         * The states of the challenges to be returned
-         */
-        states: string[];
+        scriptData: ScriptData;
     }
 }

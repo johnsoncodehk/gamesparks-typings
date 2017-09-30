@@ -18,15 +18,27 @@ declare namespace SparkRequests {
     }
     class _LeaveTeamResponse extends _Response {
         /**
-         * The team owner to find, used in combination with teamType. If not supplied the current players id will be used
+         * The team members
          */
-        ownerId: string;
+        members: Player[];
         /**
-         * The teamId to find (may be null if teamType supplied)
+         * A summary of the owner
+         */
+        owner: Player;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The Id of the team
          */
         teamId: string;
         /**
-         * The teamType to find, used in combination with the current player, or the player defined by ownerId
+         * The team name
+         */
+        teamName: string;
+        /**
+         * The team type
          */
         teamType: string;
     }

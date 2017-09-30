@@ -14,12 +14,12 @@ declare namespace SparkRequests {
     }
     class _GetChallengeResponse extends _Response {
         /**
-         * The ID of the challenge
+         * A JSON object representing the challenge.
          */
-        challengeInstanceId: string;
+        challenge: Challenge;
         /**
-         * An optional message to send with the challenge
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        message: string;
+        scriptData: ScriptData;
     }
 }

@@ -14,12 +14,40 @@ declare namespace SparkRequests {
     }
     class _MatchDetailsResponse extends _Response {
         /**
-         * The matchId to find the details of
+         * The accessToken used to authenticate this player for this match
+         */
+        accessToken: string;
+        /**
+         * The host to connect to for this match
+         */
+        host: string;
+        /**
+         * MatchData is arbitrary data that can be stored in a Match instance by a Cloud Code script.
+         */
+        matchData: JSON;
+        /**
+         * The id for this match instance
          */
         matchId: string;
         /**
-         * Adds realtime server details if the match has been created using Cloud Code and it has not been realtime enabled
+         * The opponents this player has been matched against
          */
-        realtimeEnabled: boolean;
+        opponents: Player[];
+        /**
+         * The peerId of this player within the match
+         */
+        peerId: number;
+        /**
+         * The id of the current player
+         */
+        playerId: string;
+        /**
+         * The port to connect to for this match
+         */
+        port: number;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

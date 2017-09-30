@@ -14,12 +14,8 @@ declare namespace SparkRequests {
     }
     class _SendFriendMessageResponse extends _Response {
         /**
-         * One or more friend ID’s. This can be supplied as a single string, or a JSON array
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        friendIds: string[];
-        /**
-         * The message to send
-         */
-        message: string;
+        scriptData: ScriptData;
     }
 }

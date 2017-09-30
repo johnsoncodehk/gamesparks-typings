@@ -6,5 +6,13 @@ declare namespace SparkRequests {
     class EndSessionRequest extends _Request<_EndSessionResponse> {
     }
     class _EndSessionResponse extends _Response {
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
+        /**
+         * The length of this session
+         */
+        sessionDuration: number;
     }
 }

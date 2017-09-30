@@ -10,8 +10,12 @@ declare namespace SparkRequests {
     }
     class _GetPropertyResponse extends _Response {
         /**
-         * The shortCode of the property to return.
+         * The property value
          */
-        propertyShortCode: string;
+        property: JSON;
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

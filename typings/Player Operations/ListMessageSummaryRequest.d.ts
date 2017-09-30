@@ -16,12 +16,12 @@ declare namespace SparkRequests {
     }
     class _ListMessageSummaryResponse extends _Response {
         /**
-         * The number of items to return in a page (default=50)
+         * A list of JSON objects containing player message summaries
          */
-        entryCount: number;
+        messageList: JSON[];
         /**
-         * The offset (page number) to start from (default=0)
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        offset: number;
+        scriptData: ScriptData;
     }
 }

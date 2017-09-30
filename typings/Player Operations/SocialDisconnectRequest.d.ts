@@ -10,8 +10,8 @@ declare namespace SparkRequests {
     }
     class _SocialDisconnectResponse extends _Response {
         /**
-         * The external system from which to disconnect this profile, supplied as a two letter ID. The options are: {FACEBOOK:FB, AMAZON:AM, GAME_CENTER:GC
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
          */
-        systemId: string;
+        scriptData: ScriptData;
     }
 }

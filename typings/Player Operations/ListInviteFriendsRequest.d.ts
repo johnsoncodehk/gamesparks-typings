@@ -7,5 +7,13 @@ declare namespace SparkRequests {
     class ListInviteFriendsRequest extends _Request<_ListInviteFriendsResponse> {
     }
     class _ListInviteFriendsResponse extends _Response {
+        /**
+         * A list of JSON objects containing game friend data
+         */
+        friends: InvitableFriend[];
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }

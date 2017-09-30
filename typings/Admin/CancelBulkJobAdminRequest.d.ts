@@ -10,8 +10,12 @@ declare namespace SparkRequests {
     }
     class _CancelBulkJobAdminResponse extends _Response {
         /**
-         * The IDs of existing bulk jobs to cancel
+         * A list of JSON objects containing bulk jobs
          */
-        bulkJobIds: string[];
+        bulkJobs: BulkJob[];
+        /**
+         * A JSON Map of any data added either to the Request or the Response by your Cloud Code
+         */
+        scriptData: ScriptData;
     }
 }
