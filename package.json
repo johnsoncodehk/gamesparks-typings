@@ -1,0 +1,15 @@
+{
+  "name": "gamesparks-request-api-typings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jsdom": "^11.0.2",
+    "@types/node": "^8.0.31",
+    "jsdom": "^11.2.0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}
