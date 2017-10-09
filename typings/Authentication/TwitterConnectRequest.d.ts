@@ -11,30 +11,37 @@ declare namespace SparkRequests {
     class TwitterConnectRequest extends _Request<_TwitterConnectResponse> {
         /**
          * The accessSecret is obtained at the same time as the accessToken, and is required to sign requests to Twitter’s services that require the accessToken.
+         * @Required No
          */
         accessSecret: string;
         /**
          * The accessToken represents a player’s permission to share access to their account with your application.
+         * @Required No
          */
         accessToken: string;
         /**
          * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
+         * @Required No
          */
         doNotLinkToCurrentPlayer: boolean;
         /**
          * Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
+         * @Required No
          */
         errorOnSwitch: boolean;
         /**
          * An optional segment configuration for this request.
+         * @Required No
          */
         segments: JSON;
         /**
          * Indicates that the server should switch to the supplied profile if it isalready associated to a player. Defaults to false.
+         * @Required No
          */
         switchIfPossible: boolean;
         /**
          * Indicates that the associated players displayName should be kept in syn with this profile when it’s updated by the external provider.
+         * @Required No
          */
         syncDisplayName: boolean;
     }

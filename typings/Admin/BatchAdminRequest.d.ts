@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class BatchAdminRequest extends _Request<_BatchAdminResponse> {
         /**
          * The players to run the request for.
+         * @Required Yes
          */
         playerIds: string[];
         /**
          * The request to be run for each player.
+         * @Required Yes
          */
         request: DBObject;
     }

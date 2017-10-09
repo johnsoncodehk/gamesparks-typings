@@ -5,18 +5,22 @@ declare namespace SparkRequests {
     class RegistrationRequest extends _Request<_RegistrationResponse> {
         /**
          * A display name to use
+         * @Required Yes
          */
         displayName: string;
         /**
          * The previously registered password
+         * @Required Yes
          */
         password: string;
         /**
          * An optional segment configuration for this request.
+         * @Required No
          */
         segments: JSON;
         /**
          * The previously registered player name
+         * @Required Yes
          */
         userName: string;
     }

@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class ListBulkJobsAdminRequest extends _Request<_ListBulkJobsAdminResponse> {
         /**
          * The IDs of existing bulk jobs to get details for
+         * @Required No
          */
         bulkJobIds: string[];
     }

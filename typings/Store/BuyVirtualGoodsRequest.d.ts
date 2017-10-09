@@ -5,18 +5,22 @@ declare namespace SparkRequests {
     class BuyVirtualGoodsRequest extends _Request<_BuyVirtualGoodsResponse> {
         /**
          * The short code of the currency to use
+         * @Required No
          */
         currencyShortCode: string;
         /**
          * Which virtual currency to use. (1 to 6)
+         * @Required No
          */
         currencyType: number;
         /**
          * The number of items to purchase
+         * @Required Yes
          */
         quantity: number;
         /**
          * The short code of the virtual good to be purchased
+         * @Required Yes
          */
         shortCode: string;
     }

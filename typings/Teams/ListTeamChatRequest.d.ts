@@ -5,22 +5,27 @@ declare namespace SparkRequests {
     class ListTeamChatRequest extends _Request<_ListTeamChatResponse> {
         /**
          * The number of messages to return (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * The offset (nth message) to start from (default=0)
+         * @Required No
          */
         offset: number;
         /**
          * The team owner to find, used in combination with teamType. If not supplied the current players id will be used
+         * @Required No
          */
         ownerId: string;
         /**
          * The teamId to find (may be null if teamType supplied)
+         * @Required No
          */
         teamId: string;
         /**
          * The teamType to find, used in combination with the current player, or the player defined by ownerId
+         * @Required No
          */
         teamType: string;
     }

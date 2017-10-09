@@ -1,6 +1,6 @@
 import * as https from "https";
 import * as fs from "fs";
-import { JSDOM, VirtualConsole, CookieJar, FromUrlOptions, FromFileOptions, DOMWindow } from 'jsdom';
+import { JSDOM } from 'jsdom';
 
 let webUrl = "https://api.gamesparks.net";
 let fileUrl = "./gs.html"
@@ -166,7 +166,8 @@ function handleReurestAPI(data: ApiInfo) {
 		level++; {
 			for (let i = 0; i < data.requestParameters.length; i++) {
 				let requestParameter = data.requestParameters[i];
-				dts += createDes([requestParameter.Description], level);
+				let required = "@Required " + requestParameter.Required;
+				dts += createDes([requestParameter.Description, required], level);
 				dts += getLevelSpace(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
 			}
 		} level--;

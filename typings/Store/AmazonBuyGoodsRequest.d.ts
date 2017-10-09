@@ -8,22 +8,27 @@ declare namespace SparkRequests {
     class AmazonBuyGoodsRequest extends _Request<_AmazonBuyGoodsResponse> {
         /**
          * The userId obtained from the UserData within a PurchaseResponse
+         * @Required Yes
          */
         amazonUserId: string;
         /**
          * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * @Required No
          */
         currencyCode: string;
         /**
          * The receiptId obtained from the Receipt within a PurchaseResponse
+         * @Required Yes
          */
         receiptId: string;
         /**
          * The price of this purchase
+         * @Required No
          */
         subUnitPrice: number;
         /**
          * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * @Required No
          */
         uniqueTransactionByPlayer: boolean;
     }

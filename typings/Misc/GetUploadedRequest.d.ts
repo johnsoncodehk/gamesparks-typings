@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class GetUploadedRequest extends _Request<_GetUploadedResponse> {
         /**
          * The system generated id of the uploaded item
+         * @Required No
          */
         uploadId: string;
     }

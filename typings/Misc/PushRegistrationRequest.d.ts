@@ -6,10 +6,12 @@ declare namespace SparkRequests {
     class PushRegistrationRequest extends _Request<_PushRegistrationResponse> {
         /**
          * The type of id, valid values are ios, android, fcm, wp8, w8, kindle or viber
+         * @Required Yes
          */
         deviceOS: string;
         /**
          * The push notification identifier for the device
+         * @Required Yes
          */
         pushId: string;
     }

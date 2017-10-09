@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class SocialDisconnectRequest extends _Request<_SocialDisconnectResponse> {
         /**
          * The external system from which to disconnect this profile, supplied as a two letter ID. The options are: {FACEBOOK:FB, AMAZON:AM, GAME_CENTER:GC
+         * @Required No
          */
         systemId: string;
     }

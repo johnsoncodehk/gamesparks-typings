@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class SendFriendMessageRequest extends _Request<_SendFriendMessageResponse> {
         /**
          * One or more friend ID’s. This can be supplied as a single string, or a JSON array
+         * @Required Yes
          */
         friendIds: string[];
         /**
          * The message to send
+         * @Required Yes
          */
         message: string;
     }

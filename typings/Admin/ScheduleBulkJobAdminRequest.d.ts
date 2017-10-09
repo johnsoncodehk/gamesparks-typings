@@ -5,22 +5,27 @@ declare namespace SparkRequests {
     class ScheduleBulkJobAdminRequest extends _Request<_ScheduleBulkJobAdminResponse> {
         /**
          * Optional data to be passed into the script
+         * @Required No
          */
         data: DBObject;
         /**
          * The short code of the cloud code module to be executed against each player
+         * @Required No
          */
         moduleShortCode: string;
         /**
          * The query to be run against the player collection to identify which players to execute the cloud code for
+         * @Required Yes
          */
         playerQuery: DBObject;
         /**
          * An optional date and time for this job to be run
+         * @Required No
          */
         scheduledTime: date;
         /**
          * The script to be executed against each player
+         * @Required No
          */
         script: string;
     }

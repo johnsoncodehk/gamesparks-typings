@@ -13,22 +13,27 @@ declare namespace SparkRequests {
     class ListChallengeRequest extends _Request<_ListChallengeResponse> {
         /**
          * The number of items to return in a page (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * The offset (page number) to start from (default=0)
+         * @Required No
          */
         offset: number;
         /**
          * The type of challenge to return
+         * @Required No
          */
         shortCode: string;
         /**
          * The state of the challenged to be returned
+         * @Required No
          */
         state: string;
         /**
          * The states of the challenges to be returned
+         * @Required No
          */
         states: string[];
     }

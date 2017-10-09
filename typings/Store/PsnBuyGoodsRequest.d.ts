@@ -8,30 +8,37 @@ declare namespace SparkRequests {
     class PsnBuyGoodsRequest extends _Request<_PsnBuyGoodsResponse> {
         /**
          * The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
+         * @Required No
          */
         authorizationCode: string;
         /**
          * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * @Required No
          */
         currencyCode: string;
         /**
          * Specify the entitlement label of the entitlement to update. (Not an entitlement ID).
+         * @Required Yes
          */
         entitlementLabel: string;
         /**
          * When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
+         * @Required No
          */
         redirectUri: string;
         /**
          * The price of this purchase
+         * @Required No
          */
         subUnitPrice: number;
         /**
          * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * @Required No
          */
         uniqueTransactionByPlayer: boolean;
         /**
          * Optional - specify the quantity of the entitlement to use. Default = 1
+         * @Required No
          */
         useCount: number;
     }

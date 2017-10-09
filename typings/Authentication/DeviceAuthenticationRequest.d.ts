@@ -7,34 +7,42 @@ declare namespace SparkRequests {
     class DeviceAuthenticationRequest extends _Request<_DeviceAuthenticationResponse> {
         /**
          * A unique device identifier. Each platform has it’s own method for getting a unique id
+         * @Required Yes
          */
         deviceId: string;
         /**
          * The device model
+         * @Required No
          */
         deviceModel: string;
         /**
          * The device name
+         * @Required No
          */
         deviceName: string;
         /**
          * An indicator of the device platform, should be IOS, ANDROID, WP8 or W8
+         * @Required Yes
          */
         deviceOS: string;
         /**
          * The device type
+         * @Required No
          */
         deviceType: string;
         /**
          * An optional displayname for the player
+         * @Required No
          */
         displayName: string;
         /**
          * The device type
+         * @Required No
          */
         operatingSystem: string;
         /**
          * An optional segment configuration for this request.
+         * @Required No
          */
         segments: JSON;
     }

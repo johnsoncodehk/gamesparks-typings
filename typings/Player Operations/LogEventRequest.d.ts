@@ -7,6 +7,7 @@ declare namespace SparkRequests {
     class LogEventRequest extends _Request<_LogEventResponse> {
         /**
          * The short code of the event to trigger
+         * @Required Yes
          */
         eventKey: string;
     }

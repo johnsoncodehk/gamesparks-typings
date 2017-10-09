@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class GetDownloadableRequest extends _Request<_GetDownloadableResponse> {
         /**
          * The short code of the Downloadable item
+         * @Required Yes
          */
         shortCode: string;
     }

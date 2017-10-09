@@ -6,26 +6,32 @@ declare namespace SparkRequests {
     class LeaderboardsEntriesRequest extends _Request<_LeaderboardsEntriesResponse> {
         /**
          * The challenge leaderboards to return entries for
+         * @Required No
          */
         challenges: string[];
         /**
          * Returns the leaderboard excluding the player’s social friends
+         * @Required No
          */
         inverseSocial: boolean;
         /**
          * The list of leaderboards shortcodes
+         * @Required No
          */
         leaderboards: string[];
         /**
          * The player id. Leave out to use the current player id
+         * @Required No
          */
         player: string;
         /**
          * Set to true to include the player’s game friends
+         * @Required No
          */
         social: boolean;
         /**
          * The types of team to apply this request to
+         * @Required No
          */
         teamTypes: string[];
     }

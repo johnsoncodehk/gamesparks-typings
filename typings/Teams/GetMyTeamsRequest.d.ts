@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class GetMyTeamsRequest extends _Request<_GetMyTeamsResponse> {
         /**
          * Set to true to only get teams owned by the player
+         * @Required No
          */
         ownedOnly: boolean;
         /**
          * The type of teams to get
+         * @Required No
          */
         teamTypes: string[];
     }

@@ -6,10 +6,12 @@ declare namespace SparkRequests {
     class AuthenticationRequest extends _Request<_AuthenticationResponse> {
         /**
          * The previously registered password
+         * @Required Yes
          */
         password: string;
         /**
          * The previously registered player name
+         * @Required Yes
          */
         userName: string;
     }

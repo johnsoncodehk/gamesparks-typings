@@ -8,18 +8,22 @@ declare namespace SparkRequests {
     class FindMatchRequest extends _Request<_FindMatchResponse> {
         /**
          * The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel’
+         * @Required No
          */
         action: string;
         /**
          * Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
+         * @Required No
          */
         matchGroup: string;
         /**
          * The shortCode of the match type this player is registering for
+         * @Required Yes
          */
         matchShortCode: string;
         /**
          * The skill of the player looking for a match
+         * @Required No
          */
         skill: number;
     }

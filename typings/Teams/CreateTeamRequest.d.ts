@@ -5,14 +5,17 @@ declare namespace SparkRequests {
     class CreateTeamRequest extends _Request<_CreateTeamResponse> {
         /**
          * An optional teamId to use
+         * @Required No
          */
         teamId: string;
         /**
          * A display name to use
+         * @Required Yes
          */
         teamName: string;
         /**
          * The type of team to be created
+         * @Required Yes
          */
         teamType: string;
     }

@@ -11,34 +11,42 @@ declare namespace SparkRequests {
     class NXConnectRequest extends _Request<_NXConnectResponse> {
         /**
          * Whether to create one GameSparks player per console login ID
+         * @Required No
          */
         accountPerLoginId: boolean;
         /**
          * The display name of the current player from NX. This will be used as the displayName of the gamesparks player if created (or syncDisplayname is true)
+         * @Required No
          */
         displayName: string;
         /**
          * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
+         * @Required No
          */
         doNotLinkToCurrentPlayer: boolean;
         /**
          * Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
+         * @Required No
          */
         errorOnSwitch: boolean;
         /**
          * The NSA ID token obtained from Nintendo
+         * @Required No
          */
         nsaIdToken: string;
         /**
          * An optional segment configuration for this request.
+         * @Required No
          */
         segments: JSON;
         /**
          * Indicates that the server should switch to the supplied profile if it isalready associated to a player. Defaults to false.
+         * @Required No
          */
         switchIfPossible: boolean;
         /**
          * Indicates that the associated players displayName should be kept in syn with this profile when it’s updated by the external provider.
+         * @Required No
          */
         syncDisplayName: boolean;
     }

@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class DismissMultipleMessagesRequest extends _Request<_DismissMultipleMessagesResponse> {
         /**
          * The list of the messageIds to dismiss
+         * @Required No
          */
         messageIds: string[];
     }

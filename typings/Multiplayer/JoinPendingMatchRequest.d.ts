@@ -5,14 +5,17 @@ declare namespace SparkRequests {
     class JoinPendingMatchRequest extends _Request<_JoinPendingMatchResponse> {
         /**
          * Optional. The matchGroup of the match this player previously registeredfor
+         * @Required No
          */
         matchGroup: string;
         /**
          * The shortCode of the match this player previously registered for
+         * @Required Yes
          */
         matchShortCode: string;
         /**
          * The pending match ID to join
+         * @Required Yes
          */
         pendingMatchId: string;
     }

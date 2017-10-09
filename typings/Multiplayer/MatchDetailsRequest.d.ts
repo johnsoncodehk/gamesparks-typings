@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class MatchDetailsRequest extends _Request<_MatchDetailsResponse> {
         /**
          * The matchId to find the details of
+         * @Required Yes
          */
         matchId: string;
         /**
          * Adds realtime server details if the match has been created using Cloud Code and it has not been realtime enabled
+         * @Required No
          */
         realtimeEnabled: boolean;
     }

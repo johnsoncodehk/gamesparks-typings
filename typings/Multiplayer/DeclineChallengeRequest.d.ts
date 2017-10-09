@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class DeclineChallengeRequest extends _Request<_DeclineChallengeResponse> {
         /**
          * The ID of the challenge
+         * @Required Yes
          */
         challengeInstanceId: string;
         /**
          * An optional message to send with the challenge
+         * @Required No
          */
         message: string;
     }

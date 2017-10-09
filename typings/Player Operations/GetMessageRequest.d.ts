@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class GetMessageRequest extends _Request<_GetMessageResponse> {
         /**
          * The messageId of the message retreive
+         * @Required Yes
          */
         messageId: string;
     }

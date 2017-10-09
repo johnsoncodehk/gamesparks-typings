@@ -6,14 +6,17 @@ declare namespace SparkRequests {
     class ListMessageRequest extends _Request<_ListMessageResponse> {
         /**
          * The number of items to return in a page (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * An optional filter that limits the message types returned
+         * @Required No
          */
         include: string;
         /**
          * The offset (page number) to start from (default=0)
+         * @Required No
          */
         offset: number;
     }

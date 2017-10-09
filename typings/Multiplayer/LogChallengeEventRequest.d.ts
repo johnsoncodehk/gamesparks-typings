@@ -7,10 +7,12 @@ declare namespace SparkRequests {
     class LogChallengeEventRequest extends _Request<_LogChallengeEventResponse> {
         /**
          * The ID challenge instance to target
+         * @Required Yes
          */
         challengeInstanceId: string;
         /**
          * The short code of the event to trigger
+         * @Required Yes
          */
         eventKey: string;
     }

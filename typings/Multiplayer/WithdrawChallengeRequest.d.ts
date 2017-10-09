@@ -6,10 +6,12 @@ declare namespace SparkRequests {
     class WithdrawChallengeRequest extends _Request<_WithdrawChallengeResponse> {
         /**
          * The ID of the challenge
+         * @Required Yes
          */
         challengeInstanceId: string;
         /**
          * An optional message to send with the challenge
+         * @Required No
          */
         message: string;
     }

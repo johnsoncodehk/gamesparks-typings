@@ -5,50 +5,62 @@ declare namespace SparkRequests {
     class AroundMeLeaderboardRequest extends _Request<_AroundMeLeaderboardResponse> {
         /**
          * The challenge instance to get the leaderboard data for
+         * @Required No
          */
         challengeInstanceId: string;
         /**
          * An optional filter on the customIds.
+         * @Required No
          */
         customIdFilter: JSON;
         /**
          * The default behaviour on a social request is to error if the player has no friends (NOTSOCIAL).  Set this flag to suppress that error and return the player’s leaderboard entry instead.
+         * @Required No
          */
         dontErrorOnNotSocial: boolean;
         /**
          * The number of items to return in a page (default=50)
+         * @Required Yes
          */
         entryCount: number;
         /**
          * A friend id or an array of friend ids to use instead of the player’s social friends
+         * @Required No
          */
         friendIds: string[];
         /**
          * Number of entries to include from head of the list
+         * @Required No
          */
         includeFirst: number;
         /**
          * Number of entries to include from tail of the list
+         * @Required No
          */
         includeLast: number;
         /**
          * Returns the leaderboard excluding the player’s social friends
+         * @Required No
          */
         inverseSocial: boolean;
         /**
          * The short code of the leaderboard
+         * @Required No
          */
         leaderboardShortCode: string;
         /**
          * If True returns a leaderboard of the player’s social friends
+         * @Required No
          */
         social: boolean;
         /**
          * The IDs of the teams you are interested in
+         * @Required No
          */
         teamIds: string[];
         /**
          * The type of team you are interested in
+         * @Required No
          */
         teamTypes: string[];
     }

@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class UpdateMessageRequest extends _Request<_UpdateMessageResponse> {
         /**
          * The messageId of the message to update
+         * @Required Yes
          */
         messageId: string;
         /**
          * The status to set on the message
+         * @Required Yes
          */
         status: string;
     }

@@ -5,14 +5,17 @@ declare namespace SparkRequests {
     class LeaveTeamRequest extends _Request<_LeaveTeamResponse> {
         /**
          * The team owner to find, used in combination with teamType. If not supplied the current players id will be used
+         * @Required No
          */
         ownerId: string;
         /**
          * The teamId to find (may be null if teamType supplied)
+         * @Required No
          */
         teamId: string;
         /**
          * The teamType to find, used in combination with the current player, or the player defined by ownerId
+         * @Required No
          */
         teamType: string;
     }

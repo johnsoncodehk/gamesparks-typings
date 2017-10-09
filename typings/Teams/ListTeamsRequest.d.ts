@@ -5,18 +5,22 @@ declare namespace SparkRequests {
     class ListTeamsRequest extends _Request<_ListTeamsResponse> {
         /**
          * The number of teams to return in a page (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * The offset (page number) to start from (default=0)
+         * @Required No
          */
         offset: number;
         /**
          * An optional filter to return teams with a matching name
+         * @Required No
          */
         teamNameFilter: string;
         /**
          * An optional filter to return teams of a particular type
+         * @Required No
          */
         teamTypeFilter: string;
     }

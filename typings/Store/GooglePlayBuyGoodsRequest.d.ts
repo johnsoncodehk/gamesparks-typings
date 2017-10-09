@@ -9,22 +9,27 @@ declare namespace SparkRequests {
     class GooglePlayBuyGoodsRequest extends _Request<_GooglePlayBuyGoodsResponse> {
         /**
          * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * @Required No
          */
         currencyCode: string;
         /**
          * The value obtained from data.getStringExtra(“INAPP_DATA_SIGNATURE”);
+         * @Required Yes
          */
         signature: string;
         /**
          * The value obtained from data.getStringExtra(“INAPP_PURCHASE_DATA”)
+         * @Required Yes
          */
         signedData: string;
         /**
          * The price of this purchase
+         * @Required No
          */
         subUnitPrice: number;
         /**
          * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * @Required No
          */
         uniqueTransactionByPlayer: boolean;
     }

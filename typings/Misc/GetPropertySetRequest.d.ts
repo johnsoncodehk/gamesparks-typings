@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class GetPropertySetRequest extends _Request<_GetPropertySetResponse> {
         /**
          * The shortCode of the property set to return.
+         * @Required Yes
          */
         propertySetShortCode: string;
     }

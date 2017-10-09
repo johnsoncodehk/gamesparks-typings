@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class GetUploadUrlRequest extends _Request<_GetUploadUrlResponse> {
         /**
          * Optional meta data which is stored against the player’s uploaded content
+         * @Required No
          */
         uploadData: JSON[];
     }

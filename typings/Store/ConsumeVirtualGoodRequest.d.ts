@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class ConsumeVirtualGoodRequest extends _Request<_ConsumeVirtualGoodResponse> {
         /**
          * The amount of virtual goods to be consumed
+         * @Required Yes
          */
         quantity: number;
         /**
          * The short code of the virtual good to be consumed
+         * @Required Yes
          */
         shortCode: string;
     }

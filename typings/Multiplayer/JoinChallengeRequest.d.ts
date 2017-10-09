@@ -5,14 +5,17 @@ declare namespace SparkRequests {
     class JoinChallengeRequest extends _Request<_JoinChallengeResponse> {
         /**
          * The ID of the challenge
+         * @Required Yes
          */
         challengeInstanceId: string;
         /**
          * Optional.  Allows the current player’s eligibility to be overridden by what is provided here.
+         * @Required Yes
          */
         eligibility: JSON;
         /**
          * An optional message to send with the challenge
+         * @Required No
          */
         message: string;
     }

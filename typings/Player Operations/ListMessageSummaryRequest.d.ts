@@ -7,10 +7,12 @@ declare namespace SparkRequests {
     class ListMessageSummaryRequest extends _Request<_ListMessageSummaryResponse> {
         /**
          * The number of items to return in a page (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * The offset (page number) to start from (default=0)
+         * @Required No
          */
         offset: number;
     }

@@ -7,22 +7,27 @@ declare namespace SparkRequests {
     class IOSBuyGoodsRequest extends _Request<_IOSBuyGoodsResponse> {
         /**
          * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * @Required No
          */
         currencyCode: string;
         /**
          * The receipt obtained from SKPaymentTransaction. transactionReceipt
+         * @Required Yes
          */
         receipt: string;
         /**
          * Should the sandbox account be used
+         * @Required No
          */
         sandbox: boolean;
         /**
          * The price of this purchase
+         * @Required No
          */
         subUnitPrice: number;
         /**
          * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * @Required No
          */
         uniqueTransactionByPlayer: boolean;
     }

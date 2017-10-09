@@ -5,10 +5,12 @@ declare namespace SparkRequests {
     class AcceptChallengeRequest extends _Request<_AcceptChallengeResponse> {
         /**
          * The ID of the challenge
+         * @Required Yes
          */
         challengeInstanceId: string;
         /**
          * An optional message to send with the challenge
+         * @Required No
          */
         message: string;
     }

@@ -7,18 +7,22 @@ declare namespace SparkRequests {
     class SteamBuyGoodsRequest extends _Request<_SteamBuyGoodsResponse> {
         /**
          * The ISO 4217 currency code representing the real-world currency used for this transaction.
+         * @Required No
          */
         currencyCode: string;
         /**
          * Unique 64-bit ID for order
+         * @Required Yes
          */
         orderId: string;
         /**
          * The price of this purchase
+         * @Required No
          */
         subUnitPrice: number;
         /**
          * If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
+         * @Required No
          */
         uniqueTransactionByPlayer: boolean;
     }

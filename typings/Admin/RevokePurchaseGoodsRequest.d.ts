@@ -5,14 +5,17 @@ declare namespace SparkRequests {
     class RevokePurchaseGoodsRequest extends _Request<_RevokePurchaseGoodsResponse> {
         /**
          * The playerId for which to revoke the transaction
+         * @Required Yes
          */
         playerId: string;
         /**
          * The store type for which to revoke these transactions
+         * @Required Yes
          */
         storeType: string;
         /**
          * The list of transactionIds to revoke
+         * @Required Yes
          */
         transactionIds: string[];
     }

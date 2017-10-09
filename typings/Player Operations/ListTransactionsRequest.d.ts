@@ -5,22 +5,27 @@ declare namespace SparkRequests {
     class ListTransactionsRequest extends _Request<_ListTransactionsResponse> {
         /**
          * Optional date constraint to list transactions from
+         * @Required No
          */
         dateFrom: date;
         /**
          * Optional date constraint to list transactions to
+         * @Required No
          */
         dateTo: date;
         /**
          * The number of items to return in a page (default=50)
+         * @Required No
          */
         entryCount: number;
         /**
          * An optional filter that limits the transaction types returned
+         * @Required No
          */
         include: string;
         /**
          * The offset (page number) to start from (default=0)
+         * @Required No
          */
         offset: number;
     }

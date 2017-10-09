@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class DismissMessageRequest extends _Request<_DismissMessageResponse> {
         /**
          * The messageId of the message to dismiss
+         * @Required Yes
          */
         messageId: string;
     }

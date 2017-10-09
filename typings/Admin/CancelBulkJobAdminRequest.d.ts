@@ -5,6 +5,7 @@ declare namespace SparkRequests {
     class CancelBulkJobAdminRequest extends _Request<_CancelBulkJobAdminResponse> {
         /**
          * The IDs of existing bulk jobs to cancel
+         * @Required Yes
          */
         bulkJobIds: string[];
     }

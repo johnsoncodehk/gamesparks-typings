@@ -11,18 +11,22 @@ declare namespace SparkRequests {
     class AnalyticsRequest extends _Request<_AnalyticsResponse> {
         /**
          * Custom data payload
+         * @Required No
          */
         data: JSON;
         /**
          * Use the value true to indicate it’s an end timer
+         * @Required No
          */
         end: boolean;
         /**
          * The key you want to track this analysis with.
+         * @Required No
          */
         key: string;
         /**
          * Use the value true to indicate it’s a start timer
+         * @Required No
          */
         start: boolean;
     }

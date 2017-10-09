@@ -7,14 +7,17 @@ declare namespace SparkRequests {
     class FindPendingMatchesRequest extends _Request<_FindPendingMatchesResponse> {
         /**
          * Optional. The matchGroup of the match this player previously registeredfor
+         * @Required No
          */
         matchGroup: string;
         /**
          * The shortCode of the match this player previously registered for
+         * @Required Yes
          */
         matchShortCode: string;
         /**
          * Optional. The maximum number of pending matches to return (default=10)
+         * @Required No
          */
         maxMatchesToFind: number;
     }
