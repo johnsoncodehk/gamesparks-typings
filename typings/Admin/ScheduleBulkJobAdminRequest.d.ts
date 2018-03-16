@@ -29,6 +29,9 @@ declare namespace SparkRequests {
          */
         script: string;
     }
+    /**
+     * A response acknowledging the scheduling of a bulk job
+     */
     class _ScheduleBulkJobAdminResponse extends _Response {
         /**
          * The count of players who would be affected by this job if it ran at the time it was submitted

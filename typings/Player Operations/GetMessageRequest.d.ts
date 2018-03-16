@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         messageId: string;
     }
+    /**
+     * A response containing the message data for a given message
+     */
     class _GetMessageResponse extends _Response {
         /**
          * The message data

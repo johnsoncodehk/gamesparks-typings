@@ -44,6 +44,9 @@ declare namespace SparkRequests {
          */
         userId: string;
     }
+    /**
+     * A response containing the auth token
+     */
     class _KongregateConnectResponse extends _Response {
         /**
          * 44b297a8-162a-4220-8c14-dad9a1946ad2

@@ -4,6 +4,9 @@ declare namespace SparkRequests {
      */
     class ListChallengeTypeRequest extends _Request<_ListChallengeTypeResponse> {
     }
+    /**
+     * A response containing the list of configured challenge types in the game
+     */
     class _ListChallengeTypeResponse extends _Response {
         /**
          * A list of JSON objects containing the challenge templates for the game

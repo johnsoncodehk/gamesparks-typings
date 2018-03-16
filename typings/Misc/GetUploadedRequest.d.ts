@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         uploadId: string;
     }
+    /**
+     * A reponse containing a time sensitive URL to a piece of content that was previously uploaded to the GameSparks platform by a player.
+     */
     class _GetUploadedResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         request: DBObject;
     }
+    /**
+     * A response containing the individual responses for requests performed via a BatchAdminRequest
+     */
     class _BatchAdminResponse extends _Response {
         /**
          * A map of responses by player ID

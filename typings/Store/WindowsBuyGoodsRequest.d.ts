@@ -31,6 +31,9 @@ declare namespace SparkRequests {
          */
         uniqueTransactionByPlayer: boolean;
     }
+    /**
+     * A response containing details of the bought items
+     */
     class _WindowsBuyGoodsResponse extends _Response {
         /**
          * A JSON object containing details of the bought items

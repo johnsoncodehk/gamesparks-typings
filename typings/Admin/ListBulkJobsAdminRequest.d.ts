@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         bulkJobIds: string[];
     }
+    /**
+     * A response listing existing bulk jobs
+     */
     class _ListBulkJobsAdminResponse extends _Response {
         /**
          * A list of JSON objects containing bulk jobs

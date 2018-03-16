@@ -29,6 +29,9 @@ declare namespace SparkRequests {
          */
         userName: string;
     }
+    /**
+     * A response to a change user details request
+     */
     class _ChangeUserDetailsResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

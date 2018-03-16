@@ -4,6 +4,9 @@ declare namespace SparkRequests {
      */
     class AccountDetailsRequest extends _Request<_AccountDetailsResponse> {
     }
+    /**
+     * A response containing the player’s data.
+     */
     class _AccountDetailsResponse extends _Response {
         /**
          * A JSON object containing the player’s achievments

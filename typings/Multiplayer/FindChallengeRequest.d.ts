@@ -29,6 +29,9 @@ declare namespace SparkRequests {
          */
         shortCode: string[];
     }
+    /**
+     * A response to a find challenge request
+     */
     class _FindChallengeResponse extends _Response {
         /**
          * A list of JSON objects representing the challenges.

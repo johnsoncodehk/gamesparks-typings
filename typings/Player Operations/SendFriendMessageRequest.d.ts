@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response to a send friend message request.
+     */
     class _SendFriendMessageResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

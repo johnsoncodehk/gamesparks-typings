@@ -4,6 +4,9 @@ declare namespace SparkRequests {
      */
     class ListAchievementsRequest extends _Request<_ListAchievementsResponse> {
     }
+    /**
+     * A reponse containing the game’s achievments and an indication of whether the player has earned it
+     */
     class _ListAchievementsResponse extends _Response {
         /**
          * A list of JSON achievment objects

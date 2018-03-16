@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         teamTypes: string[];
     }
+    /**
+     * A response containing team data for teams that a player belong to
+     */
     class _GetMyTeamsResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

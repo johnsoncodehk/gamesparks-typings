@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         transactionIds: string[];
     }
+    /**
+     * A response containing details of the revoked items
+     */
     class _RevokePurchaseGoodsResponse extends _Response {
         /**
          * The map of revoked goods

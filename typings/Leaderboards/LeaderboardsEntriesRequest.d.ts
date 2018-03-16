@@ -35,6 +35,9 @@ declare namespace SparkRequests {
          */
         teamTypes: string[];
     }
+    /**
+     * A response containing leaderboard entry data for a given player. The response will contain one key for every leaderboard in the result. Example response: 
+     */
     class _LeaderboardsEntriesResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

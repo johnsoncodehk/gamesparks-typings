@@ -66,6 +66,9 @@ declare namespace SparkRequests {
          */
         teamTypes: string[];
     }
+    /**
+     * A response containing leaderboard data
+     */
     class _SocialLeaderboardDataResponse extends _Response {
         /**
          * The leaderboard’s challenge id

@@ -30,6 +30,9 @@ declare namespace SparkRequests {
          */
         start: boolean;
     }
+    /**
+     * A response to an analytics request
+     */
     class _AnalyticsResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

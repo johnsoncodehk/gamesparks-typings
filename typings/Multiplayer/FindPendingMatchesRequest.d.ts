@@ -21,6 +21,9 @@ declare namespace SparkRequests {
          */
         maxMatchesToFind: number;
     }
+    /**
+     * A response to a FindPendingMatchesRequest
+     */
     class _FindPendingMatchesResponse extends _Response {
         /**
          * A list of JSON objects containing pending matches

@@ -15,6 +15,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response containing the challenge instance id that was withdrawn by a player
+     */
     class _WithdrawChallengeResponse extends _Response {
         /**
          * A challenge instance id

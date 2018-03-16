@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response to a player joining a challenge
+     */
     class _JoinChallengeResponse extends _Response {
         /**
          * Whether the player successfully joined the challenge

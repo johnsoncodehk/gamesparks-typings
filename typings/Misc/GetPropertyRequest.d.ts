@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         propertyShortCode: string;
     }
+    /**
+     * A response containing the requested property
+     */
     class _GetPropertyResponse extends _Response {
         /**
          * The property value

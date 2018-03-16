@@ -15,6 +15,9 @@ declare namespace SparkRequests {
          */
         userName: string;
     }
+    /**
+     * A response containing the auth token
+     */
     class _AuthenticationResponse extends _Response {
         /**
          * 44b297a8-162a-4220-8c14-dad9a1946ad2

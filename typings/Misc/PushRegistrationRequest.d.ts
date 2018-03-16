@@ -15,6 +15,9 @@ declare namespace SparkRequests {
          */
         pushId: string;
     }
+    /**
+     * A response to a push registration request 
+     */
     class _PushRegistrationResponse extends _Response {
         /**
          * An identifier for the successful registration.  Clients should store this value to be used in the event the player no longer wants to receive push notifications to this device.

@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         status: string;
     }
+    /**
+     * A response to an update message request
+     */
     class _UpdateMessageResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

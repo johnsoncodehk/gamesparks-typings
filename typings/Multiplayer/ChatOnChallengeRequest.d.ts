@@ -15,6 +15,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response to a chat on challenge request
+     */
     class _ChatOnChallengeResponse extends _Response {
         /**
          * The challenge instance id

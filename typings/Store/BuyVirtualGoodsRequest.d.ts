@@ -24,6 +24,9 @@ declare namespace SparkRequests {
          */
         shortCode: string;
     }
+    /**
+     * A response containing details of the bought items
+     */
     class _BuyVirtualGoodsResponse extends _Response {
         /**
          * A JSON object containing details of the bought items

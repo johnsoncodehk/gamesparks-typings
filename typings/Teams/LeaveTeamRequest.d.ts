@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         teamType: string;
     }
+    /**
+     * A response to a player leaving a team
+     */
     class _LeaveTeamResponse extends _Response {
         /**
          * The team members

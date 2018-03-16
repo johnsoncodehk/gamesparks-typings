@@ -29,6 +29,9 @@ declare namespace SparkRequests {
          */
         teamType: string;
     }
+    /**
+     * A response to a list team messages request.
+     */
     class _ListTeamChatResponse extends _Response {
         /**
          * The collection of team chat messages

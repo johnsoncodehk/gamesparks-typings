@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         realtimeEnabled: boolean;
     }
+    /**
+     * A response to a match details request
+     */
     class _MatchDetailsResponse extends _Response {
         /**
          * The accessToken used to authenticate this player for this match

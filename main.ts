@@ -17,6 +17,7 @@ interface ApiInfo {
 		Type: string,
 		Description: string,
 	}[],
+	responseDescriptions: string[],
 	responseParameters: {
 		Parameter: string,
 		Type: string,
@@ -56,23 +57,7 @@ async function main() {
 			if (node.localName == "h2") {
 				let title = node.textContent as string;
 				console.log(h1 + ": " + title);
-				let descriptions: any[] = [];
-				let isGetDes = false;
-				for (let k = j + 1; k < content.childNodes.length; k++) {
-					let node_2 = content.childNodes[k];
-					if (node_2.localName == undefined) {
-						j++;
-						continue;
-					}
-					if (node_2.localName == "p") {
-						descriptions.push(node_2.textContent as string);
-						isGetDes = true;
-					}
-					else if (node_2.localName == "table" || node_2.localName == "h2" || isGetDes) {
-						break;
-					}
-					j++;
-				}
+				let descriptions: string[] = getNextDescriptions(content, j);
 				if (h1 == "Data Types") {
 					// Data
 					let data: DataInfo = {
@@ -92,10 +77,12 @@ async function main() {
 						title: title,
 						descriptions: descriptions,
 						requestParameters: [],
+						responseDescriptions: [],
 						responseParameters: [],
 					};
 					j = toTag(content, "table", j + 1);
 					api.requestParameters = readTableNode(content.childNodes[j]);
+					api.responseDescriptions = getNextDescriptions(content, j);
 					j = toTag(content, "table", j + 1);
 					api.responseParameters = readTableNode(content.childNodes[j]);
 					handleReurestAPI(api);
@@ -103,6 +90,26 @@ async function main() {
 			}
 		}
 	}
+}
+function getNextDescriptions(content: Node, j: number): string[] {
+	let descriptions: string[] = [];
+	let isGetDes = false;
+	for (let k = j + 1; k < content.childNodes.length; k++) {
+		let node_2 = content.childNodes[k];
+		if (node_2.localName == undefined) {
+			j++;
+			continue;
+		}
+		if (node_2.localName == "p") {
+			descriptions.push(node_2.textContent as string);
+			isGetDes = true;
+		}
+		else if (node_2.localName == "table" || node_2.localName == "h2" || isGetDes) {
+			break;
+		}
+		j++;
+	}
+	return descriptions;
 }
 function toTag(content: Node, findLocalName: string, start: number) {
 	for (let i = start; i < content.childNodes.length; i++) {
@@ -173,6 +180,7 @@ function handleReurestAPI(data: ApiInfo) {
 		} level--;
 		dts += getLevelSpace(level) + "}\n";
 		// Response
+		dts += createDes(data.responseDescriptions, level);
 		dts += getLevelSpace(level) + "class " + response + " extends " + responseExtends + " {\n";
 		level++; {
 			for (let i = 0; i < data.responseParameters.length; i++) {

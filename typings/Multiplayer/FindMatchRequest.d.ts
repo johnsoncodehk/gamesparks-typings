@@ -27,6 +27,9 @@ declare namespace SparkRequests {
          */
         skill: number;
     }
+    /**
+     * A response to a find match request
+     */
     class _FindMatchResponse extends _Response {
         /**
          * The accessToken used to authenticate this player for this match

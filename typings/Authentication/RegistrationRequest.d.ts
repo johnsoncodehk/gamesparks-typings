@@ -24,6 +24,9 @@ declare namespace SparkRequests {
          */
         userName: string;
     }
+    /**
+     * A response to a registration request 
+     */
     class _RegistrationResponse extends _Response {
         /**
          * 44b297a8-162a-4220-8c14-dad9a1946ad2

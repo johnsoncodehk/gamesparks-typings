@@ -11,6 +11,9 @@ declare namespace SparkRequests {
          */
         eventKey: string;
     }
+    /**
+     * A response to a log event request 
+     */
     class _LogEventResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

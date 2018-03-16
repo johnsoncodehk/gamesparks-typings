@@ -25,6 +25,9 @@ declare namespace SparkRequests {
          */
         status: string;
     }
+    /**
+     * A response containing the list of the current players messages / notifications.
+     */
     class _ListMessageDetailResponse extends _Response {
         /**
          * A list of JSON objects containing player messages

@@ -42,6 +42,9 @@ declare namespace SparkRequests {
          */
         skill: number;
     }
+    /**
+     * A response to a matchmaking request
+     */
     class _MatchmakingResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

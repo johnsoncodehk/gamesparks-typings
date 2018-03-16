@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         messageIds: string[];
     }
+    /**
+     * A response to a dismiss message request
+     */
     class _DismissMultipleMessagesResponse extends _Response {
         /**
          * A list of the messageId values that were not dismissed

@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         uploadData: JSON[];
     }
+    /**
+     * A response containing a time sensitive URL to allow the game to upload a piece of player content to the GameSparks platform
+     */
     class _GetUploadUrlResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

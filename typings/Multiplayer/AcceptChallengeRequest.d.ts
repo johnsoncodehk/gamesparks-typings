@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response containing the challenge instance id that was accepted.
+     */
     class _AcceptChallengeResponse extends _Response {
         /**
          * The ID of the challenge

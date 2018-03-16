@@ -35,6 +35,9 @@ declare namespace SparkRequests {
          */
         teamTypes: string[];
     }
+    /**
+     * A response containing leaderboard entry data for a given player. Example response: 
+     */
     class _GetLeaderboardEntriesResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

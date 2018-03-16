@@ -9,6 +9,9 @@ declare namespace SparkRequests {
          */
         shortCode: string;
     }
+    /**
+     * A response containing the download URL for a downloadable item
+     */
     class _GetDownloadableResponse extends _Response {
         /**
          * The date when the downloadable item was last modified

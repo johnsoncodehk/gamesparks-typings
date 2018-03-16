@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         pendingMatchId: string;
     }
+    /**
+     * A response to a JoinPendingMatchRequest
+     */
     class _JoinPendingMatchResponse extends _Response {
         /**
          * A JSON object containing the new pending match

@@ -20,6 +20,9 @@ declare namespace SparkRequests {
          */
         offset: number;
     }
+    /**
+     * A response containing the list of the current players messages / notifications.
+     */
     class _ListMessageResponse extends _Response {
         /**
          * A list of JSON objects containing player messages

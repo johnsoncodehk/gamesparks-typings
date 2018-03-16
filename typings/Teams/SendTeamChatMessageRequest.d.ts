@@ -24,6 +24,9 @@ declare namespace SparkRequests {
          */
         teamType: string;
     }
+    /**
+     * A response to a send team message request.
+     */
     class _SendTeamChatMessageResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

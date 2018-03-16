@@ -14,6 +14,9 @@ declare namespace SparkRequests {
          */
         message: string;
     }
+    /**
+     * A response containing the details of a challenge
+     */
     class _GetChallengeResponse extends _Response {
         /**
          * A JSON object representing the challenge.

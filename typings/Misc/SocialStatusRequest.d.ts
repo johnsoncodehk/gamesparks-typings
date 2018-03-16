@@ -4,6 +4,9 @@ declare namespace SparkRequests {
      */
     class SocialStatusRequest extends _Request<_SocialStatusResponse> {
     }
+    /**
+     * A response containing the details of a the players social connections
+     */
     class _SocialStatusResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

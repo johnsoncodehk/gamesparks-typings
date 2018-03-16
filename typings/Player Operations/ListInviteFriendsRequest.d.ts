@@ -6,6 +6,9 @@ declare namespace SparkRequests {
      */
     class ListInviteFriendsRequest extends _Request<_ListInviteFriendsResponse> {
     }
+    /**
+     * A response containing a list of non game friends.
+     */
     class _ListInviteFriendsResponse extends _Response {
         /**
          * A list of JSON objects containing game friend data

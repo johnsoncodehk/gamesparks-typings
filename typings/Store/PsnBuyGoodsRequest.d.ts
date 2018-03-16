@@ -42,6 +42,9 @@ declare namespace SparkRequests {
          */
         useCount: number;
     }
+    /**
+     * A response containing details of the bought items
+     */
     class _PsnBuyGoodsResponse extends _Response {
         /**
          * A JSON object containing details of the bought items

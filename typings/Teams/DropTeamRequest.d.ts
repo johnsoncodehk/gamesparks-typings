@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         teamType: string;
     }
+    /**
+     * A response to a drop team request
+     */
     class _DropTeamResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

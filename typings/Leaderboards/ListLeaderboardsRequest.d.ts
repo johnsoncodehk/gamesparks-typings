@@ -4,6 +4,9 @@ declare namespace SparkRequests {
      */
     class ListLeaderboardsRequest extends _Request<_ListLeaderboardsResponse> {
     }
+    /**
+     * A response containing a list of all leaderboards configured in the game.
+     */
     class _ListLeaderboardsResponse extends _Response {
         /**
          * A list of JSON object containing leaderboard meta data

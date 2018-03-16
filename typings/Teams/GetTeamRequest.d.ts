@@ -19,6 +19,9 @@ declare namespace SparkRequests {
          */
         teamType: string;
     }
+    /**
+     * A response containing the details of the requested teams
+     */
     class _GetTeamResponse extends _Response {
         /**
          * The team members

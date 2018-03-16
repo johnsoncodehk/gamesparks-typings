@@ -29,6 +29,9 @@ declare namespace SparkRequests {
          */
         offset: number;
     }
+    /**
+     * A response listing transactions for the player
+     */
     class _ListTransactionsResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code

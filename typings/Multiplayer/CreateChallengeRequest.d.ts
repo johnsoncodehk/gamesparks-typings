@@ -106,6 +106,9 @@ declare namespace SparkRequests {
          */
         usersToChallenge: string[];
     }
+    /**
+     * A response to a create challenge response
+     */
     class _CreateChallengeResponse extends _Response {
         /**
          * The challenge instance id

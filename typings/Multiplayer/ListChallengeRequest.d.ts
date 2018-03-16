@@ -37,6 +37,9 @@ declare namespace SparkRequests {
          */
         states: string[];
     }
+    /**
+     * A response containing challenges that are in the state that was specified in the request
+     */
     class _ListChallengeResponse extends _Response {
         /**
          * A list of JSON objects representing the challenges.

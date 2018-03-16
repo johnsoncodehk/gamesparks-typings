@@ -24,6 +24,9 @@ declare namespace SparkRequests {
          */
         teamTypeFilter: string;
     }
+    /**
+     * A response containing the list of teams for a game.
+     */
     class _ListTeamsResponse extends _Response {
         /**
          * A JSON Map of any data added either to the Request or the Response by your Cloud Code
