@@ -6,6 +6,18 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The supplied challengeInstanceId does not match a challenge related to the current player
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.JoinChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.eligibility = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var joined = response.joined; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class GetChallengeRequest extends _Request<_GetChallengeResponse> {
         /**

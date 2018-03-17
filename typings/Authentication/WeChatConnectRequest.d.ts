@@ -15,6 +15,26 @@ declare namespace SparkRequests {
      * accessToken | REQUIRED | The accessToken is missing
      * openId | REQUIRED | The openId is missing
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.XBOXLiveConnectRequest();
+     * request.displayName = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.stsTokenString = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class WeChatConnectRequest extends _Request<_WeChatConnectResponse> {
         /**

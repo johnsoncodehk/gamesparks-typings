@@ -7,6 +7,15 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * deviceOS | IOS | ANDROID
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SocialStatusRequest();
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * var statuses = response.statuses; 
+     * ```
      */
     class PushRegistrationRequest extends _Request<_PushRegistrationResponse> {
         /**

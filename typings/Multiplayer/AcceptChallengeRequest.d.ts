@@ -6,6 +6,17 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge the user is involved with
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ChatOnChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class AcceptChallengeRequest extends _Request<_AcceptChallengeResponse> {
         /**

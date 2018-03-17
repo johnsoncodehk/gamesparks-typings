@@ -2,6 +2,15 @@ declare namespace SparkRequests {
     /**
      * Get the leaderboard entry data for the current player or a given player.
      * For each leaderboard it returns the array of leaderboard entries that the player has.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListLeaderboardsRequest();
+     * var response = request.Send();
+     * 
+     * var leaderboards = response.leaderboards; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class LeaderboardsEntriesRequest extends _Request<_LeaderboardsEntriesResponse> {
         /**

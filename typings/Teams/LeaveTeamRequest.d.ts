@@ -10,6 +10,20 @@ declare namespace SparkRequests {
      * team | CANNOT_LEAVE_OR_JOIN_OWNED_MANDATORY_TEAM | The current player is trying to leave a mandatory team they own.
      * team | NOT_MEMBER | The current player is not a mamber of the team they are requesting to leave
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListTeamChatRequest();
+     * request.entryCount = ...;
+     * request.offset = ...;
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var messages = response.messages; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class LeaveTeamRequest extends _Request<_LeaveTeamResponse> {
         /**

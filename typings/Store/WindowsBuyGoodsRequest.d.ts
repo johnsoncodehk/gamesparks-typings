@@ -10,6 +10,22 @@ declare namespace SparkRequests {
      * verificationError | 1 | No matching virtual good can be found
      * verificationError | 2 | The XMLSignature validation failed
      * verificationError | 5 | The Id in the receipt xml has previously been processed
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.CreateTeamRequest();
+     * request.teamId = ...;
+     * request.teamName = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var members = response.members; 
+     * var owner = response.owner; 
+     * var scriptData = response.scriptData; 
+     * var teamId = response.teamId; 
+     * var teamName = response.teamName; 
+     * var teamType = response.teamType; 
+     * ```
      */
     class WindowsBuyGoodsRequest extends _Request<_WindowsBuyGoodsResponse> {
         /**

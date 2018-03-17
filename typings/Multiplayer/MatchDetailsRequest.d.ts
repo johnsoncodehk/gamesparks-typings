@@ -6,6 +6,21 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * matchId | NOT_FOUND | No match found with given matchId for this player
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.MatchmakingRequest();
+     * request.action = ...;
+     * request.customQuery = ...;
+     * request.matchData = ...;
+     * request.matchGroup = ...;
+     * request.matchShortCode = ...;
+     * request.participantData = ...;
+     * request.skill = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class MatchDetailsRequest extends _Request<_MatchDetailsResponse> {
         /**

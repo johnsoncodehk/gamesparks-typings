@@ -9,6 +9,24 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * challengeInstanceId | INVALID | The challengeInstanceId does not match a challenge the user has access to
      * [attribute short code] | REQUIRED | Each attribute defined in the event must be supplied.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.MatchDetailsRequest();
+     * request.matchId = ...;
+     * request.realtimeEnabled = ...;
+     * var response = request.Send();
+     * 
+     * var accessToken = response.accessToken; 
+     * var host = response.host; 
+     * var matchData = response.matchData; 
+     * var matchId = response.matchId; 
+     * var opponents = response.opponents; 
+     * var peerId = response.peerId; 
+     * var playerId = response.playerId; 
+     * var port = response.port; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class LogChallengeEventRequest extends _Request<_LogChallengeEventResponse> {
         /**

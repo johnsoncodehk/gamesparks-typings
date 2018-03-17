@@ -13,6 +13,19 @@ declare namespace SparkRequests {
      * currentUser | NOTSOCIAL | The current player does not have any game friends
      * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetDownloadableRequest();
+     * request.shortCode = ...;
+     * var response = request.Send();
+     * 
+     * var lastModified = response.lastModified; 
+     * var scriptData = response.scriptData; 
+     * var shortCode = response.shortCode; 
+     * var size = response.size; 
+     * var url = response.url; 
+     * ```
      */
     class SocialLeaderboardDataRequest extends _Request<_SocialLeaderboardDataResponse> {
         /**

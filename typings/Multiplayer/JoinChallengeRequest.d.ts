@@ -12,6 +12,18 @@ declare namespace SparkRequests {
      * eligibility | { “segments” : {“XXX” : “MALFORMED”}} | The value provied for XXX is not in the correct format
      * eligibility | { “missingSegments” : {“XXX” : [“YYY”, “ZZZ”]}} | To join this challenge the player must have segment XXX with value YYY or ZZZ
      * eligibility | { “invalidSegments” :  { “actual” : {“XXX” : “YYY”}, “required” : {“XXX” : “ZZZ”}} | This player has segment XXX value YYY however this challenge requires a segment XXX value of ZZZ
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.JoinPendingMatchRequest();
+     * request.matchGroup = ...;
+     * request.matchShortCode = ...;
+     * request.pendingMatchId = ...;
+     * var response = request.Send();
+     * 
+     * var pendingMatch = response.pendingMatch; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class JoinChallengeRequest extends _Request<_JoinChallengeResponse> {
         /**

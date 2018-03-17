@@ -6,6 +6,20 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge that has been issued
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.FindChallengeRequest();
+     * request.accessType = ...;
+     * request.count = ...;
+     * request.eligibility = ...;
+     * request.offset = ...;
+     * request.shortCode = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstances = response.challengeInstances; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class DeclineChallengeRequest extends _Request<_DeclineChallengeResponse> {
         /**

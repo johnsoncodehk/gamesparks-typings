@@ -1,6 +1,17 @@
 declare namespace SparkRequests {
     /**
      * Allows multiple messages to be dismissed. Once dismissed the messages will no longer appear in either ListMessageResponse or ListMessageSummaryResponse.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetMessageRequest();
+     * request.messageId = ...;
+     * var response = request.Send();
+     * 
+     * var message = response.message; 
+     * var scriptData = response.scriptData; 
+     * var status = response.status; 
+     * ```
      */
     class DismissMultipleMessagesRequest extends _Request<_DismissMultipleMessagesResponse> {
         /**

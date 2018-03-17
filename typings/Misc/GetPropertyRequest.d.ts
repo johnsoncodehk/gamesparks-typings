@@ -6,6 +6,16 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * property | NOT_FOUND | No property with given shortCode could be found.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetPropertySetRequest();
+     * request.propertySetShortCode = ...;
+     * var response = request.Send();
+     * 
+     * var propertySet = response.propertySet; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class GetPropertyRequest extends _Request<_GetPropertyResponse> {
         /**

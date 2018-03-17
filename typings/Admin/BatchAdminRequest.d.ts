@@ -7,6 +7,16 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * playerIds | INVALID | Between 1-500 player IDs must be supplied in the form of an array
      * request | INVALID | You must supply a valid request in JSON format to be performed for each player listed in playerIds
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.CancelBulkJobAdminRequest();
+     * request.bulkJobIds = ...;
+     * var response = request.Send();
+     * 
+     * var bulkJobs = response.bulkJobs; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class BatchAdminRequest extends _Request<_BatchAdminResponse> {
         /**

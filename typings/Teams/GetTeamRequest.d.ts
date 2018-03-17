@@ -8,6 +8,22 @@ declare namespace SparkRequests {
      * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.JoinTeamRequest();
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var members = response.members; 
+     * var owner = response.owner; 
+     * var scriptData = response.scriptData; 
+     * var teamId = response.teamId; 
+     * var teamName = response.teamName; 
+     * var teamType = response.teamType; 
+     * ```
      */
     class GetTeamRequest extends _Request<_GetTeamResponse> {
         /**

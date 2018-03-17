@@ -16,6 +16,25 @@ declare namespace SparkRequests {
      * authorizationCode | ACCOUNT_ALREADY_LINKED | The current user has a PSN profile and it’s not the profile they have just tried to log in with
      * authorizationCode | REQUIRED | Parameter authorizationCode is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.QQConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class PSNConnectRequest extends _Request<_PSNConnectResponse> {
         /**

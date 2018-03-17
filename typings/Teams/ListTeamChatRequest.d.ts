@@ -1,6 +1,19 @@
 declare namespace SparkRequests {
     /**
      * Get a list of the messages sent to the team (by players using SendTeamChatMessageRequest).
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListTeamsRequest();
+     * request.entryCount = ...;
+     * request.offset = ...;
+     * request.teamNameFilter = ...;
+     * request.teamTypeFilter = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * var teams = response.teams; 
+     * ```
      */
     class ListTeamChatRequest extends _Request<_ListTeamChatResponse> {
         /**

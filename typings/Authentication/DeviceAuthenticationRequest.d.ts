@@ -8,6 +8,26 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * deviceOS | IOS | ANDROID
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.FacebookConnectRequest();
+     * request.accessToken = ...;
+     * request.code = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class DeviceAuthenticationRequest extends _Request<_DeviceAuthenticationResponse> {
         /**

@@ -6,6 +6,16 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * shortCode | INVALID | The short code does not match any Downloadable shortCode
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetPropertyRequest();
+     * request.propertyShortCode = ...;
+     * var response = request.Send();
+     * 
+     * var property = response.property; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class GetDownloadableRequest extends _Request<_GetDownloadableResponse> {
         /**

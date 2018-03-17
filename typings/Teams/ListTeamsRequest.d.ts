@@ -1,6 +1,18 @@
 declare namespace SparkRequests {
     /**
      * Returns a list of teams. Can be filtered on team name or team type.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SendTeamChatMessageRequest();
+     * request.message = ...;
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class ListTeamsRequest extends _Request<_ListTeamsResponse> {
         /**

@@ -11,6 +11,17 @@ declare namespace SparkRequests {
      * eligibilityCriteria | { “XXX” : “UNRECOGNISED”} | XXX is not a valid field of eligibilityCriteria
      * eligibilityCriteria | { “segments” : {“XXX” : “MALFORMED”}} | The value provided for XXX is not in the correct format
      * autoStartJoinedChallengeOnMaxPlayers | MaxPlayers Required | If autoStartJoinedChallengeOnMaxPlayers is true, the maximum number of players must also be specified
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.DeclineChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class CreateChallengeRequest extends _Request<_CreateChallengeResponse> {
         /**

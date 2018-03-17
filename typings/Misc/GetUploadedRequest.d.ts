@@ -6,6 +6,17 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * uploadId | INVALID | The upload id was invalid
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.PushRegistrationRequest();
+     * request.deviceOS = ...;
+     * request.pushId = ...;
+     * var response = request.Send();
+     * 
+     * var registrationId = response.registrationId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class GetUploadedRequest extends _Request<_GetUploadedResponse> {
         /**

@@ -8,6 +8,21 @@ declare namespace SparkRequests {
      * transactionIds | REQUIRED | The transactionIds is missing
      * storeType | REQUIRED | The storeType is missing
      * playerId | REQUIRED | The playerId is missing
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ScheduleBulkJobAdminRequest();
+     * request.data = ...;
+     * request.moduleShortCode = ...;
+     * request.playerQuery = ...;
+     * request.scheduledTime = ...;
+     * request.script = ...;
+     * var response = request.Send();
+     * 
+     * var estimatedCount = response.estimatedCount; 
+     * var jobId = response.jobId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class RevokePurchaseGoodsRequest extends _Request<_RevokePurchaseGoodsResponse> {
         /**

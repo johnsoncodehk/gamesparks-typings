@@ -15,6 +15,26 @@ declare namespace SparkRequests {
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.XboxOneConnectRequest();
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.sandbox = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * request.token = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class XBOXLiveConnectRequest extends _Request<_XBOXLiveConnectResponse> {
         /**

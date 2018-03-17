@@ -7,7 +7,7 @@ let fileUrl = "./gs.html"
 let fromFile = false;
 let outPath = "./typings/";
 
-interface ApiInfo {
+interface IApiInfo {
 	href: string,
 	title: string,
 	descriptions: string[],
@@ -28,8 +28,9 @@ interface ApiInfo {
 		Value: string,
 		Description: string,
 	}[],
+	example: string[],
 }
-interface DataInfo {
+interface IDataInfo {
 	href: string,
 	title: string,
 	descriptions: string[],
@@ -64,20 +65,20 @@ async function main() {
 				console.log(h1 + ": " + title);
 				if (h1 == "Data Types") {
 					// Data
-					let data: DataInfo = {
+					let data: IDataInfo = {
 						href: h1,
 						title: title,
 						descriptions: [],
 						parameters: [],
 					};
 					data.descriptions = getNextDescriptions(content, j);
-					j = toTag(content, "table", j + 1);
+					j = gotoTag(content, "table", j + 1);
 					data.parameters = readTableNode(content.childNodes[j]);
 					handleData(data);
 				}
 				else {
 					// Request API
-					let api: ApiInfo = {
+					let api: IApiInfo = {
 						href: h1,
 						title: title,
 						descriptions: [],
@@ -85,17 +86,19 @@ async function main() {
 						responseDescriptions: [],
 						responseParameters: [],
 						errorCodes: [],
+						example: [],
 					};
 					api.descriptions = getNextDescriptions(content, j);
-					j = toTag(content, "table", j + 1); // Request Parameters
+					j = gotoTag(content, "table", j + 1); // Request Parameters
 					api.requestParameters = readTableNode(content.childNodes[j]);
 					api.responseDescriptions = getNextDescriptions(content, j);
-					j = toTag(content, "table", j + 1); // Response Parameters
+					j = gotoTag(content, "table", j + 1); // Response Parameters
 					api.responseParameters = readTableNode(content.childNodes[j]);
 					if (content.childNodes[j + 2].textContent == "Error Codes") {
-						j = toTag(content, "table", j + 1); // Error Codes
+						j = gotoTag(content, "table", j + 1); // Error Codes
 						api.errorCodes = readTableNode(content.childNodes[j]);
 					}
+					api.example = getNextExample(content, j);
 					handleReurestAPI(api);
 				}
 			}
@@ -122,7 +125,7 @@ function getNextDescriptions(content: Node, j: number): string[] {
 	}
 	return descriptions;
 }
-function toTag(content: Node, findLocalName: string, start: number) {
+function gotoTag(content: Node, findLocalName: string, start: number) {
 	for (let i = start; i < content.childNodes.length; i++) {
 		let node = content.childNodes[i];
 		if (node.localName == undefined) {
@@ -134,7 +137,38 @@ function toTag(content: Node, findLocalName: string, start: number) {
 	}
 	return -1;
 }
-function handleData(data: DataInfo) {
+function getNextExample(content: Node, current: number): string[] {
+	let example: string[] = [];
+	let start = gotoTag(content, "pre", current + 1);
+
+	for (let i = start; i < content.childNodes.length; i++) {
+		let node = content.childNodes[i];
+		if (node.localName == undefined) {
+			continue;
+		}
+		if (node.localName != "pre") {
+			break;
+		}
+		let e = node as Element;
+		if (!e) {
+			break;
+		}
+		if (e.className == "highlight ccsdk") {
+			let code = e.firstChild;
+			if (!code) {
+				break;
+			}
+			for (let j = 1; j < code.childNodes.length - 1; j++) {
+				let line = code.childNodes[j];
+				example.push(line.textContent as string);
+			}
+			example = example.join("").split("\n");
+			break;
+		}
+	}
+	return example;
+}
+function handleData(data: IDataInfo) {
 	if (!fs.existsSync(outPath)) {
 		fs.mkdirSync(outPath);
 	}
@@ -162,7 +196,7 @@ function handleData(data: DataInfo) {
 
 	fs.writeFileSync(outPath + data.href + "/" + data.title + ".d.ts", dts);
 }
-function handleReurestAPI(data: ApiInfo) {
+function handleReurestAPI(data: IApiInfo) {
 	if (!fs.existsSync(outPath)) {
 		fs.mkdirSync(outPath);
 	}
@@ -192,6 +226,15 @@ function handleReurestAPI(data: ApiInfo) {
 				].join(" | ");
 				data.descriptions.push(des);
 			});
+		}
+		if (data.example.length > 0) {
+			data.descriptions.push("");
+			data.descriptions.push("## Cloud Code Sample");
+			data.descriptions.push("```javascript");
+			data.example.forEach(code => {
+				data.descriptions.push(code);
+			});
+			data.descriptions.push("```");
 		}
 		dts += createDes(data.descriptions, level);
 		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";

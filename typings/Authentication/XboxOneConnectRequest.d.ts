@@ -13,6 +13,32 @@ declare namespace SparkRequests {
      * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Xbox One profile and it’s not the profile they have just tried to log in with
      * token | NOTAUTHENTICATED | The system was unable to authenticate the token
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.AroundMeLeaderboardRequest();
+     * request.challengeInstanceId = ...;
+     * request.customIdFilter = ...;
+     * request.dontErrorOnNotSocial = ...;
+     * request.entryCount = ...;
+     * request.friendIds = ...;
+     * request.includeFirst = ...;
+     * request.includeLast = ...;
+     * request.inverseSocial = ...;
+     * request.leaderboardShortCode = ...;
+     * request.social = ...;
+     * request.teamIds = ...;
+     * request.teamTypes = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var data = response.data; 
+     * var first = response.first; 
+     * var last = response.last; 
+     * var leaderboardShortCode = response.leaderboardShortCode; 
+     * var scriptData = response.scriptData; 
+     * var social = response.social; 
+     * ```
      */
     class XboxOneConnectRequest extends _Request<_XboxOneConnectResponse> {
         /**

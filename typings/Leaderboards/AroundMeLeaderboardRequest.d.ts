@@ -11,6 +11,20 @@ declare namespace SparkRequests {
      * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      * challengeInstanceVersion | INVALID | The challengeInstance predates support for this request type
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetLeaderboardEntriesRequest();
+     * request.challenges = ...;
+     * request.inverseSocial = ...;
+     * request.leaderboards = ...;
+     * request.player = ...;
+     * request.social = ...;
+     * request.teamTypes = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class AroundMeLeaderboardRequest extends _Request<_AroundMeLeaderboardResponse> {
         /**

@@ -14,6 +14,17 @@ declare namespace SparkRequests {
      * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
      * customQuery | INVALID_QUERY | No customQuery is not a valid mongo query
      * match | NOT_FOUND | No match was found for the current player
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.WithdrawChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class MatchmakingRequest extends _Request<_MatchmakingResponse> {
         /**

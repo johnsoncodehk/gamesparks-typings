@@ -1,6 +1,17 @@
 declare namespace SparkRequests {
     /**
      * Returns detials of the current social connections of this player. Each connection .
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.AcceptChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class SocialStatusRequest extends _Request<_SocialStatusResponse> {
     }

@@ -7,6 +7,15 @@ declare namespace SparkRequests {
      * If both start and end are supplied, the request will be treated as a start timer.
      * An additional data payload can be attached to the event for advanced reporting. This data can be a string, number or JSON object.
      * If a second start timer is created using a key that has already had a start timer created without an end, the previous one will be marked as abandoned.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.EndSessionRequest();
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * var sessionDuration = response.sessionDuration; 
+     * ```
      */
     class AnalyticsRequest extends _Request<_AnalyticsResponse> {
         /**

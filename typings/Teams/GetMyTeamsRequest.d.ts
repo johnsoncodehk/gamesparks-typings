@@ -1,6 +1,23 @@
 declare namespace SparkRequests {
     /**
      * Get the teams that the player is in. Can be filtered on team type and also on those teams that the player owns.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetTeamRequest();
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var members = response.members; 
+     * var owner = response.owner; 
+     * var scriptData = response.scriptData; 
+     * var teamId = response.teamId; 
+     * var teamName = response.teamName; 
+     * var teamType = response.teamType; 
+     * var teams = response.teams; 
+     * ```
      */
     class GetMyTeamsRequest extends _Request<_GetMyTeamsResponse> {
         /**

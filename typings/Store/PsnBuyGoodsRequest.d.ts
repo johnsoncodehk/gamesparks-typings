@@ -11,6 +11,31 @@ declare namespace SparkRequests {
      * verificationError | 1 | No matching virtual good can be found
      * verificationError | 2 | The PSN servers failed to verify the entitlementLabel
      * verificationError | 3 | There was an error connecting to the PSN server
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SteamBuyGoodsRequest();
+     * request.currencyCode = ...;
+     * request.orderId = ...;
+     * request.subUnitPrice = ...;
+     * request.uniqueTransactionByPlayer = ...;
+     * var response = request.Send();
+     * 
+     * var boughtItems = response.boughtItems; 
+     * var currenciesAdded = response.currenciesAdded; 
+     * var currency1Added = response.currency1Added; 
+     * var currency2Added = response.currency2Added; 
+     * var currency3Added = response.currency3Added; 
+     * var currency4Added = response.currency4Added; 
+     * var currency5Added = response.currency5Added; 
+     * var currency6Added = response.currency6Added; 
+     * var currencyConsumed = response.currencyConsumed; 
+     * var currencyShortCode = response.currencyShortCode; 
+     * var currencyType = response.currencyType; 
+     * var invalidItems = response.invalidItems; 
+     * var scriptData = response.scriptData; 
+     * var transactionIds = response.transactionIds; 
+     * ```
      */
     class PsnBuyGoodsRequest extends _Request<_PsnBuyGoodsResponse> {
         /**

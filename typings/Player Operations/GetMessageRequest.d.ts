@@ -1,6 +1,15 @@
 declare namespace SparkRequests {
     /**
      * Returns the full details of a message.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListAchievementsRequest();
+     * var response = request.Send();
+     * 
+     * var achievements = response.achievements; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class GetMessageRequest extends _Request<_GetMessageResponse> {
         /**

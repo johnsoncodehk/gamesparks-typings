@@ -11,6 +11,32 @@ declare namespace SparkRequests {
      * verificationError | 2 | The Steam servers failed to verify the order_id
      * verificationError | 3 | There was an error connecting to the Steam server
      * verificationError | 4 | The order_id has been processed before
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.WindowsBuyGoodsRequest();
+     * request.currencyCode = ...;
+     * request.platform = ...;
+     * request.receipt = ...;
+     * request.subUnitPrice = ...;
+     * request.uniqueTransactionByPlayer = ...;
+     * var response = request.Send();
+     * 
+     * var boughtItems = response.boughtItems; 
+     * var currenciesAdded = response.currenciesAdded; 
+     * var currency1Added = response.currency1Added; 
+     * var currency2Added = response.currency2Added; 
+     * var currency3Added = response.currency3Added; 
+     * var currency4Added = response.currency4Added; 
+     * var currency5Added = response.currency5Added; 
+     * var currency6Added = response.currency6Added; 
+     * var currencyConsumed = response.currencyConsumed; 
+     * var currencyShortCode = response.currencyShortCode; 
+     * var currencyType = response.currencyType; 
+     * var invalidItems = response.invalidItems; 
+     * var scriptData = response.scriptData; 
+     * var transactionIds = response.transactionIds; 
+     * ```
      */
     class SteamBuyGoodsRequest extends _Request<_SteamBuyGoodsResponse> {
         /**

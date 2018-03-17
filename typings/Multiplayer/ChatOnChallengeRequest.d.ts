@@ -7,6 +7,35 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge the current player is involved with
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.CreateChallengeRequest();
+     * request.accessType = ...;
+     * request.autoStartJoinedChallengeOnMaxPlayers = ...;
+     * request.challengeMessage = ...;
+     * request.challengeShortCode = ...;
+     * request.currency1Wager = ...;
+     * request.currency2Wager = ...;
+     * request.currency3Wager = ...;
+     * request.currency4Wager = ...;
+     * request.currency5Wager = ...;
+     * request.currency6Wager = ...;
+     * request.currencyWagers = ...;
+     * request.eligibilityCriteria = ...;
+     * request.endTime = ...;
+     * request.expiryTime = ...;
+     * request.maxAttempts = ...;
+     * request.maxPlayers = ...;
+     * request.minPlayers = ...;
+     * request.silent = ...;
+     * request.startTime = ...;
+     * request.usersToChallenge = ...;
+     * var response = request.Send();
+     * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class ChatOnChallengeRequest extends _Request<_ChatOnChallengeResponse> {
         /**

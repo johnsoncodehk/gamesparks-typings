@@ -13,6 +13,22 @@ declare namespace SparkRequests {
      * teamType | NOT_SINGULAR_USE_TEAMID | A player can own more than one of the specified teamType, therefore joining by ownerId and teamType is not sufficient to uniquely identify the team to join. Specify the team by teamId instead.
      * teamType | INVALID | The specified team type is invalid.
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.LeaveTeamRequest();
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var members = response.members; 
+     * var owner = response.owner; 
+     * var scriptData = response.scriptData; 
+     * var teamId = response.teamId; 
+     * var teamName = response.teamName; 
+     * var teamType = response.teamType; 
+     * ```
      */
     class JoinTeamRequest extends _Request<_JoinTeamResponse> {
         /**

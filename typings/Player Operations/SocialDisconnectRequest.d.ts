@@ -9,6 +9,16 @@ declare namespace SparkRequests {
      * systemId | NOT_CONNECTED | The player does not have a connection with the provided system.
      * userName | CHANGE_REQUIRED | If the player’s userName was derived from the profile they are disconnecting from, they must change it before they can disconnect.  The userName can be changed via a ChangeUserDetailsRequest.
      * password | NOT_SET | Before disconnecting, if the player has no other connected profiles then they must have a password set in order to be able to authenticate in the future.  A password can be set via a ChangeUserDetailsRequest.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.UpdateMessageRequest();
+     * request.messageId = ...;
+     * request.status = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class SocialDisconnectRequest extends _Request<_SocialDisconnectResponse> {
         /**

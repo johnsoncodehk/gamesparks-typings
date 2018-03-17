@@ -10,6 +10,17 @@ declare namespace SparkRequests {
      * matchShortCode | may not be null | matchShortCode must be provided
      * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
      * match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode / matchGroup currently in progress
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var challenge = response.challenge; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class FindPendingMatchesRequest extends _Request<_FindPendingMatchesResponse> {
         /**

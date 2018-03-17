@@ -2,6 +2,17 @@ declare namespace SparkRequests {
     /**
      * Returns the list of the current player’s messages / notifications.
      * The list only contains un-dismissed messages, to dismiss a message see DismissMessageRequest Read the section on Messages to see the complete list of messages and their meaning.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListMessageSummaryRequest();
+     * request.entryCount = ...;
+     * request.offset = ...;
+     * var response = request.Send();
+     * 
+     * var messageList = response.messageList; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class ListMessageRequest extends _Request<_ListMessageResponse> {
         /**

@@ -7,6 +7,15 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * DETAILS | UNRECOGNISED | The oldPassword did not match the one stored against the player.
      * USERNAME | TAKEN | The userName supplied is already in use.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.DismissMessageRequest();
+     * request.messageId = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class ChangeUserDetailsRequest extends _Request<_ChangeUserDetailsResponse> {
         /**

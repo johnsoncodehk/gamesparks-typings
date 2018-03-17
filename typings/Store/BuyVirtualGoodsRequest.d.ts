@@ -17,6 +17,16 @@ declare namespace SparkRequests {
      * shortCode | DISABLED | The VirtualGood requested is marked as disabled
      * quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to maxQty of this VirtualGood
      * currencyShortCode | UNRECOGNISED | Not a valid currency
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ConsumeVirtualGoodRequest();
+     * request.quantity = ...;
+     * request.shortCode = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class BuyVirtualGoodsRequest extends _Request<_BuyVirtualGoodsResponse> {
         /**

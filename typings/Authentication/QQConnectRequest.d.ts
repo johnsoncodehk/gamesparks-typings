@@ -14,6 +14,23 @@ declare namespace SparkRequests {
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
      * accessToken | REQUIRED | The accessToken is missing
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.RegistrationRequest();
+     * request.displayName = ...;
+     * request.password = ...;
+     * request.segments = ...;
+     * request.userName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class QQConnectRequest extends _Request<_QQConnectResponse> {
         /**

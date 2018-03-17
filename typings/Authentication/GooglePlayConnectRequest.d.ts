@@ -18,6 +18,27 @@ declare namespace SparkRequests {
      * GOOGLE_PLUS | NOT_CONFIGURED | Google+ scope is requested, but the game has not been configured with the required Google Plus integration credentials: the client ID and the client secret
      * redirectUri | REQUIRED | The redirectUri is required when using a code rather than an accessToken
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GooglePlusConnectRequest();
+     * request.accessToken = ...;
+     * request.code = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.redirectUri = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class GooglePlayConnectRequest extends _Request<_GooglePlayConnectResponse> {
         /**

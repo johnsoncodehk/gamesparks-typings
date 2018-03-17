@@ -1,6 +1,17 @@
 declare namespace SparkRequests {
     /**
      * Allows a message to be dismissed. Once dismissed the message will no longer appear in either ListMessageResponse or ListMessageSummaryResponse.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.DismissMultipleMessagesRequest();
+     * request.messageIds = ...;
+     * var response = request.Send();
+     * 
+     * var failedDismissals = response.failedDismissals; 
+     * var messagesDismissed = response.messagesDismissed; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class DismissMessageRequest extends _Request<_DismissMessageResponse> {
         /**

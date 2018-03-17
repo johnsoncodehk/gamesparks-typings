@@ -7,6 +7,15 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * friendId | NOT_FRIEND | The friend ID passed is not linked to the current player as a game friend
      * friendId | INVALID | The value passed is not a valid ID
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SocialDisconnectRequest();
+     * request.systemId = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class SendFriendMessageRequest extends _Request<_SendFriendMessageResponse> {
         /**

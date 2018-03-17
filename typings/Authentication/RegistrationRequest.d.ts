@@ -6,6 +6,25 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * USERNAME | TAKEN | The userName supplied is already in use.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SteamConnectRequest();
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.sessionTicket = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class RegistrationRequest extends _Request<_RegistrationResponse> {
         /**

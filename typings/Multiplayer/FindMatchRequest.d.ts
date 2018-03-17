@@ -15,6 +15,18 @@ declare namespace SparkRequests {
      * match | HEAD_TO_HEAD_ONLY | To match multiple opponents please use MatchmakingRequest
      * match | NO_DROP_IN_DROP_OUT_AVAILABLE | To use the drop-in-drop-out functionality please use MatchmakingRequest
      * match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality please use MatchmakingRequest
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.FindPendingMatchesRequest();
+     * request.matchGroup = ...;
+     * request.matchShortCode = ...;
+     * request.maxMatchesToFind = ...;
+     * var response = request.Send();
+     * 
+     * var pendingMatches = response.pendingMatches; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class FindMatchRequest extends _Request<_FindMatchResponse> {
         /**

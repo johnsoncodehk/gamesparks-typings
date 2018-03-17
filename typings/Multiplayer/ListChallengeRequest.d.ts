@@ -9,6 +9,15 @@ declare namespace SparkRequests {
      * RECEIVED : The challenge has been issued to the current player and is waiting to be accepted.
      * COMPLETE : The challenge has completed.
      * DECLINED : The challenge has been issued by the current player and has been declined.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListChallengeTypeRequest();
+     * var response = request.Send();
+     * 
+     * var challengeTemplates = response.challengeTemplates; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class ListChallengeRequest extends _Request<_ListChallengeResponse> {
         /**

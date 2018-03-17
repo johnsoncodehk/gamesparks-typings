@@ -8,6 +8,25 @@ declare namespace SparkRequests {
      * moduleShortCode | INVALID | One of either the script or moduleShortCode properties must be populated
      * script | Validation error | If an invalid script is supplied, the validation error will be returned here.
      * scheduledTime | INVALID | The date/time for scheduled jobs must not be in the past
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.AmazonConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class ScheduleBulkJobAdminRequest extends _Request<_ScheduleBulkJobAdminResponse> {
         /**

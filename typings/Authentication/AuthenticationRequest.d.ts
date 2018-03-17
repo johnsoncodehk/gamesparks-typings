@@ -8,6 +8,27 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * DETAILS | UNRECOGNISED | The userName password combination did not match any existing account
      * DETAILS | LOCKED | There have been too many failed login attempts with these details, the account has been locked temporarily
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.DeviceAuthenticationRequest();
+     * request.deviceId = ...;
+     * request.deviceModel = ...;
+     * request.deviceName = ...;
+     * request.deviceOS = ...;
+     * request.deviceType = ...;
+     * request.displayName = ...;
+     * request.operatingSystem = ...;
+     * request.segments = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class AuthenticationRequest extends _Request<_AuthenticationResponse> {
         /**

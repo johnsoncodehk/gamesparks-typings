@@ -3,6 +3,16 @@ declare namespace SparkRequests {
      * Allows a user defined event to be triggered.
      * This call differs from most as it does not have a fixed format. The @class and eventKey attributes are common, but the rest of the attributes are as defined in the Event object configured in the dev portal.
      * The example below shows a request to an event with a short code of HS with 2 attributes, 'HS’ & 'GL’.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.SendFriendMessageRequest();
+     * request.friendIds = ...;
+     * request.message = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class LogEventRequest extends _Request<_LogEventResponse> {
         /**

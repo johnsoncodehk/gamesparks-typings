@@ -11,6 +11,17 @@ declare namespace SparkRequests {
      * verificationError | 2 | The Apple servers failed to verify the receipt
      * verificationError | 3 | There was an error connecting to the Apple server
      * verificationError | 5 | The transaction_id has been processed before
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ListVirtualGoodsRequest();
+     * request.includeDisabled = ...;
+     * request.tags = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * var virtualGoods = response.virtualGoods; 
+     * ```
      */
     class IOSBuyGoodsRequest extends _Request<_IOSBuyGoodsResponse> {
         /**

@@ -7,6 +7,18 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * team | INVALID | No team exists for the given details
      * team | NOT_A_MEMBER | The current player is not a member of the team they are trying to message
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.AnalyticsRequest();
+     * request.data = ...;
+     * request.end = ...;
+     * request.key = ...;
+     * request.start = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class SendTeamChatMessageRequest extends _Request<_SendTeamChatMessageResponse> {
         /**

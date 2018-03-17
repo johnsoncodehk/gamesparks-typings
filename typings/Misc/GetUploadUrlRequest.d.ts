@@ -1,6 +1,17 @@
 declare namespace SparkRequests {
     /**
      * Returns a secure, time sensitive URL to allow the game to upload a piece of player content to the GameSparks platform.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GetUploadedRequest();
+     * request.uploadId = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * var size = response.size; 
+     * var url = response.url; 
+     * ```
      */
     class GetUploadUrlRequest extends _Request<_GetUploadUrlResponse> {
         /**

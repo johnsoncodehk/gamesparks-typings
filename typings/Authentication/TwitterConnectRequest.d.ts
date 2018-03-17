@@ -16,6 +16,26 @@ declare namespace SparkRequests {
      * accessToken | REQUIRED | Parameter accessToken is required but was not provided
      * accessSecret | REQUIRED | Parameter accessSecret is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ViberConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.doNotRegisterForPush = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class TwitterConnectRequest extends _Request<_TwitterConnectResponse> {
         /**

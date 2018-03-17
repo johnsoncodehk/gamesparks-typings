@@ -17,6 +17,26 @@ declare namespace SparkRequests {
      * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Viber profile and it’s not the profile they have just tried to log in with
      * accessToken | REQUIRED | Parameter accessToken is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.WeChatConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.openId = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class ViberConnectRequest extends _Request<_ViberConnectResponse> {
         /**

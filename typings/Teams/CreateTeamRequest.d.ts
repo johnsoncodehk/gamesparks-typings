@@ -9,6 +9,17 @@ declare namespace SparkRequests {
      * teamType | MAX_OWNED_REACHED | The current player has reached the ownership limit of the supplied teamType
      * teamType | MAX_TEAMS_REACHED | The current player has reached the membership limit of the supplied teamType
      * teamId | NOT_UNIQUE | The teamId supplied already exists
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.DropTeamRequest();
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class CreateTeamRequest extends _Request<_CreateTeamResponse> {
         /**

@@ -7,6 +7,26 @@ declare namespace SparkRequests {
      * :- | :- | :-
      * eligibility | { “XXX” : “UNRECOGNISED”} | XXX is not a valid field of eligibility
      * eligibility | { “segments” : {“XXX” : “MALFORMED”}} | The value provied for XXX is not in the correct format
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.FindMatchRequest();
+     * request.action = ...;
+     * request.matchGroup = ...;
+     * request.matchShortCode = ...;
+     * request.skill = ...;
+     * var response = request.Send();
+     * 
+     * var accessToken = response.accessToken; 
+     * var host = response.host; 
+     * var matchData = response.matchData; 
+     * var matchId = response.matchId; 
+     * var opponents = response.opponents; 
+     * var peerId = response.peerId; 
+     * var playerId = response.playerId; 
+     * var port = response.port; 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class FindChallengeRequest extends _Request<_FindChallengeResponse> {
         /**

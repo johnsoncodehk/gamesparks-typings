@@ -1,6 +1,19 @@
 declare namespace SparkRequests {
     /**
      * Retrieves the details of the current authenticated player.
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.ChangeUserDetailsRequest();
+     * request.displayName = ...;
+     * request.language = ...;
+     * request.newPassword = ...;
+     * request.oldPassword = ...;
+     * request.userName = ...;
+     * var response = request.Send();
+     * 
+     * var scriptData = response.scriptData; 
+     * ```
      */
     class AccountDetailsRequest extends _Request<_AccountDetailsResponse> {
     }

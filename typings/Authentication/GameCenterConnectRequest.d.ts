@@ -22,6 +22,30 @@ declare namespace SparkRequests {
      * externalPlayerId | REQUIRED | The externalPlayerId is required but not provided
      * displayName | REQUIRED | The displayName is required but not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.GooglePlayConnectRequest();
+     * request.accessToken = ...;
+     * request.code = ...;
+     * request.displayName = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.googlePlusScope = ...;
+     * request.profileScope = ...;
+     * request.redirectUri = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class GameCenterConnectRequest extends _Request<_GameCenterConnectResponse> {
         /**

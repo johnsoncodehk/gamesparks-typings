@@ -16,6 +16,27 @@ declare namespace SparkRequests {
      * userId | REQUIRED | The userId is required but not provided
      * gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.NXConnectRequest();
+     * request.accountPerLoginId = ...;
+     * request.displayName = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.nsaIdToken = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class KongregateConnectRequest extends _Request<_KongregateConnectResponse> {
         /**

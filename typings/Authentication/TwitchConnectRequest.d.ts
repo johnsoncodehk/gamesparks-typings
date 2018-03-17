@@ -14,6 +14,26 @@ declare namespace SparkRequests {
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
      * accessToken | REQUIRED | The accessToken is required but not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.TwitterConnectRequest();
+     * request.accessSecret = ...;
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class TwitchConnectRequest extends _Request<_TwitchConnectResponse> {
         /**

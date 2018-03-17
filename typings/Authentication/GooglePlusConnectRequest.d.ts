@@ -15,6 +15,26 @@ declare namespace SparkRequests {
      * accessToken&#124;code | REQUIRED | Both the code and the accessToken are missing
      * GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the required Google Plus integration credentials
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
+     * 
+     * ## Cloud Code Sample
+     * ```javascript
+     * var request = new SparkRequests.KongregateConnectRequest();
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.gameAuthToken = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * request.userId = ...;
+     * var response = request.Send();
+     * 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
+     * var scriptData = response.scriptData; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
+     * ```
      */
     class GooglePlusConnectRequest extends _Request<_GooglePlusConnectResponse> {
         /**
