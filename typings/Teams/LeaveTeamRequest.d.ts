@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player to leave a team.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * team | CANNOT_LEAVE_OR_JOIN_OWNED_MANDATORY_TEAM | The current player is trying to leave a mandatory team they own.

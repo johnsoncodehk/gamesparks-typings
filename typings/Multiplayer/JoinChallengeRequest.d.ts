@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player to join an open challenge.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * challengeInstanceId | UNKNOWN | No challenge could be found with the given challengeInstanceId
      * JOIN | NOT_FRIEND | The player is trying to join a FRIENDS challenge that is owned by someone with whom they are not a friend
      * JOIN | Must be a PUBLIC | FRIENDS challenge to join

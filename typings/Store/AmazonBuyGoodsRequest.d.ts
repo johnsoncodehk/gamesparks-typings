@@ -5,10 +5,9 @@ declare namespace SparkRequests {
      * The receiptId in the data will be recorded and the request will be rejected if the receiptId has previously been processed, this prevents replay attacks.
      * Once verfied, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the receipt with the 'Amazon Product Id’ configured against the virtual good.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * receiptId | REQUIRED | The receiptId is missing
      * amazonUserId | REQUIRED | The amazonUserId is missing
      * verificationError | 1 | No matching virtual good can be found

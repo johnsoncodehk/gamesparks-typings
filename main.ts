@@ -181,10 +181,9 @@ function handleReurestAPI(data: ApiInfo) {
 		// Resuest
 		if (data.errorCodes.length > 0) {
 			data.descriptions.push("");
-			data.descriptions.push("Error Codes");
-			data.descriptions.push("---");
+			data.descriptions.push("## Error Codes");
 			data.descriptions.push("Key | Value | Description");
-			data.descriptions.push("--- | --- | ---");
+			data.descriptions.push(":- | :- | :-");
 			data.errorCodes.forEach(errorCode => {
 				data.descriptions.push(errorCode.Key + " | " + errorCode.Value + " | " + errorCode.Description);
 			});

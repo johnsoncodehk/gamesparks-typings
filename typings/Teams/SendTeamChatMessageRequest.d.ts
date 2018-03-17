@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Send a message to all the players who are member of the given team
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * team | INVALID | No team exists for the given details
      * team | NOT_A_MEMBER | The current player is not a member of the team they are trying to message
      */

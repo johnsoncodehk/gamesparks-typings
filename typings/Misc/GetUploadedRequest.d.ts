@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Returns a secure, time sensitive URL to a piece of content that was previously uploaded to the GameSparks platform by a player.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * uploadId | INVALID | The upload id was invalid
      */
     class GetUploadedRequest extends _Request<_GetUploadedResponse> {

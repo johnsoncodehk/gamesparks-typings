@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Twitter user is not known, a new player will be created using the Twitter details and the session will be authenticated against the new player.
      * If the Twitter user is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
      * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Twitter profile and it’s not the profile they have just tried to log in with
      * accessToken | REQUIRED | Parameter accessToken is required but was not provided

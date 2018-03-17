@@ -4,10 +4,9 @@ declare namespace SparkRequests {
      * The GameSparks platform will attempt to return players both ahead and behind the current player, where data is available.
      * The entry count defines how many player should be returned both ahead and behind. The numer of results may vary if there are not enough friends either ahead or behind.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
      * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
      * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard

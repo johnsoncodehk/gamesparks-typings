@@ -5,10 +5,9 @@ declare namespace SparkRequests {
      * Players looking for a match using the same matchShortCode will be considered for a match, based on the matchConfig.
      * Each player must match the other for the match to be found.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * skill | may not be null | skill must be provided
      * matchShortCode | may not be null | matchShortCode must be provided
      * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode

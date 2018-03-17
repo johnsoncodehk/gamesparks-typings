@@ -4,10 +4,9 @@ declare namespace SparkRequests {
      * This allows the player to be tracked and have data stored against them before using FacebookConnectRequest to create a full profile.
      * DeviceAuthenticationRequest should not be used in conjunction with RegistrationRequest as the two accounts will not be merged.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * deviceOS | IOS | ANDROID
      */
     class DeviceAuthenticationRequest extends _Request<_DeviceAuthenticationResponse> {

@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Steam user is not known, a new player will be created using the Steam details and the session will be authenticated against the new player.
      * If the Steam user is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * sessionTicket | ACCOUNT_ALREADY_LINKED | The current user has a Steam profile and it’s not the profile they have just tried to log in with
      * sessionTicket | NOTAUTHENTICATED | The system was unable to authenticate the sessionTicket
      * sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provided

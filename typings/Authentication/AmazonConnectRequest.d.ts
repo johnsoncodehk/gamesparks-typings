@@ -7,10 +7,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Amazon user is not known, a new player will be created using the Amazon details and the session will be authenticated against the new player.
      * If the Amazon user is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Amazon profile and it’s not the profile they have just tried to log in with
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
      * accessToken | REQUIRED | The accessToken is missing

@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Purchases a virtual good with an in game currency. Once purchased the virtual good will be added to the players account.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * currencyType | UNRECOGNISED | Not a valid currency, valid values are 1 to 6
      * virtualGood | CANNOT_BE_CURRENCY | The player cannot buy a currency pack with virtual currency
      * currency1 | INSUFFICIENT_FUNDS | The player does not have enough currency 1 funds to complete the purchase

@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the PSN user is not known, a new player will be created using the PSN details and the session will be authenticated against the new player.
      * If the PSN user is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * PSN | NOT_CONFIGURED | The game does not have the PSN integration details configured.
      * authorizationCode | NOTAUTHENTICATED | The system was unable to authenticate the authorizationCode
      * authorizationCode | ACCOUNT_ALREADY_LINKED | The current user has a PSN profile and it’s not the profile they have just tried to log in with

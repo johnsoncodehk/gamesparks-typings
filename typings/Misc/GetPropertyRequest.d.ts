@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Get the property for the given short Code.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * property | NOT_FOUND | No property with given shortCode could be found.
      */
     class GetPropertyRequest extends _Request<_GetPropertyResponse> {

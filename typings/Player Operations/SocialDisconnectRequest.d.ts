@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player’s internal profile to be disconnected from an external system to which it is linked.  Any friends linked as result of this connection will be removed.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * systemId | REQUIRED | A systemId from which to disconnect must be provided
      * systemId | NOT_CONNECTED | The player does not have a connection with the provided system.
      * userName | CHANGE_REQUIRED | If the player’s userName was derived from the profile they are disconnecting from, they must change it before they can disconnect.  The userName can be changed via a ChangeUserDetailsRequest.

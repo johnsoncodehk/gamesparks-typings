@@ -5,10 +5,9 @@ declare namespace SparkRequests {
      * Each player must match the other for the match to be found.
      * If the matchShortCode points to a match with realtime enabled, in order to minimise latency, the location of Players and their proximity to one another takes precedence over their reciprocal skill values.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * skill | may not be null | skill must be provided
      * action | UNKNOWN | action is not valid
      * matchShortCode | may not be null | matchShortCode must be provided

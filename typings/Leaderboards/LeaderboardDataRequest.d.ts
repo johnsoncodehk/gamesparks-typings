@@ -4,10 +4,9 @@ declare namespace SparkRequests {
      * The response contains the top of the leaderboard, and returns the number of entries as defined in the entryCount parameter.
      * If a shortCode is supplied, the response will contain the global leaderboard data. If a challengeInstanceId is supplied, the response will contain the leaderboard data for the challenge.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
      * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
      * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard

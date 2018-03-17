@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Performs a request for multiple players.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * playerIds | INVALID | Between 1-500 player IDs must be supplied in the form of an array
      * request | INVALID | You must supply a valid request in JSON format to be performed for each player listed in playerIds
      */

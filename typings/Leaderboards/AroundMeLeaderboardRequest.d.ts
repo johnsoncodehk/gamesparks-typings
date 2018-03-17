@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Returns leaderboard data that is adjacent to the currently signed in player’s position within the given leaderboard.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
      * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
      * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard

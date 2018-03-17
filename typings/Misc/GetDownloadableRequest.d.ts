@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Returns a secure, time sensitive url to allow the game to download a piece of downloadable content stored in the GameSparks platform.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * shortCode | INVALID | The short code does not match any Downloadable shortCode
      */
     class GetDownloadableRequest extends _Request<_GetDownloadableResponse> {

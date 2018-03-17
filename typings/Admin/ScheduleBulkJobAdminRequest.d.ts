@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Schedules a bulk job to be run against multiple players.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * moduleShortCode | INVALID | One of either the script or moduleShortCode properties must be populated
      * script | Validation error | If an invalid script is supplied, the validation error will be returned here.
      * scheduledTime | INVALID | The date/time for scheduled jobs must not be in the past

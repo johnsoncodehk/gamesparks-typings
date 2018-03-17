@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Google Play user is not known, a new player will be created using the Google Play details and the session will be authenticated against the new player.
      * If the Google Play user is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
      * accessToken|code | REQUIRED | Both the code and the accessToken are missing
      * displayName | REQUIRED | The displayName is missing

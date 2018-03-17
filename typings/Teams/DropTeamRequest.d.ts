@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player to drop a team.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * team | NOT_MEMBER | The current player is not a member of the team they are requesting to leave

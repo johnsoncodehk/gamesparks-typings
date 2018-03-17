@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the GameCenter user is already known, the session will switch to being the previously created user.
      * This API call requires the output details from GKLocalPlayer.generateIdentityVerificationSignatureWithCompletionHandler on your iOS device
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * externalPlayerId | ACCOUNT_ALREADY_LINKED | The current user has a GameCenter profile and it’s not the profile they have just tried to log in with
      * signature | NOTAUTHENTICATED | The system was unable to validate the request
      * externalPlayerId | NOTAUTHENTICATED | The system was unable to validate the external player ID

@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player to join a team or a team to be retrieved.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * members | ALREADY_JOINED | The current player is already a mamber of the specified team

@@ -8,10 +8,9 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the NSA is not known, a new player will be created using the NSA details and the session will be authenticated against the new player.
      * If the NSA is already known, the session will switch to being the previously created user.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * NX | NOT_CONFIGURED | The game does not have the NX integration details configured.
      * nsaIdToken | NOTAUTHENTICATED | The system was unable to authenticate the NSA ID token
      * nsaIdToken | REQUIRED | Parameter nsaIdToken is required but was not provided

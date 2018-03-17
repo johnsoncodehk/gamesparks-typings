@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Allows a player to find challenges that they are eligible to join.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * eligibility | { “XXX” : “UNRECOGNISED”} | XXX is not a valid field of eligibility
      * eligibility | { “segments” : {“XXX” : “MALFORMED”}} | The value provied for XXX is not in the correct format
      */

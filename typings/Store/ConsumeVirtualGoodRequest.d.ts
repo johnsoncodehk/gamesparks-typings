@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Consumes a given amount of the specified virtual good.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * qty | INSUFFICIENT | The player does not have sufficient virtual goods for shortcode specified
      */
     class ConsumeVirtualGoodRequest extends _Request<_ConsumeVirtualGoodResponse> {

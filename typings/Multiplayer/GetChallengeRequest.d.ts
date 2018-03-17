@@ -2,10 +2,9 @@ declare namespace SparkRequests {
     /**
      * Gets the details of a challenge. The current player must be involved in the challenge for the request to succeed.
      * 
-     * Error Codes
-     * ---
+     * ## Error Codes
      * Key | Value | Description
-     * --- | --- | ---
+     * :- | :- | :-
      * challengeInstanceId | INVALID | The supplied challengeInstanceId does not match a challenge related to the current player
      */
     class GetChallengeRequest extends _Request<_GetChallengeResponse> {
