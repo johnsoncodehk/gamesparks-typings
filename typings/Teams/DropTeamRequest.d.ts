@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * ## Error Codes
      * Key | Value | Description
      * :- | :- | :-
-     * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
+     * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * team | NOT_MEMBER | The current player is not a member of the team they are requesting to leave
      * team | NOT_ONWER | The user is not the owner of the team

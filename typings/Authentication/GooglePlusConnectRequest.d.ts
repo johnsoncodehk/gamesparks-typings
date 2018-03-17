@@ -12,7 +12,7 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
-     * accessToken|code | REQUIRED | Both the code and the accessToken are missing
+     * accessToken&#124;code | REQUIRED | Both the code and the accessToken are missing
      * GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the required Google Plus integration credentials
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */

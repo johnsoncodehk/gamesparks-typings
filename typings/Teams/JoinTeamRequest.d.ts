@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * ## Error Codes
      * Key | Value | Description
      * :- | :- | :-
-     * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
+     * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * members | ALREADY_JOINED | The current player is already a mamber of the specified team
      * members | MAX_MEMBERS_REACHED | The team already has the maximum number of members in it

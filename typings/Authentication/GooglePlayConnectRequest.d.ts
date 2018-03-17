@@ -12,7 +12,7 @@ declare namespace SparkRequests {
      * Key | Value | Description
      * :- | :- | :-
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
-     * accessToken|code | REQUIRED | Both the code and the accessToken are missing
+     * accessToken&#124;code | REQUIRED | Both the code and the accessToken are missing
      * displayName | REQUIRED | The displayName is missing
      * GOOGLE_PLAY | NOT_CONFIGURED | The game has not been configured with the required Google Play App ID
      * GOOGLE_PLUS | NOT_CONFIGURED | Google+ scope is requested, but the game has not been configured with the required Google Plus integration credentials: the client ID and the client secret

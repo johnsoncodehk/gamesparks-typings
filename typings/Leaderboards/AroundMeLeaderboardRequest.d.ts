@@ -5,8 +5,8 @@ declare namespace SparkRequests {
      * ## Error Codes
      * Key | Value | Description
      * :- | :- | :-
-     * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
-     * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
+     * leaderboardShortCode&#124;challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
+     * leaderboardShortCode&#124;challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
      * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard
      * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play

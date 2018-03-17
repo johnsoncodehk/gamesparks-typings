@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * ## Error Codes
      * Key | Value | Description
      * :- | :- | :-
-     * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
+     * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      */

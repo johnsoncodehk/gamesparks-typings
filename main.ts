@@ -185,7 +185,12 @@ function handleReurestAPI(data: ApiInfo) {
 			data.descriptions.push("Key | Value | Description");
 			data.descriptions.push(":- | :- | :-");
 			data.errorCodes.forEach(errorCode => {
-				data.descriptions.push(errorCode.Key + " | " + errorCode.Value + " | " + errorCode.Description);
+				let des = [
+					errorCode.Key.replace(/\|/g, "&#124;"),
+					errorCode.Value.replace(/\|/g, "&#124;"),
+					errorCode.Description.replace(/\|/g, "&#124;"),
+				].join(" | ");
+				data.descriptions.push(des);
 			});
 		}
 		dts += createDes(data.descriptions, level);
