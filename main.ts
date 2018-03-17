@@ -3,8 +3,8 @@ import * as fs from "fs";
 import { JSDOM } from 'jsdom';
 
 let webUrl = "https://api.gamesparks.net";
-let fileUrl = "./gs.html"
 let fromFile = false;
+let fileUrl = "./GameSparks Request API Reference.html"
 let outPath = "./typings/";
 
 interface ApiInfo {
