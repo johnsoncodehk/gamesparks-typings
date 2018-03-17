@@ -3,6 +3,12 @@ declare namespace SparkRequests {
      * Allows a device id to be used to create an anonymous profile in the game.
      * This allows the player to be tracked and have data stored against them before using FacebookConnectRequest to create a full profile.
      * DeviceAuthenticationRequest should not be used in conjunction with RegistrationRequest as the two accounts will not be merged.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * deviceOS | IOS | ANDROID
      */
     class DeviceAuthenticationRequest extends _Request<_DeviceAuthenticationResponse> {
         /**

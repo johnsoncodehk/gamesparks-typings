@@ -4,6 +4,14 @@ declare namespace SparkRequests {
      * The GameSparks platform will update the 'use_count’ for an entitlement (by default 'use_count’ is 1).
      * The request will be rejected if entitlement 'use_limit’ is 0
      * GampSparks platform by default will use internally saved PSN user access token
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * verificationError | 1 | No matching virtual good can be found
+     * verificationError | 2 | The PSN servers failed to verify the entitlementLabel
+     * verificationError | 3 | There was an error connecting to the PSN server
      */
     class PsnBuyGoodsRequest extends _Request<_PsnBuyGoodsResponse> {
         /**

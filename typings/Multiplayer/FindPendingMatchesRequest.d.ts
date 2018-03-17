@@ -3,6 +3,14 @@ declare namespace SparkRequests {
      * Find other pending matches that will match this player’s previously submitted MatchmakingRequest.
      * Used for manual matching of players, where you want control over which pending match should be chosen.
      * Each player must match the other for the pending match to be found.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * matchShortCode | may not be null | matchShortCode must be provided
+     * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
+     * match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode / matchGroup currently in progress
      */
     class FindPendingMatchesRequest extends _Request<_FindPendingMatchesResponse> {
         /**

@@ -1,6 +1,15 @@
 declare namespace SparkRequests {
     /**
      * Allows a new team to be created.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * teamType | INVALID | The team type short code supplied does not exist
+     * teamType | MAX_OWNED_REACHED | The current player has reached the ownership limit of the supplied teamType
+     * teamType | MAX_TEAMS_REACHED | The current player has reached the membership limit of the supplied teamType
+     * teamId | NOT_UNIQUE | The teamId supplied already exists
      */
     class CreateTeamRequest extends _Request<_CreateTeamResponse> {
         /**

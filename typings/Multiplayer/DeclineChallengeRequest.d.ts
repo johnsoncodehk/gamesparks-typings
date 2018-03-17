@@ -1,6 +1,12 @@
 declare namespace SparkRequests {
     /**
      * Declines a challenge that has been issued to the current player.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * challengeInstanceId | INVALID | The ID does not match a challenge that has been issued
      */
     class DeclineChallengeRequest extends _Request<_DeclineChallengeResponse> {
         /**

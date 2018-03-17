@@ -7,6 +7,16 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthenticationRequest or RegistrationRequest AND the Facebook user is not already registered with the game, the Facebook user will be linked to the current player.
      * If the current player has not authenticated and the Facebook user is not known, a new player will be created using the Facebook details and the session will be authenticated against the new player.
      * If the Facebook user is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Facebook profile and it’s not the profile they have just tried to log in with
+     * code | NOTAUTHENTICATED | The system was unable to authenticate the code
+     * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
+     * accessToken | REQUIRED | Both the code and the accessToken are missing
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class FacebookConnectRequest extends _Request<_FacebookConnectResponse> {
         /**

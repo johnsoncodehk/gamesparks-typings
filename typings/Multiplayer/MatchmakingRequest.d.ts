@@ -4,6 +4,17 @@ declare namespace SparkRequests {
      * Players looking for a match using the same matchShortCode will be considered for a match, based on the matchConfig.
      * Each player must match the other for the match to be found.
      * If the matchShortCode points to a match with realtime enabled, in order to minimise latency, the location of Players and their proximity to one another takes precedence over their reciprocal skill values.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * skill | may not be null | skill must be provided
+     * action | UNKNOWN | action is not valid
+     * matchShortCode | may not be null | matchShortCode must be provided
+     * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
+     * customQuery | INVALID_QUERY | No customQuery is not a valid mongo query
+     * match | NOT_FOUND | No match was found for the current player
      */
     class MatchmakingRequest extends _Request<_MatchmakingResponse> {
         /**

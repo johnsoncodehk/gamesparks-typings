@@ -3,6 +3,15 @@ declare namespace SparkRequests {
      * Processes a transaction receipt from an App Store in app purchase.
      * The GameSparks platform will validate the receipt with Apple and process the response. The transaction_id in the response will be recorded and the request will be rejected if the transaction_id has previously been processed, this prevents replay attacks.
      * Once verified, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the product_id in the response with the 'IOS Product ID’ configured against the virtual good.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * verificationError | 1 | No matching virtual good can be found
+     * verificationError | 2 | The Apple servers failed to verify the receipt
+     * verificationError | 3 | There was an error connecting to the Apple server
+     * verificationError | 5 | The transaction_id has been processed before
      */
     class IOSBuyGoodsRequest extends _Request<_IOSBuyGoodsResponse> {
         /**

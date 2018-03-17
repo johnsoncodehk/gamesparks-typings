@@ -1,6 +1,14 @@
 declare namespace SparkRequests {
     /**
      * Revokes the purchase of a good. The items aquired will be removed from remaining items of the player.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * transactionIds | REQUIRED | The transactionIds is missing
+     * storeType | REQUIRED | The storeType is missing
+     * playerId | REQUIRED | The playerId is missing
      */
     class RevokePurchaseGoodsRequest extends _Request<_RevokePurchaseGoodsResponse> {
         /**

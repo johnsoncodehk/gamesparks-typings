@@ -7,6 +7,18 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the Google Play user is not already registered with the game, the Google Play user will be linked to the current player.
      * If the current player has not authenticated and the Google Play user is not known, a new player will be created using the Google Play details and the session will be authenticated against the new player.
      * If the Google Play user is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * code | NOTAUTHENTICATED | The system was unable to authenticate the code
+     * accessToken|code | REQUIRED | Both the code and the accessToken are missing
+     * displayName | REQUIRED | The displayName is missing
+     * GOOGLE_PLAY | NOT_CONFIGURED | The game has not been configured with the required Google Play App ID
+     * GOOGLE_PLUS | NOT_CONFIGURED | Google+ scope is requested, but the game has not been configured with the required Google Plus integration credentials: the client ID and the client secret
+     * redirectUri | REQUIRED | The redirectUri is required when using a code rather than an accessToken
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class GooglePlayConnectRequest extends _Request<_GooglePlayConnectResponse> {
         /**

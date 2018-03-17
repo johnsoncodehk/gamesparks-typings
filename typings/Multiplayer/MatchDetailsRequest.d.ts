@@ -1,6 +1,12 @@
 declare namespace SparkRequests {
     /**
      * Find the details of an existing match this player belongs to, using the matchId
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * matchId | NOT_FOUND | No match found with given matchId for this player
      */
     class MatchDetailsRequest extends _Request<_MatchDetailsResponse> {
         /**

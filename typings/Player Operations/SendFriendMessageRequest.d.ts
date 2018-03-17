@@ -1,6 +1,13 @@
 declare namespace SparkRequests {
     /**
      * Sends a message to one or more game friend(s). A game friend is someone in the players social network who also plays the game.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * friendId | NOT_FRIEND | The friend ID passed is not linked to the current player as a game friend
+     * friendId | INVALID | The value passed is not a valid ID
      */
     class SendFriendMessageRequest extends _Request<_SendFriendMessageResponse> {
         /**

@@ -1,6 +1,15 @@
 declare namespace SparkRequests {
     /**
      * Requests to join a pending match (found via FindPendingMatchesRequest).
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * matchShortCode | may not be null | matchShortCode must be provided
+     * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
+     * match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode / matchGroup currently in progress
+     * pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available to be joined
      */
     class JoinPendingMatchRequest extends _Request<_JoinPendingMatchResponse> {
         /**

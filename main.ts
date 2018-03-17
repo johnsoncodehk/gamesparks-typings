@@ -23,6 +23,11 @@ interface ApiInfo {
 		Type: string,
 		Description: string,
 	}[],
+	errorCodes: {
+		Key: string,
+		Value: string,
+		Description: string,
+	}[],
 }
 interface DataInfo {
 	href: string,
@@ -57,15 +62,15 @@ async function main() {
 			if (node.localName == "h2") {
 				let title = node.textContent as string;
 				console.log(h1 + ": " + title);
-				let descriptions: string[] = getNextDescriptions(content, j);
 				if (h1 == "Data Types") {
 					// Data
 					let data: DataInfo = {
 						href: h1,
 						title: title,
-						descriptions: descriptions,
+						descriptions: [],
 						parameters: [],
 					};
+					data.descriptions = getNextDescriptions(content, j);
 					j = toTag(content, "table", j + 1);
 					data.parameters = readTableNode(content.childNodes[j]);
 					handleData(data);
@@ -75,16 +80,22 @@ async function main() {
 					let api: ApiInfo = {
 						href: h1,
 						title: title,
-						descriptions: descriptions,
+						descriptions: [],
 						requestParameters: [],
 						responseDescriptions: [],
 						responseParameters: [],
+						errorCodes: [],
 					};
-					j = toTag(content, "table", j + 1);
+					api.descriptions = getNextDescriptions(content, j);
+					j = toTag(content, "table", j + 1); // Request Parameters
 					api.requestParameters = readTableNode(content.childNodes[j]);
 					api.responseDescriptions = getNextDescriptions(content, j);
-					j = toTag(content, "table", j + 1);
+					j = toTag(content, "table", j + 1); // Response Parameters
 					api.responseParameters = readTableNode(content.childNodes[j]);
+					if (content.childNodes[j + 2].textContent == "Error Codes") {
+						j = toTag(content, "table", j + 1); // Error Codes
+						api.errorCodes = readTableNode(content.childNodes[j]);
+					}
 					handleReurestAPI(api);
 				}
 			}
@@ -168,6 +179,16 @@ function handleReurestAPI(data: ApiInfo) {
 	dts += getLevelSpace(level) + "declare namespace SparkRequests {\n";
 	level++; {
 		// Resuest
+		if (data.errorCodes.length > 0) {
+			data.descriptions.push("");
+			data.descriptions.push("Error Codes");
+			data.descriptions.push("---");
+			data.descriptions.push("Key | Value | Description");
+			data.descriptions.push("--- | --- | ---");
+			data.errorCodes.forEach(errorCode => {
+				data.descriptions.push(errorCode.Key + " | " + errorCode.Value + " | " + errorCode.Description);
+			});
+		}
 		dts += createDes(data.descriptions, level);
 		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";
 		level++; {

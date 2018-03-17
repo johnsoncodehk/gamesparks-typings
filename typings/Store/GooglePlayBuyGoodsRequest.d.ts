@@ -5,6 +5,16 @@ declare namespace SparkRequests {
      * The orderId in the data will be recorded and the request will be rejected if the orderId has previously been processed, this prevents replay attacks.
      * Once verfied, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the signed data with the 'Google Product ID’ configured against the virtual good.
      * It is critical that the signedData is sent exactly as it is returned form google, including any whitespace. Any modification of the signedData will cause the verification process to fail.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * verificationError | 5 | The orderId in the signedData has previously been processed
+     * verificationError | 4 | The google play public key is not configured against the game
+     * verificationError | 3 | There was an error connecting to the google play service
+     * verificationError | 2 | The signature does not match the signed data
+     * verificationError | 1 | No matching virtual good can be found
      */
     class GooglePlayBuyGoodsRequest extends _Request<_GooglePlayBuyGoodsResponse> {
         /**

@@ -1,6 +1,17 @@
 declare namespace SparkRequests {
     /**
      * Returns leaderboard data that is adjacent to the currently signed in player’s position within the given leaderboard.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
+     * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
+     * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard
+     * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
+     * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
+     * challengeInstanceVersion | INVALID | The challengeInstance predates support for this request type
      */
     class AroundMeLeaderboardRequest extends _Request<_AroundMeLeaderboardResponse> {
         /**

@@ -3,6 +3,15 @@ declare namespace SparkRequests {
      * Issues a challenge to a group of players from the currently signed in player.
      * The endTime field must be present unless the challenge template has an achievement set in the ‘First to Achievement’ field.
      * The usersToChallenge field must be present for this request if the acessType is PRIVATE (which is the default).
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * challengeInstanceId | INVALID | The ID does not match a challenge the user is involved with
+     * eligibilityCriteria | { “XXX” : “UNRECOGNISED”} | XXX is not a valid field of eligibilityCriteria
+     * eligibilityCriteria | { “segments” : {“XXX” : “MALFORMED”}} | The value provided for XXX is not in the correct format
+     * autoStartJoinedChallengeOnMaxPlayers | MaxPlayers Required | If autoStartJoinedChallengeOnMaxPlayers is true, the maximum number of players must also be specified
      */
     class CreateChallengeRequest extends _Request<_CreateChallengeResponse> {
         /**

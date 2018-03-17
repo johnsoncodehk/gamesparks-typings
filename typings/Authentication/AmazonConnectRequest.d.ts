@@ -6,6 +6,15 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the Amazon user is not already registered with the game, the Amazon user will be linked to the current player.
      * If the current player has not authenticated and the Amazon user is not known, a new player will be created using the Amazon details and the session will be authenticated against the new player.
      * If the Amazon user is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Amazon profile and it’s not the profile they have just tried to log in with
+     * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
+     * accessToken | REQUIRED | The accessToken is missing
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class AmazonConnectRequest extends _Request<_AmazonConnectResponse> {
         /**

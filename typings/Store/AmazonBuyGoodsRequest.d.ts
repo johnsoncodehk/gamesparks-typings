@@ -4,6 +4,18 @@ declare namespace SparkRequests {
      * The GameSparks platform will validate the amazonUserId and receiptId with Amazon using the Amazon Purchase Secret configured against the game.
      * The receiptId in the data will be recorded and the request will be rejected if the receiptId has previously been processed, this prevents replay attacks.
      * Once verfied, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the receipt with the 'Amazon Product Id’ configured against the virtual good.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * receiptId | REQUIRED | The receiptId is missing
+     * amazonUserId | REQUIRED | The amazonUserId is missing
+     * verificationError | 1 | No matching virtual good can be found
+     * verificationError | 2 | The receiptId is not valid for the given userId and secret
+     * verificationError | 3 | There was an error connecting to the Amazon service
+     * verificationError | 4 | The Amazon purchase secret is not configured against the game
+     * verificationError | 5 | The receiptId has previously been processed
      */
     class AmazonBuyGoodsRequest extends _Request<_AmazonBuyGoodsResponse> {
         /**

@@ -7,6 +7,17 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the NSA is not already registered with the game, the NSA will be linked to the current player.
      * If the current player has not authenticated and the NSA is not known, a new player will be created using the NSA details and the session will be authenticated against the new player.
      * If the NSA is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * NX | NOT_CONFIGURED | The game does not have the NX integration details configured.
+     * nsaIdToken | NOTAUTHENTICATED | The system was unable to authenticate the NSA ID token
+     * nsaIdToken | REQUIRED | Parameter nsaIdToken is required but was not provided
+     * accessToken | ACCOUNT_ALREADY_LINKED | The current user has an NSA profile and it’s not the profile they have just tried to log in with
+     * displayName | REQUIRED | Parameter displayName is required but not provided
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class NXConnectRequest extends _Request<_NXConnectResponse> {
         /**

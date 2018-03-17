@@ -3,6 +3,14 @@ declare namespace SparkRequests {
      * Processes a transaction receipt from a windows store purchase.
      * The GameSparks platform will validate the receipt using the signature embedded in the xml. The Id in the xml will be recorded and the request will be rejected if the Id has previously been processed, this prevents replay attacks.
      * Once verified, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the xml with the 'WP8 Product ID’ configured against the virtual good.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * verificationError | 1 | No matching virtual good can be found
+     * verificationError | 2 | The XMLSignature validation failed
+     * verificationError | 5 | The Id in the receipt xml has previously been processed
      */
     class WindowsBuyGoodsRequest extends _Request<_WindowsBuyGoodsResponse> {
         /**

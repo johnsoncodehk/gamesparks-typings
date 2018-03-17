@@ -4,6 +4,18 @@ declare namespace SparkRequests {
      * Find a match for this player, using the given skill and matchShortCode.
      * Players looking for a match using the same matchShortCode will be considered for a match, based on the matchConfig.
      * Each player must match the other for the match to be found.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * skill | may not be null | skill must be provided
+     * matchShortCode | may not be null | matchShortCode must be provided
+     * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
+     * match | NOT_FOUND | No match was found for the current player
+     * match | HEAD_TO_HEAD_ONLY | To match multiple opponents please use MatchmakingRequest
+     * match | NO_DROP_IN_DROP_OUT_AVAILABLE | To use the drop-in-drop-out functionality please use MatchmakingRequest
+     * match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality please use MatchmakingRequest
      */
     class FindMatchRequest extends _Request<_FindMatchResponse> {
         /**

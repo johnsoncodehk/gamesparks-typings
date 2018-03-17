@@ -1,6 +1,12 @@
 declare namespace SparkRequests {
     /**
      * Accepts a challenge that has been issued to the current player.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * challengeInstanceId | INVALID | The ID does not match a challenge the user is involved with
      */
     class AcceptChallengeRequest extends _Request<_AcceptChallengeResponse> {
         /**

@@ -7,6 +7,15 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the Google Plus user is not already registered with the game, the Google Plus user will be linked to the current player.
      * If the current player has not authenticated and the Google Plus user is not known, a new player will be created using the Google Plus details and the session will be authenticated against the new player.
      * If the Google Plus user is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * code | NOTAUTHENTICATED | The system was unable to authenticate the code
+     * accessToken|code | REQUIRED | Both the code and the accessToken are missing
+     * GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the required Google Plus integration credentials
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class GooglePlusConnectRequest extends _Request<_GooglePlusConnectResponse> {
         /**

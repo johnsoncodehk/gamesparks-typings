@@ -3,6 +3,17 @@ declare namespace SparkRequests {
      * Returns leaderboard data that only contains entries of players that are game friends with the current player.
      * The GameSparks platform will attempt to return players both ahead and behind the current player, where data is available.
      * The entry count defines how many player should be returned both ahead and behind. The numer of results may vary if there are not enough friends either ahead or behind.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
+     * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
+     * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard
+     * currentUser | NOTSOCIAL | The current player does not have any game friends
+     * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
+     * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      */
     class SocialLeaderboardDataRequest extends _Request<_SocialLeaderboardDataResponse> {
         /**

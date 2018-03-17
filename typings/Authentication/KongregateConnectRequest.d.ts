@@ -6,6 +6,17 @@ declare namespace SparkRequests {
      * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the Kongregate user is not already registered with the game, the Kongregate user will be linked to the current player.
      * If the current player has not authenticated and the Kongregate user is not known, a new player will be created using the Kongregate details and the session will be authenticated against the new player.
      * If the Kongregate user is already known, the session will switch to being the previously created user.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * userId | ACCOUNT_ALREADY_LINKED | The current user has a Kongregate profile and it’s not the profile they have just tried to log in with
+     * gameAuthToken | NOTAUTHENTICATED | The system was unable to authenticate the user id
+     * gameAuthToken | NOTAUTHENTICATED | The system was unable to authenticate the user
+     * userId | REQUIRED | The userId is required but not provided
+     * gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class KongregateConnectRequest extends _Request<_KongregateConnectResponse> {
         /**

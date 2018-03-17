@@ -1,6 +1,12 @@
 declare namespace SparkRequests {
     /**
      * Allows a new player to be created using a username, password display name.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * USERNAME | TAKEN | The userName supplied is already in use.
      */
     class RegistrationRequest extends _Request<_RegistrationResponse> {
         /**

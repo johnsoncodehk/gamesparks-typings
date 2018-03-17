@@ -7,6 +7,22 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the GameCenter user is not known, a new player will be created using the GameCenter details and the session will be authenticated against the new player.
      * If the GameCenter user is already known, the session will switch to being the previously created user.
      * This API call requires the output details from GKLocalPlayer.generateIdentityVerificationSignatureWithCompletionHandler on your iOS device
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * externalPlayerId | ACCOUNT_ALREADY_LINKED | The current user has a GameCenter profile and it’s not the profile they have just tried to log in with
+     * signature | NOTAUTHENTICATED | The system was unable to validate the request
+     * externalPlayerId | NOTAUTHENTICATED | The system was unable to validate the external player ID
+     * publicKeyUrl | REQUIRED | The publicKeyUrl is required but not provided
+     * timestamp | REQUIRED | The timestamp is required but not provided
+     * timestamp | EXPIRED | The request expired
+     * signature | REQUIRED | The signature is required but not provided
+     * salt | REQUIRED | The salt is required but not provided
+     * externalPlayerId | REQUIRED | The externalPlayerId is required but not provided
+     * displayName | REQUIRED | The displayName is required but not provided
+     * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      */
     class GameCenterConnectRequest extends _Request<_GameCenterConnectResponse> {
         /**

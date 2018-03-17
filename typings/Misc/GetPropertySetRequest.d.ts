@@ -1,6 +1,12 @@
 declare namespace SparkRequests {
     /**
      * Get the property set for the given short Code.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * propertySet | NOT_FOUND | No propertySet with given shortCode could be found.
      */
     class GetPropertySetRequest extends _Request<_GetPropertySetResponse> {
         /**

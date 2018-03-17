@@ -1,6 +1,14 @@
 declare namespace SparkRequests {
     /**
      * Allows the details of a team to be retrieved.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
+     * team | INVALID | The teamId or the teamType do not match an existing team
+     * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      */
     class GetTeamRequest extends _Request<_GetTeamResponse> {
         /**

@@ -3,6 +3,17 @@ declare namespace SparkRequests {
      * Returns the top data for either the specified global leaderboard or the specified challenges leaderboard. The data is sorted as defined in the rules specified in the leaderboard configuration.
      * The response contains the top of the leaderboard, and returns the number of entries as defined in the entryCount parameter.
      * If a shortCode is supplied, the response will contain the global leaderboard data. If a challengeInstanceId is supplied, the response will contain the leaderboard data for the challenge.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * leaderboardShortCode|challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
+     * leaderboardShortCode|challengeInstanceId | REQUIRED | Both shortCode and challengeInstanceId were missing
+     * leaderboardShortCode | INVALID | The shortCode does not match a configured leaderboard
+     * currentUser | NOTSOCIAL | The current player does not have any game friends
+     * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
+     * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      */
     class LeaderboardDataRequest extends _Request<_LeaderboardDataResponse> {
         /**

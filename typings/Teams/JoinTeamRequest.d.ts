@@ -1,6 +1,19 @@
 declare namespace SparkRequests {
     /**
      * Allows a player to join a team or a team to be retrieved.
+     * 
+     * Error Codes
+     * ---
+     * Key | Value | Description
+     * --- | --- | ---
+     * teamId|teamType | REQUIRED | Both teamId and teamType have not been provided
+     * team | INVALID | The teamId or the teamType do not match an existing team
+     * members | ALREADY_JOINED | The current player is already a mamber of the specified team
+     * members | MAX_MEMBERS_REACHED | The team already has the maximum number of members in it
+     * teamType | MAX_MEMBERSHIP_REACHED | The current player has already reached the membership limit of this team type
+     * teamType | NOT_SINGULAR_USE_TEAMID | A player can own more than one of the specified teamType, therefore joining by ownerId and teamType is not sufficient to uniquely identify the team to join. Specify the team by teamId instead.
+     * teamType | INVALID | The specified team type is invalid.
+     * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      */
     class JoinTeamRequest extends _Request<_JoinTeamResponse> {
         /**
