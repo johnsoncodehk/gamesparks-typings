@@ -3,8 +3,6 @@ import * as fs from "fs";
 import { JSDOM } from 'jsdom';
 
 let webUrl = "https://api.gamesparks.net";
-let fileUrl = "./gs.html"
-let fromFile = false;
 let outPath = "./typings/";
 
 interface IApiInfo {
@@ -42,7 +40,8 @@ interface IDataInfo {
 }
 
 async function main() {
-	let dom = await readHtml();
+	console.log("read...");
+	let dom = await JSDOM.fromURL(webUrl);
 
 	let contents = dom.window.document.getElementsByClassName("content");
 	for (let i = 0; i < contents.length; i++) {
@@ -62,7 +61,6 @@ async function main() {
 			}
 			if (node.localName == "h2") {
 				let title = node.textContent as string;
-				console.log(h1 + ": " + title);
 				if (h1 == "Data Types") {
 					// Data
 					let data: IDataInfo = {
@@ -194,7 +192,9 @@ function handleData(data: IDataInfo) {
 
 	dts += getLevelSpace(level) + "}\n";
 
-	fs.writeFileSync(outPath + data.href + "/" + data.title + ".d.ts", dts);
+	let path = outPath + data.href + "/" + data.title + ".d.ts";
+	fs.writeFileSync(path, dts);
+	console.log(path);
 }
 function handleReurestAPI(data: IApiInfo) {
 	if (!fs.existsSync(outPath)) {
@@ -262,7 +262,9 @@ function handleReurestAPI(data: IApiInfo) {
 
 	dts += getLevelSpace(level) + "}\n";
 
-	fs.writeFileSync(outPath + data.href + "/" + data.title + ".d.ts", dts);
+	let path = outPath + data.href + "/" + data.title + ".d.ts";
+	fs.writeFileSync(path, dts);
+	console.log(path);
 }
 function createDes(dess: string[], level: number) {
 	if (dess.length == 0) {
@@ -301,15 +303,6 @@ function readTableNode(node: Node) {
 		tab.push(requestObj);
 	}
 	return tab
-}
-function readHtml() {
-	console.log("read...");
-	if (fromFile) {
-		return JSDOM.fromFile(fileUrl);
-	}
-	else {
-		return JSDOM.fromURL(webUrl);
-	}
 }
 
 main();
