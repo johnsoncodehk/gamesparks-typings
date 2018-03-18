@@ -5,10 +5,15 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListLeaderboardsRequest();
+     * var request = new SparkRequests.LeaderboardsEntriesRequest();
+     * request.challenges = ...;
+     * request.inverseSocial = ...;
+     * request.leaderboards = ...;
+     * request.player = ...;
+     * request.social = ...;
+     * request.teamTypes = ...;
      * var response = request.Send();
      * 
-     * var leaderboards = response.leaderboards; 
      * var scriptData = response.scriptData; 
      * ```
      */

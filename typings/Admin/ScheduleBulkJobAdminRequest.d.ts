@@ -11,21 +11,17 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AmazonConnectRequest();
-     * request.accessToken = ...;
-     * request.doNotLinkToCurrentPlayer = ...;
-     * request.errorOnSwitch = ...;
-     * request.segments = ...;
-     * request.switchIfPossible = ...;
-     * request.syncDisplayName = ...;
+     * var request = new SparkRequests.ScheduleBulkJobAdminRequest();
+     * request.data = ...;
+     * request.moduleShortCode = ...;
+     * request.playerQuery = ...;
+     * request.scheduledTime = ...;
+     * request.script = ...;
      * var response = request.Send();
      * 
-     * var authToken = response.authToken; 
-     * var displayName = response.displayName; 
-     * var newPlayer = response.newPlayer; 
+     * var estimatedCount = response.estimatedCount; 
+     * var jobId = response.jobId; 
      * var scriptData = response.scriptData; 
-     * var switchSummary = response.switchSummary; 
-     * var userId = response.userId; 
      * ```
      */
     class ScheduleBulkJobAdminRequest extends _Request<_ScheduleBulkJobAdminResponse> {

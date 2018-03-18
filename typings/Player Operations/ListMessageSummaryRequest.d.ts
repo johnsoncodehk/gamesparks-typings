@@ -6,16 +6,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListTransactionsRequest();
-     * request.dateFrom = ...;
-     * request.dateTo = ...;
+     * var request = new SparkRequests.ListMessageSummaryRequest();
      * request.entryCount = ...;
-     * request.include = ...;
      * request.offset = ...;
      * var response = request.Send();
      * 
+     * var messageList = response.messageList; 
      * var scriptData = response.scriptData; 
-     * var transactionList = response.transactionList; 
      * ```
      */
     class ListMessageSummaryRequest extends _Request<_ListMessageSummaryResponse> {

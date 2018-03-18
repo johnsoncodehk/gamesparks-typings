@@ -12,10 +12,15 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListChallengeTypeRequest();
+     * var request = new SparkRequests.ListChallengeRequest();
+     * request.entryCount = ...;
+     * request.offset = ...;
+     * request.shortCode = ...;
+     * request.state = ...;
+     * request.states = ...;
      * var response = request.Send();
      * 
-     * var challengeTemplates = response.challengeTemplates; 
+     * var challengeInstances = response.challengeInstances; 
      * var scriptData = response.scriptData; 
      * ```
      */

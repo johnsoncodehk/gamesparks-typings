@@ -9,28 +9,12 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GooglePlayBuyGoodsRequest();
-     * request.currencyCode = ...;
-     * request.signature = ...;
-     * request.signedData = ...;
-     * request.subUnitPrice = ...;
-     * request.uniqueTransactionByPlayer = ...;
+     * var request = new SparkRequests.ConsumeVirtualGoodRequest();
+     * request.quantity = ...;
+     * request.shortCode = ...;
      * var response = request.Send();
      * 
-     * var boughtItems = response.boughtItems; 
-     * var currenciesAdded = response.currenciesAdded; 
-     * var currency1Added = response.currency1Added; 
-     * var currency2Added = response.currency2Added; 
-     * var currency3Added = response.currency3Added; 
-     * var currency4Added = response.currency4Added; 
-     * var currency5Added = response.currency5Added; 
-     * var currency6Added = response.currency6Added; 
-     * var currencyConsumed = response.currencyConsumed; 
-     * var currencyShortCode = response.currencyShortCode; 
-     * var currencyType = response.currencyType; 
-     * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
-     * var transactionIds = response.transactionIds; 
      * ```
      */
     class ConsumeVirtualGoodRequest extends _Request<_ConsumeVirtualGoodResponse> {

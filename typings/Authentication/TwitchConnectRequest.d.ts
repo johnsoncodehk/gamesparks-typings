@@ -17,8 +17,7 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.TwitterConnectRequest();
-     * request.accessSecret = ...;
+     * var request = new SparkRequests.TwitchConnectRequest();
      * request.accessToken = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;

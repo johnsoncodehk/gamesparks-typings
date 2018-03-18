@@ -19,10 +19,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.QQConnectRequest();
-     * request.accessToken = ...;
+     * var request = new SparkRequests.PSNConnectRequest();
+     * request.authorizationCode = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
+     * request.redirectUri = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;

@@ -9,13 +9,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.PushRegistrationRequest();
-     * request.deviceOS = ...;
-     * request.pushId = ...;
+     * var request = new SparkRequests.GetUploadedRequest();
+     * request.uploadId = ...;
      * var response = request.Send();
      * 
-     * var registrationId = response.registrationId; 
      * var scriptData = response.scriptData; 
+     * var size = response.size; 
+     * var url = response.url; 
      * ```
      */
     class GetUploadedRequest extends _Request<_GetUploadedResponse> {

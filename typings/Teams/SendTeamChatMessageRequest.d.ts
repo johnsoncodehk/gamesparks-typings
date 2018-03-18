@@ -10,11 +10,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AnalyticsRequest();
-     * request.data = ...;
-     * request.end = ...;
-     * request.key = ...;
-     * request.start = ...;
+     * var request = new SparkRequests.SendTeamChatMessageRequest();
+     * request.message = ...;
+     * request.ownerId = ...;
+     * request.teamId = ...;
+     * request.teamType = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 

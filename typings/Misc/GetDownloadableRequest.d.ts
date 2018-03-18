@@ -9,12 +9,15 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GetPropertyRequest();
-     * request.propertyShortCode = ...;
+     * var request = new SparkRequests.GetDownloadableRequest();
+     * request.shortCode = ...;
      * var response = request.Send();
      * 
-     * var property = response.property; 
+     * var lastModified = response.lastModified; 
      * var scriptData = response.scriptData; 
+     * var shortCode = response.shortCode; 
+     * var size = response.size; 
+     * var url = response.url; 
      * ```
      */
     class GetDownloadableRequest extends _Request<_GetDownloadableResponse> {

@@ -11,14 +11,15 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.FacebookConnectRequest();
-     * request.accessToken = ...;
-     * request.code = ...;
-     * request.doNotLinkToCurrentPlayer = ...;
-     * request.errorOnSwitch = ...;
+     * var request = new SparkRequests.DeviceAuthenticationRequest();
+     * request.deviceId = ...;
+     * request.deviceModel = ...;
+     * request.deviceName = ...;
+     * request.deviceOS = ...;
+     * request.deviceType = ...;
+     * request.displayName = ...;
+     * request.operatingSystem = ...;
      * request.segments = ...;
-     * request.switchIfPossible = ...;
-     * request.syncDisplayName = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

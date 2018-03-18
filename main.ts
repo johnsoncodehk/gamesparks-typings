@@ -88,6 +88,7 @@ async function main() {
 						errorCodes: [],
 						example: [],
 					};
+					api.example = getNextExample(content, j);
 					api.descriptions = getNextDescriptions(content, j);
 					j = gotoTag(content, "table", j + 1); // Request Parameters
 					api.requestParameters = readTableNode(content.childNodes[j]);
@@ -98,7 +99,6 @@ async function main() {
 						j = gotoTag(content, "table", j + 1); // Error Codes
 						api.errorCodes = readTableNode(content.childNodes[j]);
 					}
-					api.example = getNextExample(content, j);
 					handleReurestAPI(api);
 				}
 			}

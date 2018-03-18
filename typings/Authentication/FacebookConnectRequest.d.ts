@@ -19,18 +19,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GameCenterConnectRequest();
-     * request.displayName = ...;
+     * var request = new SparkRequests.FacebookConnectRequest();
+     * request.accessToken = ...;
+     * request.code = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.externalPlayerId = ...;
-     * request.publicKeyUrl = ...;
-     * request.salt = ...;
      * request.segments = ...;
-     * request.signature = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
-     * request.timestamp = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

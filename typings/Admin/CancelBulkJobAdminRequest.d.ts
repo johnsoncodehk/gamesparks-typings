@@ -9,7 +9,7 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListBulkJobsAdminRequest();
+     * var request = new SparkRequests.CancelBulkJobAdminRequest();
      * request.bulkJobIds = ...;
      * var response = request.Send();
      * 

@@ -9,11 +9,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GetPropertySetRequest();
-     * request.propertySetShortCode = ...;
+     * var request = new SparkRequests.GetPropertyRequest();
+     * request.propertyShortCode = ...;
      * var response = request.Send();
      * 
-     * var propertySet = response.propertySet; 
+     * var property = response.property; 
      * var scriptData = response.scriptData; 
      * ```
      */

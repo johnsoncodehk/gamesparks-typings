@@ -25,18 +25,18 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GooglePlayConnectRequest();
-     * request.accessToken = ...;
-     * request.code = ...;
+     * var request = new SparkRequests.GameCenterConnectRequest();
      * request.displayName = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.googlePlusScope = ...;
-     * request.profileScope = ...;
-     * request.redirectUri = ...;
+     * request.externalPlayerId = ...;
+     * request.publicKeyUrl = ...;
+     * request.salt = ...;
      * request.segments = ...;
+     * request.signature = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
+     * request.timestamp = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

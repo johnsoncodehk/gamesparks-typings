@@ -14,10 +14,9 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.WindowsBuyGoodsRequest();
+     * var request = new SparkRequests.SteamBuyGoodsRequest();
      * request.currencyCode = ...;
-     * request.platform = ...;
-     * request.receipt = ...;
+     * request.orderId = ...;
      * request.subUnitPrice = ...;
      * request.uniqueTransactionByPlayer = ...;
      * var response = request.Send();

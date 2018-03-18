@@ -4,10 +4,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListGameFriendsRequest();
+     * var request = new SparkRequests.ListAchievementsRequest();
      * var response = request.Send();
      * 
-     * var friends = response.friends; 
+     * var achievements = response.achievements; 
      * var scriptData = response.scriptData; 
      * ```
      */

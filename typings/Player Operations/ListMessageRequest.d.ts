@@ -5,8 +5,9 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListMessageSummaryRequest();
+     * var request = new SparkRequests.ListMessageRequest();
      * request.entryCount = ...;
+     * request.include = ...;
      * request.offset = ...;
      * var response = request.Send();
      * 

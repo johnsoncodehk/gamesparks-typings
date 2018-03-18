@@ -6,14 +6,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListMessageDetailRequest();
-     * request.entryCount = ...;
-     * request.include = ...;
-     * request.offset = ...;
-     * request.status = ...;
+     * var request = new SparkRequests.ListInviteFriendsRequest();
      * var response = request.Send();
      * 
-     * var messageList = response.messageList; 
+     * var friends = response.friends; 
      * var scriptData = response.scriptData; 
      * ```
      */

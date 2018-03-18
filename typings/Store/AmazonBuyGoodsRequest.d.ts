@@ -18,11 +18,12 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.BuyVirtualGoodsRequest();
-     * request.currencyShortCode = ...;
-     * request.currencyType = ...;
-     * request.quantity = ...;
-     * request.shortCode = ...;
+     * var request = new SparkRequests.AmazonBuyGoodsRequest();
+     * request.amazonUserId = ...;
+     * request.currencyCode = ...;
+     * request.receiptId = ...;
+     * request.subUnitPrice = ...;
+     * request.uniqueTransactionByPlayer = ...;
      * var response = request.Send();
      * 
      * var boughtItems = response.boughtItems; 

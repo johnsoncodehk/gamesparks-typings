@@ -11,15 +11,9 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.DeviceAuthenticationRequest();
-     * request.deviceId = ...;
-     * request.deviceModel = ...;
-     * request.deviceName = ...;
-     * request.deviceOS = ...;
-     * request.deviceType = ...;
-     * request.displayName = ...;
-     * request.operatingSystem = ...;
-     * request.segments = ...;
+     * var request = new SparkRequests.AuthenticationRequest();
+     * request.password = ...;
+     * request.userName = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

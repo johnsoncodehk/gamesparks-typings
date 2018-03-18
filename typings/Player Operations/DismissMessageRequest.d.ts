@@ -4,12 +4,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.DismissMultipleMessagesRequest();
-     * request.messageIds = ...;
+     * var request = new SparkRequests.DismissMessageRequest();
+     * request.messageId = ...;
      * var response = request.Send();
      * 
-     * var failedDismissals = response.failedDismissals; 
-     * var messagesDismissed = response.messagesDismissed; 
      * var scriptData = response.scriptData; 
      * ```
      */

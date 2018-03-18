@@ -17,11 +17,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.RegistrationRequest();
-     * request.displayName = ...;
-     * request.password = ...;
+     * var request = new SparkRequests.QQConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
      * request.segments = ...;
-     * request.userName = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

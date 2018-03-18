@@ -21,11 +21,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GooglePlusConnectRequest();
+     * var request = new SparkRequests.GooglePlayConnectRequest();
      * request.accessToken = ...;
      * request.code = ...;
+     * request.displayName = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
+     * request.googlePlusScope = ...;
+     * request.profileScope = ...;
      * request.redirectUri = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;

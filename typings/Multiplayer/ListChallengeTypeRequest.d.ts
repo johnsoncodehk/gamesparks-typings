@@ -4,11 +4,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.LogChallengeEventRequest();
-     * request.challengeInstanceId = ...;
-     * request.eventKey = ...;
+     * var request = new SparkRequests.ListChallengeTypeRequest();
      * var response = request.Send();
      * 
+     * var challengeTemplates = response.challengeTemplates; 
      * var scriptData = response.scriptData; 
      * ```
      */

@@ -19,10 +19,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ViberConnectRequest();
+     * var request = new SparkRequests.TwitterConnectRequest();
+     * request.accessSecret = ...;
      * request.accessToken = ...;
      * request.doNotLinkToCurrentPlayer = ...;
-     * request.doNotRegisterForPush = ...;
      * request.errorOnSwitch = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;

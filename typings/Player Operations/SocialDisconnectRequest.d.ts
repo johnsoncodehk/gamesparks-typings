@@ -12,9 +12,8 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.UpdateMessageRequest();
-     * request.messageId = ...;
-     * request.status = ...;
+     * var request = new SparkRequests.SocialDisconnectRequest();
+     * request.systemId = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 

@@ -13,16 +13,18 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ListTeamChatRequest();
-     * request.entryCount = ...;
-     * request.offset = ...;
+     * var request = new SparkRequests.LeaveTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
      * request.teamType = ...;
      * var response = request.Send();
      * 
-     * var messages = response.messages; 
+     * var members = response.members; 
+     * var owner = response.owner; 
      * var scriptData = response.scriptData; 
+     * var teamId = response.teamId; 
+     * var teamName = response.teamName; 
+     * var teamType = response.teamType; 
      * ```
      */
     class LeaveTeamRequest extends _Request<_LeaveTeamResponse> {

@@ -9,13 +9,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.SteamConnectRequest();
-     * request.doNotLinkToCurrentPlayer = ...;
-     * request.errorOnSwitch = ...;
+     * var request = new SparkRequests.RegistrationRequest();
+     * request.displayName = ...;
+     * request.password = ...;
      * request.segments = ...;
-     * request.sessionTicket = ...;
-     * request.switchIfPossible = ...;
-     * request.syncDisplayName = ...;
+     * request.userName = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

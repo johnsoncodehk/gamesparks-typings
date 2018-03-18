@@ -9,7 +9,7 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.ChatOnChallengeRequest();
+     * var request = new SparkRequests.AcceptChallengeRequest();
      * request.challengeInstanceId = ...;
      * request.message = ...;
      * var response = request.Send();

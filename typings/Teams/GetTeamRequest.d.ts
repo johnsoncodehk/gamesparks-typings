@@ -11,7 +11,7 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.JoinTeamRequest();
+     * var request = new SparkRequests.GetTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
      * request.teamType = ...;
@@ -23,6 +23,7 @@ declare namespace SparkRequests {
      * var teamId = response.teamId; 
      * var teamName = response.teamName; 
      * var teamType = response.teamType; 
+     * var teams = response.teams; 
      * ```
      */
     class GetTeamRequest extends _Request<_GetTeamResponse> {

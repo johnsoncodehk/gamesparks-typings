@@ -18,11 +18,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.TwitchConnectRequest();
-     * request.accessToken = ...;
+     * var request = new SparkRequests.SteamConnectRequest();
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
      * request.segments = ...;
+     * request.sessionTicket = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
      * var response = request.Send();

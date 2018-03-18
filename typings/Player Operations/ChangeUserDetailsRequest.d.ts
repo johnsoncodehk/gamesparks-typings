@@ -10,8 +10,12 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.DismissMessageRequest();
-     * request.messageId = ...;
+     * var request = new SparkRequests.ChangeUserDetailsRequest();
+     * request.displayName = ...;
+     * request.language = ...;
+     * request.newPassword = ...;
+     * request.oldPassword = ...;
+     * request.userName = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 

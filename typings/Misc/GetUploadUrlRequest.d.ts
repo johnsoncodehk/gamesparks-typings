@@ -4,12 +4,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.GetUploadedRequest();
-     * request.uploadId = ...;
+     * var request = new SparkRequests.GetUploadUrlRequest();
+     * request.uploadData = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * var size = response.size; 
      * var url = response.url; 
      * ```
      */

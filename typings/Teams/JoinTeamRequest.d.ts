@@ -16,7 +16,7 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.LeaveTeamRequest();
+     * var request = new SparkRequests.JoinTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
      * request.teamType = ...;

@@ -17,9 +17,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AuthenticationRequest();
-     * request.password = ...;
-     * request.userName = ...;
+     * var request = new SparkRequests.AmazonConnectRequest();
+     * request.accessToken = ...;
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

@@ -10,11 +10,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.SocialStatusRequest();
+     * var request = new SparkRequests.PushRegistrationRequest();
+     * request.deviceOS = ...;
+     * request.pushId = ...;
      * var response = request.Send();
      * 
+     * var registrationId = response.registrationId; 
      * var scriptData = response.scriptData; 
-     * var statuses = response.statuses; 
      * ```
      */
     class PushRegistrationRequest extends _Request<_PushRegistrationResponse> {

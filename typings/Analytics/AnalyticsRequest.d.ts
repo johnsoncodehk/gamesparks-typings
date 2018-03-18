@@ -10,11 +10,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.EndSessionRequest();
+     * var request = new SparkRequests.AnalyticsRequest();
+     * request.data = ...;
+     * request.end = ...;
+     * request.key = ...;
+     * request.start = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * var sessionDuration = response.sessionDuration; 
      * ```
      */
     class AnalyticsRequest extends _Request<_AnalyticsResponse> {

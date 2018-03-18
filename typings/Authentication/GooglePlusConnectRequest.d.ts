@@ -18,14 +18,15 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.KongregateConnectRequest();
+     * var request = new SparkRequests.GooglePlusConnectRequest();
+     * request.accessToken = ...;
+     * request.code = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.gameAuthToken = ...;
+     * request.redirectUri = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
-     * request.userId = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

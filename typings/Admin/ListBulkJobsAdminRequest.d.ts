@@ -4,13 +4,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.RevokePurchaseGoodsRequest();
-     * request.playerId = ...;
-     * request.storeType = ...;
-     * request.transactionIds = ...;
+     * var request = new SparkRequests.ListBulkJobsAdminRequest();
+     * request.bulkJobIds = ...;
      * var response = request.Send();
      * 
-     * var revokedGoods = response.revokedGoods; 
+     * var bulkJobs = response.bulkJobs; 
      * var scriptData = response.scriptData; 
      * ```
      */

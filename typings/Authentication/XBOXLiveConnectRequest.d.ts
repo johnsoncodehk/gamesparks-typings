@@ -18,14 +18,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.XboxOneConnectRequest();
+     * var request = new SparkRequests.XBOXLiveConnectRequest();
+     * request.displayName = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.sandbox = ...;
      * request.segments = ...;
+     * request.stsTokenString = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
-     * request.token = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

@@ -6,9 +6,8 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.SendFriendMessageRequest();
-     * request.friendIds = ...;
-     * request.message = ...;
+     * var request = new SparkRequests.LogEventRequest();
+     * request.eventKey = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 

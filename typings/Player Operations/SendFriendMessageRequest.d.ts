@@ -10,8 +10,9 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.SocialDisconnectRequest();
-     * request.systemId = ...;
+     * var request = new SparkRequests.SendFriendMessageRequest();
+     * request.friendIds = ...;
+     * request.message = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 

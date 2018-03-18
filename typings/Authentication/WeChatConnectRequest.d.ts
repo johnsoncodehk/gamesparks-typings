@@ -18,12 +18,12 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.XBOXLiveConnectRequest();
-     * request.displayName = ...;
+     * var request = new SparkRequests.WeChatConnectRequest();
+     * request.accessToken = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
+     * request.openId = ...;
      * request.segments = ...;
-     * request.stsTokenString = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
      * var response = request.Send();

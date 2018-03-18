@@ -20,11 +20,12 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.PSNConnectRequest();
-     * request.authorizationCode = ...;
+     * var request = new SparkRequests.NXConnectRequest();
+     * request.accountPerLoginId = ...;
+     * request.displayName = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.redirectUri = ...;
+     * request.nsaIdToken = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;

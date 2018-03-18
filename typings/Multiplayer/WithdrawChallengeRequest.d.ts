@@ -10,29 +10,13 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AccountDetailsRequest();
+     * var request = new SparkRequests.WithdrawChallengeRequest();
+     * request.challengeInstanceId = ...;
+     * request.message = ...;
      * var response = request.Send();
      * 
-     * var achievements = response.achievements; 
-     * var currencies = response.currencies; 
-     * var currency1 = response.currency1; 
-     * var currency2 = response.currency2; 
-     * var currency3 = response.currency3; 
-     * var currency4 = response.currency4; 
-     * var currency5 = response.currency5; 
-     * var currency6 = response.currency6; 
-     * var displayName = response.displayName; 
-     * var externalIds = response.externalIds; 
-     * var location = response.location; 
-     * var reservedCurrencies = response.reservedCurrencies; 
-     * var reservedCurrency1 = response.reservedCurrency1; 
-     * var reservedCurrency2 = response.reservedCurrency2; 
-     * var reservedCurrency3 = response.reservedCurrency3; 
-     * var reservedCurrency4 = response.reservedCurrency4; 
-     * var reservedCurrency5 = response.reservedCurrency5; 
-     * var reservedCurrency6 = response.reservedCurrency6; 
-     * var userId = response.userId; 
-     * var virtualGoods = response.virtualGoods; 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var scriptData = response.scriptData; 
      * ```
      */
     class WithdrawChallengeRequest extends _Request<_WithdrawChallengeResponse> {

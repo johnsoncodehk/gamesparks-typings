@@ -19,15 +19,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.NXConnectRequest();
-     * request.accountPerLoginId = ...;
-     * request.displayName = ...;
+     * var request = new SparkRequests.KongregateConnectRequest();
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
-     * request.nsaIdToken = ...;
+     * request.gameAuthToken = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
+     * request.userId = ...;
      * var response = request.Send();
      * 
      * var authToken = response.authToken; 

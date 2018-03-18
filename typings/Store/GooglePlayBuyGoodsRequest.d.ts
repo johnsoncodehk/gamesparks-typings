@@ -17,10 +17,10 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.IOSBuyGoodsRequest();
+     * var request = new SparkRequests.GooglePlayBuyGoodsRequest();
      * request.currencyCode = ...;
-     * request.receipt = ...;
-     * request.sandbox = ...;
+     * request.signature = ...;
+     * request.signedData = ...;
      * request.subUnitPrice = ...;
      * request.uniqueTransactionByPlayer = ...;
      * var response = request.Send();

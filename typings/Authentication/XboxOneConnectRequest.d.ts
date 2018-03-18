@@ -16,28 +16,22 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AroundMeLeaderboardRequest();
-     * request.challengeInstanceId = ...;
-     * request.customIdFilter = ...;
-     * request.dontErrorOnNotSocial = ...;
-     * request.entryCount = ...;
-     * request.friendIds = ...;
-     * request.includeFirst = ...;
-     * request.includeLast = ...;
-     * request.inverseSocial = ...;
-     * request.leaderboardShortCode = ...;
-     * request.social = ...;
-     * request.teamIds = ...;
-     * request.teamTypes = ...;
+     * var request = new SparkRequests.XboxOneConnectRequest();
+     * request.doNotLinkToCurrentPlayer = ...;
+     * request.errorOnSwitch = ...;
+     * request.sandbox = ...;
+     * request.segments = ...;
+     * request.switchIfPossible = ...;
+     * request.syncDisplayName = ...;
+     * request.token = ...;
      * var response = request.Send();
      * 
-     * var challengeInstanceId = response.challengeInstanceId; 
-     * var data = response.data; 
-     * var first = response.first; 
-     * var last = response.last; 
-     * var leaderboardShortCode = response.leaderboardShortCode; 
+     * var authToken = response.authToken; 
+     * var displayName = response.displayName; 
+     * var newPlayer = response.newPlayer; 
      * var scriptData = response.scriptData; 
-     * var social = response.social; 
+     * var switchSummary = response.switchSummary; 
+     * var userId = response.userId; 
      * ```
      */
     class XboxOneConnectRequest extends _Request<_XboxOneConnectResponse> {

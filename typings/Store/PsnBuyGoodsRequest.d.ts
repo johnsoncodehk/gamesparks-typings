@@ -14,11 +14,14 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.SteamBuyGoodsRequest();
+     * var request = new SparkRequests.PsnBuyGoodsRequest();
+     * request.authorizationCode = ...;
      * request.currencyCode = ...;
-     * request.orderId = ...;
+     * request.entitlementLabel = ...;
+     * request.redirectUri = ...;
      * request.subUnitPrice = ...;
      * request.uniqueTransactionByPlayer = ...;
+     * request.useCount = ...;
      * var response = request.Send();
      * 
      * var boughtItems = response.boughtItems; 

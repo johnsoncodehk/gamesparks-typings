@@ -18,13 +18,21 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.FindPendingMatchesRequest();
+     * var request = new SparkRequests.FindMatchRequest();
+     * request.action = ...;
      * request.matchGroup = ...;
      * request.matchShortCode = ...;
-     * request.maxMatchesToFind = ...;
+     * request.skill = ...;
      * var response = request.Send();
      * 
-     * var pendingMatches = response.pendingMatches; 
+     * var accessToken = response.accessToken; 
+     * var host = response.host; 
+     * var matchData = response.matchData; 
+     * var matchId = response.matchId; 
+     * var opponents = response.opponents; 
+     * var peerId = response.peerId; 
+     * var playerId = response.playerId; 
+     * var port = response.port; 
      * var scriptData = response.scriptData; 
      * ```
      */

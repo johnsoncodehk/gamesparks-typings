@@ -13,18 +13,28 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.CreateTeamRequest();
-     * request.teamId = ...;
-     * request.teamName = ...;
-     * request.teamType = ...;
+     * var request = new SparkRequests.WindowsBuyGoodsRequest();
+     * request.currencyCode = ...;
+     * request.platform = ...;
+     * request.receipt = ...;
+     * request.subUnitPrice = ...;
+     * request.uniqueTransactionByPlayer = ...;
      * var response = request.Send();
      * 
-     * var members = response.members; 
-     * var owner = response.owner; 
+     * var boughtItems = response.boughtItems; 
+     * var currenciesAdded = response.currenciesAdded; 
+     * var currency1Added = response.currency1Added; 
+     * var currency2Added = response.currency2Added; 
+     * var currency3Added = response.currency3Added; 
+     * var currency4Added = response.currency4Added; 
+     * var currency5Added = response.currency5Added; 
+     * var currency6Added = response.currency6Added; 
+     * var currencyConsumed = response.currencyConsumed; 
+     * var currencyShortCode = response.currencyShortCode; 
+     * var currencyType = response.currencyType; 
+     * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
-     * var teamId = response.teamId; 
-     * var teamName = response.teamName; 
-     * var teamType = response.teamType; 
+     * var transactionIds = response.transactionIds; 
      * ```
      */
     class WindowsBuyGoodsRequest extends _Request<_WindowsBuyGoodsResponse> {

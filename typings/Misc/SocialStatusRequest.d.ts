@@ -4,13 +4,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.AcceptChallengeRequest();
-     * request.challengeInstanceId = ...;
-     * request.message = ...;
+     * var request = new SparkRequests.SocialStatusRequest();
      * var response = request.Send();
      * 
-     * var challengeInstanceId = response.challengeInstanceId; 
      * var scriptData = response.scriptData; 
+     * var statuses = response.statuses; 
      * ```
      */
     class SocialStatusRequest extends _Request<_SocialStatusResponse> {

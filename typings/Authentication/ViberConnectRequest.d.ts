@@ -20,11 +20,11 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.WeChatConnectRequest();
+     * var request = new SparkRequests.ViberConnectRequest();
      * request.accessToken = ...;
      * request.doNotLinkToCurrentPlayer = ...;
+     * request.doNotRegisterForPush = ...;
      * request.errorOnSwitch = ...;
-     * request.openId = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;

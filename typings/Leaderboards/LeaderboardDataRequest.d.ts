@@ -16,15 +16,26 @@ declare namespace SparkRequests {
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.LeaderboardsEntriesRequest();
-     * request.challenges = ...;
+     * var request = new SparkRequests.LeaderboardDataRequest();
+     * request.challengeInstanceId = ...;
+     * request.dontErrorOnNotSocial = ...;
+     * request.entryCount = ...;
+     * request.friendIds = ...;
+     * request.includeFirst = ...;
+     * request.includeLast = ...;
      * request.inverseSocial = ...;
-     * request.leaderboards = ...;
-     * request.player = ...;
+     * request.leaderboardShortCode = ...;
+     * request.offset = ...;
      * request.social = ...;
+     * request.teamIds = ...;
      * request.teamTypes = ...;
      * var response = request.Send();
      * 
+     * var challengeInstanceId = response.challengeInstanceId; 
+     * var data = response.data; 
+     * var first = response.first; 
+     * var last = response.last; 
+     * var leaderboardShortCode = response.leaderboardShortCode; 
      * var scriptData = response.scriptData; 
      * ```
      */
