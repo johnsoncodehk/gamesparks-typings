@@ -1,6 +1,7 @@
 import * as https from "https";
 import * as fs from "fs";
 import { JSDOM } from 'jsdom';
+import * as glob from "glob";
 
 let webUrl = "https://api.gamesparks.net";
 let outPath = "./typings/";
@@ -102,6 +103,18 @@ async function build() {
 			}
 		}
 	}
+	wirteIndexDts();
+}
+function wirteIndexDts() {
+	let path = "./index.d.ts";
+	glob(outPath + "**/*.d.ts", (err, files) => {
+		let index = "";
+		files.forEach(file => {
+			index += "/// <reference path=\"[file_path]\" />\n".replace("[file_path]", file);
+		});
+		fs.writeFileSync(path, index);
+	});
+	console.log(path);
 }
 function getNextDescriptions(content: Node, j: number): string[] {
 	let descriptions: string[] = [];

@@ -1,15 +1,17 @@
 {
-  "name": "gamesparks-request-api-typings",
+  "name": "@types/gamesparks-request-api",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "types": "./index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@types/jsdom": "latest",
     "@types/node": "latest",
+    "@types/glob": "latest",
     "jsdom": "latest",
     "typescript": "latest",
-    "ts-node": "latest"
+    "ts-node": "latest",
+    "glob": "latest"
   },
   "scripts": {
     "build": "ts-node build.ts"
