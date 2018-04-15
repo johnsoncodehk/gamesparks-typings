@@ -39,7 +39,7 @@ interface IDataInfo {
 	}[],
 }
 
-async function main() {
+async function build() {
 	console.log("read...");
 	let dom = await JSDOM.fromURL(webUrl);
 
@@ -305,4 +305,4 @@ function readTableNode(node: Node) {
 	return tab
 }
 
-main();
+build();

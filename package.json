@@ -2,14 +2,18 @@
   "name": "gamesparks-request-api-typings",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "",
   "dependencies": {},
   "devDependencies": {
-    "@types/jsdom": "^11.0.2",
-    "@types/node": "^8.0.31",
-    "jsdom": "^11.2.0"
+    "@types/jsdom": "latest",
+    "@types/node": "latest",
+    "jsdom": "latest",
+    "typescript": "latest",
+    "ts-node": "latest"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "ts-node build.ts"
+  },
   "author": "",
   "license": "ISC"
 }
