@@ -49,7 +49,7 @@ async function build() {
 		let content = contents[i];
 		let h1 = "";
 		for (let j = 0; j < content.childNodes.length; j++) {
-			let node = content.childNodes[j];
+			let node = content.childNodes[j] as Element;
 			if (node.localName == undefined) {
 				continue;
 			}
@@ -120,7 +120,7 @@ function getNextDescriptions(content: Node, j: number): string[] {
 	let descriptions: string[] = [];
 	let isGetDes = false;
 	for (let k = j + 1; k < content.childNodes.length; k++) {
-		let node_2 = content.childNodes[k];
+		let node_2 = content.childNodes[k] as Element;
 		if (node_2.localName == undefined) {
 			j++;
 			continue;
@@ -138,7 +138,7 @@ function getNextDescriptions(content: Node, j: number): string[] {
 }
 function gotoTag(content: Node, findLocalName: string, start: number) {
 	for (let i = start; i < content.childNodes.length; i++) {
-		let node = content.childNodes[i];
+		let node = content.childNodes[i] as Element;
 		if (node.localName == undefined) {
 			continue;
 		}
@@ -153,7 +153,7 @@ function getNextExample(content: Node, current: number): string[] {
 	let start = gotoTag(content, "pre", current + 1);
 
 	for (let i = start; i < content.childNodes.length; i++) {
-		let node = content.childNodes[i];
+		let node = content.childNodes[i] as Element;
 		if (node.localName == undefined) {
 			continue;
 		}
