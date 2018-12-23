@@ -3,8 +3,8 @@ import * as fs from "fs";
 import { JSDOM } from 'jsdom';
 import * as glob from "glob";
 
-let webUrl = "https://api.gamesparks.net";
-let outPath = "./typings/";
+const webUrl = "https://api.gamesparks.net";
+const outPath = "./typings/";
 
 interface IApiInfo {
 	href: string,
@@ -42,14 +42,14 @@ interface IDataInfo {
 
 async function build() {
 	console.log("read...");
-	let dom = await JSDOM.fromURL(webUrl);
+	const dom = await JSDOM.fromURL(webUrl);
 
-	let contents = dom.window.document.getElementsByClassName("content");
+	const contents = dom.window.document.getElementsByClassName("content");
 	for (let i = 0; i < contents.length; i++) {
-		let content = contents[i];
+		const content = contents[i];
 		let h1 = "";
 		for (let j = 0; j < content.childNodes.length; j++) {
-			let node = content.childNodes[j] as Element;
+			const node = content.childNodes[j] as Element;
 			if (node.localName == undefined) {
 				continue;
 			}
@@ -61,10 +61,10 @@ async function build() {
 				continue;
 			}
 			if (node.localName == "h2") {
-				let title = node.textContent as string;
+				const title = node.textContent as string;
 				if (h1 == "Data Types") {
 					// Data
-					let data: IDataInfo = {
+					const data: IDataInfo = {
 						href: h1,
 						title: title,
 						descriptions: [],
@@ -77,7 +77,7 @@ async function build() {
 				}
 				else {
 					// Request API
-					let api: IApiInfo = {
+					const api: IApiInfo = {
 						href: h1,
 						title: title,
 						descriptions: [],
@@ -106,7 +106,7 @@ async function build() {
 	wirteIndexDts();
 }
 function wirteIndexDts() {
-	let path = "./index.d.ts";
+	const path = "./index.d.ts";
 	glob(outPath + "**/*.d.ts", (err, files) => {
 		let index = "";
 		files.forEach(file => {
@@ -117,10 +117,10 @@ function wirteIndexDts() {
 	console.log(path);
 }
 function getNextDescriptions(content: Node, j: number): string[] {
-	let descriptions: string[] = [];
+	const descriptions: string[] = [];
 	let isGetDes = false;
 	for (let k = j + 1; k < content.childNodes.length; k++) {
-		let node_2 = content.childNodes[k] as Element;
+		const node_2 = content.childNodes[k] as Element;
 		if (node_2.localName == undefined) {
 			j++;
 			continue;
@@ -138,7 +138,7 @@ function getNextDescriptions(content: Node, j: number): string[] {
 }
 function gotoTag(content: Node, findLocalName: string, start: number) {
 	for (let i = start; i < content.childNodes.length; i++) {
-		let node = content.childNodes[i] as Element;
+		const node = content.childNodes[i] as Element;
 		if (node.localName == undefined) {
 			continue;
 		}
@@ -150,27 +150,27 @@ function gotoTag(content: Node, findLocalName: string, start: number) {
 }
 function getNextExample(content: Node, current: number): string[] {
 	let example: string[] = [];
-	let start = gotoTag(content, "pre", current + 1);
+	const start = gotoTag(content, "pre", current + 1);
 
 	for (let i = start; i < content.childNodes.length; i++) {
-		let node = content.childNodes[i] as Element;
+		const node = content.childNodes[i] as Element;
 		if (node.localName == undefined) {
 			continue;
 		}
 		if (node.localName != "pre") {
 			break;
 		}
-		let e = node as Element;
+		const e = node as Element;
 		if (!e) {
 			break;
 		}
 		if (e.className == "highlight ccsdk") {
-			let code = e.firstChild;
+			const code = e.firstChild;
 			if (!code) {
 				break;
 			}
 			for (let j = 1; j < code.childNodes.length - 1; j++) {
-				let line = code.childNodes[j];
+				const line = code.childNodes[j];
 				example.push(line.textContent as string);
 			}
 			example = example.join("").split("\n");
@@ -195,7 +195,7 @@ function handleData(data: IDataInfo) {
 		dts += getLevelSpace(level) + "class " + data.title + " {\n";
 		level++; {
 			for (let i = 0; i < data.parameters.length; i++) {
-				let requestParameter = data.parameters[i];
+				const requestParameter = data.parameters[i];
 				dts += createDes([requestParameter.Description], level);
 				dts += getLevelSpace(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
 			}
@@ -205,7 +205,7 @@ function handleData(data: IDataInfo) {
 
 	dts += getLevelSpace(level) + "}\n";
 
-	let path = outPath + data.href + "/" + data.title + ".d.ts";
+	const path = outPath + data.href + "/" + data.title + ".d.ts";
 	fs.writeFileSync(path, dts);
 	console.log(path);
 }
@@ -217,9 +217,9 @@ function handleReurestAPI(data: IApiInfo) {
 		fs.mkdirSync(outPath + data.href + "/");
 	}
 
-	let requestExtends = "_Request";
-	let response = "_" + data.title.replace("Request", "Response");
-	let responseExtends = "_Response";
+	const requestExtends = "_Request";
+	const response = "_" + data.title.replace("Request", "Response");
+	const responseExtends = "_Response";
 
 	let dts = "";
 	let level = 0;
@@ -232,7 +232,7 @@ function handleReurestAPI(data: IApiInfo) {
 			data.descriptions.push("Key | Value | Description");
 			data.descriptions.push(":- | :- | :-");
 			data.errorCodes.forEach(errorCode => {
-				let des = [
+				const des = [
 					errorCode.Key.replace(/\|/g, "&#124;"),
 					errorCode.Value.replace(/\|/g, "&#124;"),
 					errorCode.Description.replace(/\|/g, "&#124;"),
@@ -253,8 +253,8 @@ function handleReurestAPI(data: IApiInfo) {
 		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";
 		level++; {
 			for (let i = 0; i < data.requestParameters.length; i++) {
-				let requestParameter = data.requestParameters[i];
-				let required = "@Required " + requestParameter.Required;
+				const requestParameter = data.requestParameters[i];
+				const required = "@Required " + requestParameter.Required;
 				dts += createDes([requestParameter.Description, required], level);
 				dts += getLevelSpace(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
 			}
@@ -265,7 +265,7 @@ function handleReurestAPI(data: IApiInfo) {
 		dts += getLevelSpace(level) + "class " + response + " extends " + responseExtends + " {\n";
 		level++; {
 			for (let i = 0; i < data.responseParameters.length; i++) {
-				let responseParameter = data.responseParameters[i];
+				const responseParameter = data.responseParameters[i];
 				dts += createDes([responseParameter.Description], level);
 				dts += getLevelSpace(level) + responseParameter.Parameter + ": " + responseParameter.Type + ";\n"
 			}
@@ -275,7 +275,7 @@ function handleReurestAPI(data: IApiInfo) {
 
 	dts += getLevelSpace(level) + "}\n";
 
-	let path = outPath + data.href + "/" + data.title + ".d.ts";
+	const path = outPath + data.href + "/" + data.title + ".d.ts";
 	fs.writeFileSync(path, dts);
 	console.log(path);
 }
@@ -302,15 +302,15 @@ function getLevelSpace(level: number) {
 	return space;
 }
 function readTableNode(node: Node) {
-	let tab: any[] = [];
-	let requestTitles = node.childNodes[0].childNodes[1];
-	let requestPars = node.childNodes[1];
+	const tab: any[] = [];
+	const requestTitles = node.childNodes[0].childNodes[1];
+	const requestPars = node.childNodes[1];
 	for (let k = 1; k < requestPars.childNodes.length; k += 2) {
-		let requestPar = requestPars.childNodes[k];
-		let requestObj: any = {};
+		const requestPar = requestPars.childNodes[k];
+		const requestObj: any = {};
 		for (let l = 1; l < requestPar.childNodes.length; l += 2) {
-			let key = requestTitles.childNodes[l];
-			let val = requestPar.childNodes[l];
+			const key = requestTitles.childNodes[l];
+			const val = requestPar.childNodes[l];
 			requestObj[key.textContent as string] = val.textContent;
 		}
 		tab.push(requestObj);
