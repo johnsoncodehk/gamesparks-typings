@@ -3,14 +3,13 @@ declare namespace SparkRequests {
      * Provides authentication using a username/password combination.
      * The username will have been previously created using a RegistrationRequest.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * DETAILS | UNRECOGNISED | The userName password combination did not match any existing account
      * DETAILS | LOCKED | There have been too many failed login attempts with these details, the account has been locked temporarily
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AuthenticationRequest();
      * request.password = ...;
      * request.userName = ...;
@@ -22,7 +21,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class AuthenticationRequest extends _Request<_AuthenticationResponse> {
         /**

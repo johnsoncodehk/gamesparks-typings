@@ -2,8 +2,7 @@ declare namespace SparkRequests {
     /**
      * Returns a list of the current player’s transaction history.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListTransactionsRequest();
      * request.dateFrom = ...;
      * request.dateTo = ...;
@@ -14,7 +13,6 @@ declare namespace SparkRequests {
      * 
      * var scriptData = response.scriptData; 
      * var transactionList = response.transactionList; 
-     * ```
      */
     class ListTransactionsRequest extends _Request<_ListTransactionsResponse> {
         /**

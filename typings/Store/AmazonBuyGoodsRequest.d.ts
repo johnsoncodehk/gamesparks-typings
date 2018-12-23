@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * The receiptId in the data will be recorded and the request will be rejected if the receiptId has previously been processed, this prevents replay attacks.
      * Once verfied, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the receipt with the 'Amazon Product Id’ configured against the virtual good.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * receiptId | REQUIRED | The receiptId is missing
@@ -16,8 +16,7 @@ declare namespace SparkRequests {
      * verificationError | 4 | The Amazon purchase secret is not configured against the game
      * verificationError | 5 | The receiptId has previously been processed
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AmazonBuyGoodsRequest();
      * request.amazonUserId = ...;
      * request.currencyCode = ...;
@@ -40,7 +39,6 @@ declare namespace SparkRequests {
      * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
      * var transactionIds = response.transactionIds; 
-     * ```
      */
     class AmazonBuyGoodsRequest extends _Request<_AmazonBuyGoodsResponse> {
         /**

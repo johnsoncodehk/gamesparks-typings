@@ -2,15 +2,13 @@ declare namespace SparkRequests {
     /**
      * Allows a message status to be updated.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.UpdateMessageRequest();
      * request.messageId = ...;
      * request.status = ...;
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class UpdateMessageRequest extends _Request<_UpdateMessageResponse> {
         /**

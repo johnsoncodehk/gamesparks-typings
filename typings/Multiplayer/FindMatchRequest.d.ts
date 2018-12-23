@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * Players looking for a match using the same matchShortCode will be considered for a match, based on the matchConfig.
      * Each player must match the other for the match to be found.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * skill | may not be null | skill must be provided
@@ -16,8 +16,7 @@ declare namespace SparkRequests {
      * match | NO_DROP_IN_DROP_OUT_AVAILABLE | To use the drop-in-drop-out functionality please use MatchmakingRequest
      * match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality please use MatchmakingRequest
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.FindMatchRequest();
      * request.action = ...;
      * request.matchGroup = ...;
@@ -34,7 +33,6 @@ declare namespace SparkRequests {
      * var playerId = response.playerId; 
      * var port = response.port; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class FindMatchRequest extends _Request<_FindMatchResponse> {
         /**

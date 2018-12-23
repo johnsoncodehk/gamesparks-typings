@@ -2,15 +2,14 @@ declare namespace SparkRequests {
     /**
      * Revokes the purchase of a good. The items aquired will be removed from remaining items of the player.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * transactionIds | REQUIRED | The transactionIds is missing
      * storeType | REQUIRED | The storeType is missing
      * playerId | REQUIRED | The playerId is missing
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.RevokePurchaseGoodsRequest();
      * request.playerId = ...;
      * request.storeType = ...;
@@ -19,7 +18,6 @@ declare namespace SparkRequests {
      * 
      * var revokedGoods = response.revokedGoods; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class RevokePurchaseGoodsRequest extends _Request<_RevokePurchaseGoodsResponse> {
         /**

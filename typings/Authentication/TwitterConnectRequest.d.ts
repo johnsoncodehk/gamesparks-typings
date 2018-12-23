@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Twitter user is not known, a new player will be created using the Twitter details and the session will be authenticated against the new player.
      * If the Twitter user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
@@ -17,8 +17,7 @@ declare namespace SparkRequests {
      * accessSecret | REQUIRED | Parameter accessSecret is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.TwitterConnectRequest();
      * request.accessSecret = ...;
      * request.accessToken = ...;
@@ -36,7 +35,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class TwitterConnectRequest extends _Request<_TwitterConnectResponse> {
         /**

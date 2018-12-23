@@ -2,8 +2,7 @@ declare namespace SparkRequests {
     /**
      * Retrieves the details of the current authenticated player.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AccountDetailsRequest();
      * var response = request.Send();
      * 
@@ -27,7 +26,6 @@ declare namespace SparkRequests {
      * var reservedCurrency6 = response.reservedCurrency6; 
      * var userId = response.userId; 
      * var virtualGoods = response.virtualGoods; 
-     * ```
      */
     class AccountDetailsRequest extends _Request<_AccountDetailsResponse> {
     }

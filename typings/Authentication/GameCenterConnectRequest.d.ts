@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the GameCenter user is already known, the session will switch to being the previously created user.
      * This API call requires the output details from GKLocalPlayer.generateIdentityVerificationSignatureWithCompletionHandler on your iOS device
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * externalPlayerId | ACCOUNT_ALREADY_LINKED | The current user has a GameCenter profile and it’s not the profile they have just tried to log in with
@@ -23,8 +23,7 @@ declare namespace SparkRequests {
      * displayName | REQUIRED | The displayName is required but not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GameCenterConnectRequest();
      * request.displayName = ...;
      * request.doNotCreateNewPlayer = ...;
@@ -46,7 +45,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class GameCenterConnectRequest extends _Request<_GameCenterConnectResponse> {
         /**

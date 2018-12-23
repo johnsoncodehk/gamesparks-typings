@@ -2,14 +2,12 @@ declare namespace SparkRequests {
     /**
      * Retrieves a list of the configured achievements in the game, along with whether the current player has earned the achievement.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListAchievementsRequest();
      * var response = request.Send();
      * 
      * var achievements = response.achievements; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListAchievementsRequest extends _Request<_ListAchievementsResponse> {
     }

@@ -2,13 +2,12 @@ declare namespace SparkRequests {
     /**
      * Declines a challenge that has been issued to the current player.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge that has been issued
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.DeclineChallengeRequest();
      * request.challengeInstanceId = ...;
      * request.message = ...;
@@ -16,7 +15,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstanceId = response.challengeInstanceId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class DeclineChallengeRequest extends _Request<_DeclineChallengeResponse> {
         /**

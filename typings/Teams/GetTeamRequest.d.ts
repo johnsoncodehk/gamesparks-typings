@@ -2,15 +2,14 @@ declare namespace SparkRequests {
     /**
      * Allows the details of a team to be retrieved.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
      * team | INVALID | The teamId or the teamType do not match an existing team
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GetTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
@@ -24,7 +23,6 @@ declare namespace SparkRequests {
      * var teamName = response.teamName; 
      * var teamType = response.teamType; 
      * var teams = response.teams; 
-     * ```
      */
     class GetTeamRequest extends _Request<_GetTeamResponse> {
         /**

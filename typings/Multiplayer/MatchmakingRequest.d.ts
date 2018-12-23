@@ -5,7 +5,7 @@ declare namespace SparkRequests {
      * Each player must match the other for the match to be found.
      * If the matchShortCode points to a match with realtime enabled, in order to minimise latency, the location of Players and their proximity to one another takes precedence over their reciprocal skill values.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * skill | may not be null | skill must be provided
@@ -15,8 +15,7 @@ declare namespace SparkRequests {
      * customQuery | INVALID_QUERY | No customQuery is not a valid mongo query
      * match | NOT_FOUND | No match was found for the current player
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.MatchmakingRequest();
      * request.action = ...;
      * request.customQuery = ...;
@@ -28,7 +27,6 @@ declare namespace SparkRequests {
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class MatchmakingRequest extends _Request<_MatchmakingResponse> {
         /**

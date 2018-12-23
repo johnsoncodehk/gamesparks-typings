@@ -4,7 +4,7 @@ declare namespace SparkRequests {
      * The response contains the top of the leaderboard, and returns the number of entries as defined in the entryCount parameter.
      * If a shortCode is supplied, the response will contain the global leaderboard data. If a challengeInstanceId is supplied, the response will contain the leaderboard data for the challenge.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * leaderboardShortCode&#124;challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
@@ -14,8 +14,7 @@ declare namespace SparkRequests {
      * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.LeaderboardDataRequest();
      * request.challengeInstanceId = ...;
      * request.dontErrorOnNotSocial = ...;
@@ -37,7 +36,6 @@ declare namespace SparkRequests {
      * var last = response.last; 
      * var leaderboardShortCode = response.leaderboardShortCode; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class LeaderboardDataRequest extends _Request<_LeaderboardDataResponse> {
         /**

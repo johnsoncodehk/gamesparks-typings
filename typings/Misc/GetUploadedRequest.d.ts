@@ -2,13 +2,12 @@ declare namespace SparkRequests {
     /**
      * Returns a secure, time sensitive URL to a piece of content that was previously uploaded to the GameSparks platform by a player.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * uploadId | INVALID | The upload id was invalid
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GetUploadedRequest();
      * request.uploadId = ...;
      * var response = request.Send();
@@ -16,7 +15,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var size = response.size; 
      * var url = response.url; 
-     * ```
      */
     class GetUploadedRequest extends _Request<_GetUploadedResponse> {
         /**

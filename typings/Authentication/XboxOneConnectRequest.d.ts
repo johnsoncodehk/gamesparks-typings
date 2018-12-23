@@ -7,15 +7,14 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Xbox One user is not known, a new player will be created using the Xbox Live details and the session will be authenticated against the new player.
      * If the Xbox One user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Xbox One profile and it’s not the profile they have just tried to log in with
      * token | NOTAUTHENTICATED | The system was unable to authenticate the token
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.XboxOneConnectRequest();
      * request.doNotCreateNewPlayer = ...;
      * request.doNotLinkToCurrentPlayer = ...;
@@ -33,7 +32,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class XboxOneConnectRequest extends _Request<_XboxOneConnectResponse> {
         /**

@@ -2,14 +2,13 @@ declare namespace SparkRequests {
     /**
      * Performs a request for multiple players.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * playerIds | INVALID | Between 1-500 player IDs must be supplied in the form of an array
      * request | INVALID | You must supply a valid request in JSON format to be performed for each player listed in playerIds
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.BatchAdminRequest();
      * request.playerIds = ...;
      * request.request = ...;
@@ -17,7 +16,6 @@ declare namespace SparkRequests {
      * 
      * var responses = response.responses; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class BatchAdminRequest extends _Request<_BatchAdminResponse> {
         /**

@@ -4,7 +4,7 @@ declare namespace SparkRequests {
      * The GameSparks platform will validate the 'orderid’ with Steam and process the response. The 'orderid’ from the response will be recorded and the request will be rejected, if the 'orderid’ has previously been processed, this prevents replay attacks.
      * Once verified, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the 'itemid’ in the response with the 'Steam Product ID’ configured against the virtual good.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * verificationError | 1 | No matching virtual good can be found
@@ -12,8 +12,7 @@ declare namespace SparkRequests {
      * verificationError | 3 | There was an error connecting to the Steam server
      * verificationError | 4 | The order_id has been processed before
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.SteamBuyGoodsRequest();
      * request.currencyCode = ...;
      * request.orderId = ...;
@@ -35,7 +34,6 @@ declare namespace SparkRequests {
      * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
      * var transactionIds = response.transactionIds; 
-     * ```
      */
     class SteamBuyGoodsRequest extends _Request<_SteamBuyGoodsResponse> {
         /**

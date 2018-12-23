@@ -2,14 +2,12 @@ declare namespace SparkRequests {
     /**
      * Returns a list of all leaderboards configured in the game.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListLeaderboardsRequest();
      * var response = request.Send();
      * 
      * var leaderboards = response.leaderboards; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListLeaderboardsRequest extends _Request<_ListLeaderboardsResponse> {
     }

@@ -10,8 +10,7 @@ declare namespace SparkRequests {
      * COMPLETE : The challenge has completed.
      * DECLINED : The challenge has been issued by the current player and has been declined.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListChallengeRequest();
      * request.entryCount = ...;
      * request.offset = ...;
@@ -22,7 +21,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstances = response.challengeInstances; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListChallengeRequest extends _Request<_ListChallengeResponse> {
         /**

@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Allows a player to drop a team.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
@@ -12,8 +12,7 @@ declare namespace SparkRequests {
      * teamType | CANNOT_DROP_MANDATORY_TEAM | The team has an ownership of 1 (Mandatory) so cannot be dropped
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.DropTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
@@ -21,7 +20,6 @@ declare namespace SparkRequests {
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class DropTeamRequest extends _Request<_DropTeamResponse> {
         /**

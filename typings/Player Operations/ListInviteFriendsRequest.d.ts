@@ -4,14 +4,12 @@ declare namespace SparkRequests {
      * This is dependent on the security and privacy policies of the social network.
      * For example, Facebook’s policies prevent this friend list being provided, whereas Twitter will supply a list of users who are not playing the game.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListInviteFriendsRequest();
      * var response = request.Send();
      * 
      * var friends = response.friends; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListInviteFriendsRequest extends _Request<_ListInviteFriendsResponse> {
     }

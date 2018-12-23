@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Requests to join a pending match (found via FindPendingMatchesRequest).
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * matchShortCode | may not be null | matchShortCode must be provided
@@ -10,8 +10,7 @@ declare namespace SparkRequests {
      * match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode / matchGroup currently in progress
      * pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available to be joined
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.JoinPendingMatchRequest();
      * request.matchGroup = ...;
      * request.matchShortCode = ...;
@@ -20,7 +19,6 @@ declare namespace SparkRequests {
      * 
      * var pendingMatch = response.pendingMatch; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class JoinPendingMatchRequest extends _Request<_JoinPendingMatchResponse> {
         /**

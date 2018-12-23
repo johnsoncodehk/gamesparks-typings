@@ -2,13 +2,12 @@ declare namespace SparkRequests {
     /**
      * Find the details of an existing match this player belongs to, using the matchId
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * matchId | NOT_FOUND | No match found with given matchId for this player
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.MatchDetailsRequest();
      * request.matchId = ...;
      * request.realtimeEnabled = ...;
@@ -23,7 +22,6 @@ declare namespace SparkRequests {
      * var playerId = response.playerId; 
      * var port = response.port; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class MatchDetailsRequest extends _Request<_MatchDetailsResponse> {
         /**

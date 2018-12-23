@@ -2,8 +2,7 @@ declare namespace SparkRequests {
     /**
      * Returns the list of configured virtual goods.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListVirtualGoodsRequest();
      * request.includeDisabled = ...;
      * request.tags = ...;
@@ -11,7 +10,6 @@ declare namespace SparkRequests {
      * 
      * var scriptData = response.scriptData; 
      * var virtualGoods = response.virtualGoods; 
-     * ```
      */
     class ListVirtualGoodsRequest extends _Request<_ListVirtualGoodsResponse> {
         /**

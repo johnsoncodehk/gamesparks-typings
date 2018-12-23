@@ -2,14 +2,13 @@ declare namespace SparkRequests {
     /**
      * Allows a player to find challenges that they are eligible to join.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * eligibility | { “XXX” : “UNRECOGNISED”} | XXX is not a valid field of eligibility
      * eligibility | { “segments” : {“XXX” : “MALFORMED”}} | The value provied for XXX is not in the correct format
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.FindChallengeRequest();
      * request.accessType = ...;
      * request.count = ...;
@@ -20,7 +19,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstances = response.challengeInstances; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class FindChallengeRequest extends _Request<_FindChallengeResponse> {
         /**

@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Allows a new team to be created.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * teamType | INVALID | The team type short code supplied does not exist
@@ -10,8 +10,7 @@ declare namespace SparkRequests {
      * teamType | MAX_TEAMS_REACHED | The current player has reached the membership limit of the supplied teamType
      * teamId | NOT_UNIQUE | The teamId supplied already exists
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.CreateTeamRequest();
      * request.teamId = ...;
      * request.teamName = ...;
@@ -24,7 +23,6 @@ declare namespace SparkRequests {
      * var teamId = response.teamId; 
      * var teamName = response.teamName; 
      * var teamType = response.teamType; 
-     * ```
      */
     class CreateTeamRequest extends _Request<_CreateTeamResponse> {
         /**

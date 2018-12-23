@@ -2,13 +2,12 @@ declare namespace SparkRequests {
     /**
      * Allows a new player to be created using a username, password display name.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * USERNAME | TAKEN | The userName supplied is already in use.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.RegistrationRequest();
      * request.displayName = ...;
      * request.password = ...;
@@ -22,7 +21,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class RegistrationRequest extends _Request<_RegistrationResponse> {
         /**

@@ -8,8 +8,7 @@ declare namespace SparkRequests {
      * An additional data payload can be attached to the event for advanced reporting. This data can be a string, number or JSON object.
      * If a second start timer is created using a key that has already had a start timer created without an end, the previous one will be marked as abandoned.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AnalyticsRequest();
      * request.data = ...;
      * request.end = ...;
@@ -18,7 +17,6 @@ declare namespace SparkRequests {
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class AnalyticsRequest extends _Request<_AnalyticsResponse> {
         /**

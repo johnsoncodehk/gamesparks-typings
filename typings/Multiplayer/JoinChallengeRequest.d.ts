@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Allows a player to join an open challenge.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | UNKNOWN | No challenge could be found with the given challengeInstanceId
@@ -13,8 +13,7 @@ declare namespace SparkRequests {
      * eligibility | { “missingSegments” : {“XXX” : [“YYY”, “ZZZ”]}} | To join this challenge the player must have segment XXX with value YYY or ZZZ
      * eligibility | { “invalidSegments” :  { “actual” : {“XXX” : “YYY”}, “required” : {“XXX” : “ZZZ”}} | This player has segment XXX value YYY however this challenge requires a segment XXX value of ZZZ
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.JoinChallengeRequest();
      * request.challengeInstanceId = ...;
      * request.eligibility = ...;
@@ -23,7 +22,6 @@ declare namespace SparkRequests {
      * 
      * var joined = response.joined; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class JoinChallengeRequest extends _Request<_JoinChallengeResponse> {
         /**

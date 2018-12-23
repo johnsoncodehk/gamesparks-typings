@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Returns leaderboard data that is adjacent to the currently signed in player’s position within the given leaderboard.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * leaderboardShortCode&#124;challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
@@ -12,8 +12,7 @@ declare namespace SparkRequests {
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      * challengeInstanceVersion | INVALID | The challengeInstance predates support for this request type
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AroundMeLeaderboardRequest();
      * request.challengeInstanceId = ...;
      * request.customIdFilter = ...;
@@ -36,7 +35,6 @@ declare namespace SparkRequests {
      * var leaderboardShortCode = response.leaderboardShortCode; 
      * var scriptData = response.scriptData; 
      * var social = response.social; 
-     * ```
      */
     class AroundMeLeaderboardRequest extends _Request<_AroundMeLeaderboardResponse> {
         /**

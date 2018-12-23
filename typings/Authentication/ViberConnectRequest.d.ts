@@ -9,7 +9,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Viber user is not known, a new player will be created using the Viber details and the session will be authenticated against the new player.
      * If the Viber user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * viber | NOT_ENABLED | Viber integration is available by request only, this game does not have viber integration enabled
@@ -18,8 +18,7 @@ declare namespace SparkRequests {
      * accessToken | REQUIRED | Parameter accessToken is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ViberConnectRequest();
      * request.accessToken = ...;
      * request.doNotCreateNewPlayer = ...;
@@ -37,7 +36,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class ViberConnectRequest extends _Request<_ViberConnectResponse> {
         /**

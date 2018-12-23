@@ -3,13 +3,12 @@ declare namespace SparkRequests {
      * Withdraws a challenge previously issued by the current player.
      * This can only be done while the challenge is in the ISSUED state. Once it’s been accepted the challenge can not be withdrawn.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge in the ISSUED state that was issued by the current player
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.WithdrawChallengeRequest();
      * request.challengeInstanceId = ...;
      * request.message = ...;
@@ -17,7 +16,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstanceId = response.challengeInstanceId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class WithdrawChallengeRequest extends _Request<_WithdrawChallengeResponse> {
         /**

@@ -6,7 +6,7 @@ declare namespace SparkRequests {
      * Once verfied, the players account will be credited with the Virtual Good, or Virtual Currency the purchase contains. The virtual good will be looked up by matching the productId in the signed data with the 'Google Product ID’ configured against the virtual good.
      * It is critical that the signedData is sent exactly as it is returned form google, including any whitespace. Any modification of the signedData will cause the verification process to fail.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * verificationError | 5 | The orderId in the signedData has previously been processed
@@ -15,8 +15,7 @@ declare namespace SparkRequests {
      * verificationError | 2 | The signature does not match the signed data
      * verificationError | 1 | No matching virtual good can be found
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GooglePlayBuyGoodsRequest();
      * request.currencyCode = ...;
      * request.signature = ...;
@@ -39,7 +38,6 @@ declare namespace SparkRequests {
      * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
      * var transactionIds = response.transactionIds; 
-     * ```
      */
     class GooglePlayBuyGoodsRequest extends _Request<_GooglePlayBuyGoodsResponse> {
         /**

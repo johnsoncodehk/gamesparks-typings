@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the NSA is not known, a new player will be created using the NSA details and the session will be authenticated against the new player.
      * If the NSA is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * NX | NOT_CONFIGURED | The game does not have the NX integration details configured.
@@ -18,8 +18,7 @@ declare namespace SparkRequests {
      * displayName | REQUIRED | Parameter displayName is required but not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.NXConnectRequest();
      * request.accountPerLoginId = ...;
      * request.displayName = ...;
@@ -38,7 +37,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class NXConnectRequest extends _Request<_NXConnectResponse> {
         /**

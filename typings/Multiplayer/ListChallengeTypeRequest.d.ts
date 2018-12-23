@@ -2,14 +2,12 @@ declare namespace SparkRequests {
     /**
      * Returns the list of configured challenge types.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListChallengeTypeRequest();
      * var response = request.Send();
      * 
      * var challengeTemplates = response.challengeTemplates; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListChallengeTypeRequest extends _Request<_ListChallengeTypeResponse> {
     }

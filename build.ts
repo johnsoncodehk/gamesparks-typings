@@ -228,7 +228,7 @@ function handleReurestAPI(data: IApiInfo) {
 		// Resuest
 		if (data.errorCodes.length > 0) {
 			data.descriptions.push("");
-			data.descriptions.push("## Error Codes");
+			data.descriptions.push("### Error Codes");
 			data.descriptions.push("Key | Value | Description");
 			data.descriptions.push(":- | :- | :-");
 			data.errorCodes.forEach(errorCode => {
@@ -242,12 +242,10 @@ function handleReurestAPI(data: IApiInfo) {
 		}
 		if (data.example.length > 0) {
 			data.descriptions.push("");
-			data.descriptions.push("## Cloud Code Sample");
-			data.descriptions.push("```javascript");
+			data.descriptions.push("@example");
 			data.example.forEach(code => {
 				data.descriptions.push(code);
 			});
-			data.descriptions.push("```");
 		}
 		dts += createDes(data.descriptions, level);
 		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";

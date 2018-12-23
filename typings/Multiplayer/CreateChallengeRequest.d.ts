@@ -4,7 +4,7 @@ declare namespace SparkRequests {
      * The endTime field must be present unless the challenge template has an achievement set in the ‘First to Achievement’ field.
      * The usersToChallenge field must be present for this request if the acessType is PRIVATE (which is the default).
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge the user is involved with
@@ -12,8 +12,7 @@ declare namespace SparkRequests {
      * eligibilityCriteria | { “segments” : {“XXX” : “MALFORMED”}} | The value provided for XXX is not in the correct format
      * autoStartJoinedChallengeOnMaxPlayers | MaxPlayers Required | If autoStartJoinedChallengeOnMaxPlayers is true, the maximum number of players must also be specified
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.CreateChallengeRequest();
      * request.accessType = ...;
      * request.autoStartJoinedChallengeOnMaxPlayers = ...;
@@ -39,7 +38,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstanceId = response.challengeInstanceId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class CreateChallengeRequest extends _Request<_CreateChallengeResponse> {
         /**

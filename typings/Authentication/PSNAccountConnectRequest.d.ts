@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the PSN user is not known, a new player will be created using the PSN details and the session will be authenticated against the new player.
      * If the PSN user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * PSN | NOT_CONFIGURED | The game does not have the PSN integration details configured.
@@ -17,8 +17,7 @@ declare namespace SparkRequests {
      * authorizationCode | REQUIRED | Parameter authorizationCode is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.PSNAccountConnectRequest();
      * request.authorizationCode = ...;
      * request.doNotCreateNewPlayer = ...;
@@ -36,7 +35,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class PSNAccountConnectRequest extends _Request<_PSNAccountConnectResponse> {
         /**

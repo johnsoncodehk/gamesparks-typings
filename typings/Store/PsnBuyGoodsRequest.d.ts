@@ -5,15 +5,14 @@ declare namespace SparkRequests {
      * The request will be rejected if entitlement 'use_limit’ is 0
      * GampSparks platform by default will use internally saved PSN user access token
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * verificationError | 1 | No matching virtual good can be found
      * verificationError | 2 | The PSN servers failed to verify the entitlementLabel
      * verificationError | 3 | There was an error connecting to the PSN server
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.PsnBuyGoodsRequest();
      * request.authorizationCode = ...;
      * request.currencyCode = ...;
@@ -38,7 +37,6 @@ declare namespace SparkRequests {
      * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
      * var transactionIds = response.transactionIds; 
-     * ```
      */
     class PsnBuyGoodsRequest extends _Request<_PsnBuyGoodsResponse> {
         /**

@@ -4,15 +4,14 @@ declare namespace SparkRequests {
      * Used for manual matching of players, where you want control over which pending match should be chosen.
      * Each player must match the other for the pending match to be found.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * matchShortCode | may not be null | matchShortCode must be provided
      * matchShortCode | NOT_FOUND | No matchConfig was found with the given matchShortCode
      * match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode / matchGroup currently in progress
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.FindPendingMatchesRequest();
      * request.matchGroup = ...;
      * request.matchShortCode = ...;
@@ -21,7 +20,6 @@ declare namespace SparkRequests {
      * 
      * var pendingMatches = response.pendingMatches; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class FindPendingMatchesRequest extends _Request<_FindPendingMatchesResponse> {
         /**

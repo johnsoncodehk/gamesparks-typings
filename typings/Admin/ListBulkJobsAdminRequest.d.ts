@@ -2,15 +2,13 @@ declare namespace SparkRequests {
     /**
      * Lists existing bulk jobs.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListBulkJobsAdminRequest();
      * request.bulkJobIds = ...;
      * var response = request.Send();
      * 
      * var bulkJobs = response.bulkJobs; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ListBulkJobsAdminRequest extends _Request<_ListBulkJobsAdminResponse> {
         /**

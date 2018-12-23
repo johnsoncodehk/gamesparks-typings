@@ -2,14 +2,13 @@ declare namespace SparkRequests {
     /**
      * Change the details of the currently signed in Player.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * DETAILS | UNRECOGNISED | The oldPassword did not match the one stored against the player.
      * USERNAME | TAKEN | The userName supplied is already in use.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ChangeUserDetailsRequest();
      * request.displayName = ...;
      * request.language = ...;
@@ -19,7 +18,6 @@ declare namespace SparkRequests {
      * var response = request.Send();
      * 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ChangeUserDetailsRequest extends _Request<_ChangeUserDetailsResponse> {
         /**

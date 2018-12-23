@@ -4,7 +4,7 @@ declare namespace SparkRequests {
      * The GameSparks platform will attempt to return players both ahead and behind the current player, where data is available.
      * The entry count defines how many player should be returned both ahead and behind. The numer of results may vary if there are not enough friends either ahead or behind.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * leaderboardShortCode&#124;challengeInstanceId | ONLY_ONE | Both shortCode and challengeInstanceId were supplied, only one should be supplied
@@ -14,8 +14,7 @@ declare namespace SparkRequests {
      * challengeInstanceId | NO_LEADERBOARD | The challengeInstanceId maps to a challenge without a leaderboard configured
      * challengeInstanceId | INVALID | The challengeInstanceId supplied did not match a challenge related to the current play
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.SocialLeaderboardDataRequest();
      * request.challengeInstanceId = ...;
      * request.dontErrorOnNotSocial = ...;
@@ -37,7 +36,6 @@ declare namespace SparkRequests {
      * var last = response.last; 
      * var leaderboardShortCode = response.leaderboardShortCode; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class SocialLeaderboardDataRequest extends _Request<_SocialLeaderboardDataResponse> {
         /**

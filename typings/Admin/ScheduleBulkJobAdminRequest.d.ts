@@ -2,15 +2,14 @@ declare namespace SparkRequests {
     /**
      * Schedules a bulk job to be run against multiple players.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * moduleShortCode | INVALID | One of either the script or moduleShortCode properties must be populated
      * script | Validation error | If an invalid script is supplied, the validation error will be returned here.
      * scheduledTime | INVALID | The date/time for scheduled jobs must not be in the past
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ScheduleBulkJobAdminRequest();
      * request.data = ...;
      * request.moduleShortCode = ...;
@@ -22,7 +21,6 @@ declare namespace SparkRequests {
      * var estimatedCount = response.estimatedCount; 
      * var jobId = response.jobId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class ScheduleBulkJobAdminRequest extends _Request<_ScheduleBulkJobAdminResponse> {
         /**

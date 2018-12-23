@@ -2,8 +2,7 @@ declare namespace SparkRequests {
     /**
      * Returns the full details of a message.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GetMessageRequest();
      * request.messageId = ...;
      * var response = request.Send();
@@ -11,7 +10,6 @@ declare namespace SparkRequests {
      * var message = response.message; 
      * var scriptData = response.scriptData; 
      * var status = response.status; 
-     * ```
      */
     class GetMessageRequest extends _Request<_GetMessageResponse> {
         /**

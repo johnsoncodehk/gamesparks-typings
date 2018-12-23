@@ -2,20 +2,18 @@ declare namespace SparkRequests {
     /**
      * Get the property for the given short Code.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * property | NOT_FOUND | No property with given shortCode could be found.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GetPropertyRequest();
      * request.propertyShortCode = ...;
      * var response = request.Send();
      * 
      * var property = response.property; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class GetPropertyRequest extends _Request<_GetPropertyResponse> {
         /**

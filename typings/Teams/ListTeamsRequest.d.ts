@@ -2,8 +2,7 @@ declare namespace SparkRequests {
     /**
      * Returns a list of teams. Can be filtered on team name or team type.
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.ListTeamsRequest();
      * request.entryCount = ...;
      * request.offset = ...;
@@ -13,7 +12,6 @@ declare namespace SparkRequests {
      * 
      * var scriptData = response.scriptData; 
      * var teams = response.teams; 
-     * ```
      */
     class ListTeamsRequest extends _Request<_ListTeamsResponse> {
         /**

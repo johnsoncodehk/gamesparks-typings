@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Google Plus user is not known, a new player will be created using the Google Plus details and the session will be authenticated against the new player.
      * If the Google Plus user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
@@ -16,8 +16,7 @@ declare namespace SparkRequests {
      * GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the required Google Plus integration credentials
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GooglePlusConnectRequest();
      * request.accessToken = ...;
      * request.code = ...;
@@ -36,7 +35,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class GooglePlusConnectRequest extends _Request<_GooglePlusConnectResponse> {
         /**

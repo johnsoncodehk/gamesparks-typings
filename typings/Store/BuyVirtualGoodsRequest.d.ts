@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Purchases a virtual good with an in game currency. Once purchased the virtual good will be added to the players account.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * currencyType | UNRECOGNISED | Not a valid currency, valid values are 1 to 6
@@ -18,8 +18,7 @@ declare namespace SparkRequests {
      * quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to maxQty of this VirtualGood
      * currencyShortCode | UNRECOGNISED | Not a valid currency
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.BuyVirtualGoodsRequest();
      * request.currencyShortCode = ...;
      * request.currencyType = ...;
@@ -41,7 +40,6 @@ declare namespace SparkRequests {
      * var invalidItems = response.invalidItems; 
      * var scriptData = response.scriptData; 
      * var transactionIds = response.transactionIds; 
-     * ```
      */
     class BuyVirtualGoodsRequest extends _Request<_BuyVirtualGoodsResponse> {
         /**

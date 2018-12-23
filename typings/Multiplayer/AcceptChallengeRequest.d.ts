@@ -2,13 +2,12 @@ declare namespace SparkRequests {
     /**
      * Accepts a challenge that has been issued to the current player.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * challengeInstanceId | INVALID | The ID does not match a challenge the user is involved with
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.AcceptChallengeRequest();
      * request.challengeInstanceId = ...;
      * request.message = ...;
@@ -16,7 +15,6 @@ declare namespace SparkRequests {
      * 
      * var challengeInstanceId = response.challengeInstanceId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class AcceptChallengeRequest extends _Request<_AcceptChallengeResponse> {
         /**

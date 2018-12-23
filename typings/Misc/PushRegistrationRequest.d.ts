@@ -3,13 +3,12 @@ declare namespace SparkRequests {
      * Registers the current device for push notifications. Currently GameSparks supports iOS, Android (GCM), FCM, Kindle, Viber & Microsoft Push notifications.
      * Supply the device type, and the push notification identifier for the device.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * deviceOS | IOS | ANDROID
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.PushRegistrationRequest();
      * request.deviceOS = ...;
      * request.pushId = ...;
@@ -17,7 +16,6 @@ declare namespace SparkRequests {
      * 
      * var registrationId = response.registrationId; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class PushRegistrationRequest extends _Request<_PushRegistrationResponse> {
         /**

@@ -2,7 +2,7 @@ declare namespace SparkRequests {
     /**
      * Allows a player to leave a team.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * teamId&#124;teamType | REQUIRED | Both teamId and teamType have not been provided
@@ -11,8 +11,7 @@ declare namespace SparkRequests {
      * team | NOT_MEMBER | The current player is not a mamber of the team they are requesting to leave
      * teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.LeaveTeamRequest();
      * request.ownerId = ...;
      * request.teamId = ...;
@@ -25,7 +24,6 @@ declare namespace SparkRequests {
      * var teamId = response.teamId; 
      * var teamName = response.teamName; 
      * var teamType = response.teamType; 
-     * ```
      */
     class LeaveTeamRequest extends _Request<_LeaveTeamResponse> {
         /**

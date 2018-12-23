@@ -2,20 +2,18 @@ declare namespace SparkRequests {
     /**
      * Cancel one or more bulk jobs.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bulk job IDs
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.CancelBulkJobAdminRequest();
      * request.bulkJobIds = ...;
      * var response = request.Send();
      * 
      * var bulkJobs = response.bulkJobs; 
      * var scriptData = response.scriptData; 
-     * ```
      */
     class CancelBulkJobAdminRequest extends _Request<_CancelBulkJobAdminResponse> {
         /**

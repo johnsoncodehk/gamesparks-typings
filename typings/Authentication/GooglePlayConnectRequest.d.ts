@@ -8,7 +8,7 @@ declare namespace SparkRequests {
      * If the current player has not authenticated and the Google Play user is not known, a new player will be created using the Google Play details and the session will be authenticated against the new player.
      * If the Google Play user is already known, the session will switch to being the previously created user.
      * 
-     * ## Error Codes
+     * ### Error Codes
      * Key | Value | Description
      * :- | :- | :-
      * code | NOTAUTHENTICATED | The system was unable to authenticate the code
@@ -19,8 +19,7 @@ declare namespace SparkRequests {
      * redirectUri | REQUIRED | The redirectUri is required when using a code rather than an accessToken
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
-     * ## Cloud Code Sample
-     * ```javascript
+     * @example
      * var request = new SparkRequests.GooglePlayConnectRequest();
      * request.accessToken = ...;
      * request.code = ...;
@@ -42,7 +41,6 @@ declare namespace SparkRequests {
      * var scriptData = response.scriptData; 
      * var switchSummary = response.switchSummary; 
      * var userId = response.userId; 
-     * ```
      */
     class GooglePlayConnectRequest extends _Request<_GooglePlayConnectResponse> {
         /**
