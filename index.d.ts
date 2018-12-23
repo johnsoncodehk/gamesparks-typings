@@ -14,6 +14,7 @@
 /// <reference path="./typings/Authentication/GooglePlusConnectRequest.d.ts" />
 /// <reference path="./typings/Authentication/KongregateConnectRequest.d.ts" />
 /// <reference path="./typings/Authentication/NXConnectRequest.d.ts" />
+/// <reference path="./typings/Authentication/PSNAccountConnectRequest.d.ts" />
 /// <reference path="./typings/Authentication/PSNConnectRequest.d.ts" />
 /// <reference path="./typings/Authentication/QQConnectRequest.d.ts" />
 /// <reference path="./typings/Authentication/RegistrationRequest.d.ts" />

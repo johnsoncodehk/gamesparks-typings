@@ -1,6 +1,7 @@
 declare namespace SparkRequests {
     /**
      * Location details.
+     * This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com.
      */
     class Location {
         /**

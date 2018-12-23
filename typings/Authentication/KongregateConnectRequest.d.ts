@@ -20,6 +20,7 @@ declare namespace SparkRequests {
      * ## Cloud Code Sample
      * ```javascript
      * var request = new SparkRequests.KongregateConnectRequest();
+     * request.doNotCreateNewPlayer = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
      * request.gameAuthToken = ...;
@@ -38,6 +39,11 @@ declare namespace SparkRequests {
      * ```
      */
     class KongregateConnectRequest extends _Request<_KongregateConnectResponse> {
+        /**
+         * Indicates whether the server should return an error if a new player would have been registered, rather than creating the player.  Defaults to false.
+         * @Required No
+         */
+        doNotCreateNewPlayer: boolean;
         /**
          * Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
          * @Required No

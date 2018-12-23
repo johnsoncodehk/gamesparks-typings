@@ -1,30 +1,30 @@
 declare namespace SparkRequests {
     /**
-     * Allows a Twitter account to be used as an authentication mechanism.
-     * Once authenticated the platform can determine the current players details from the Twitter platform and store them within GameSparks.
+     * Allows a PSN account to be used as an authentication mechanism.
+     * Once authenticated the platform can determine the current players details from the PSN platform and store them within GameSparks.
      * GameSparks will determine the player’s friends and whether any of them are currently registered with the game.
-     * If the Twitter user is already linked to a player, the current session will switch to the linked player.
-     * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the Twitter user is not already registered with the game, the Twitter user will be linked to the current player.
-     * If the current player has not authenticated and the Twitter user is not known, a new player will be created using the Twitter details and the session will be authenticated against the new player.
-     * If the Twitter user is already known, the session will switch to being the previously created user.
+     * If the PSN user is already linked to a player, the current session will switch to the linked player.
+     * If the current player has previously created an account using either DeviceAuthentictionRequest or RegistrationRequest AND the PSN user is not already registered with the game, the PSN user will be linked to the current player.
+     * If the current player has not authenticated and the PSN user is not known, a new player will be created using the PSN details and the session will be authenticated against the new player.
+     * If the PSN user is already known, the session will switch to being the previously created user.
      * 
      * ## Error Codes
      * Key | Value | Description
      * :- | :- | :-
-     * accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
-     * accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Twitter profile and it’s not the profile they have just tried to log in with
-     * accessToken | REQUIRED | Parameter accessToken is required but was not provided
-     * accessSecret | REQUIRED | Parameter accessSecret is required but was not provided
+     * PSN | NOT_CONFIGURED | The game does not have the PSN integration details configured.
+     * authorizationCode | NOTAUTHENTICATED | The system was unable to authenticate the authorizationCode
+     * authorizationCode | ACCOUNT_ALREADY_LINKED | The current user has a PSN profile and it’s not the profile they have just tried to log in with
+     * authorizationCode | REQUIRED | Parameter authorizationCode is required but was not provided
      * authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
      * 
      * ## Cloud Code Sample
      * ```javascript
-     * var request = new SparkRequests.TwitterConnectRequest();
-     * request.accessSecret = ...;
-     * request.accessToken = ...;
+     * var request = new SparkRequests.PSNAccountConnectRequest();
+     * request.authorizationCode = ...;
      * request.doNotCreateNewPlayer = ...;
      * request.doNotLinkToCurrentPlayer = ...;
      * request.errorOnSwitch = ...;
+     * request.redirectUri = ...;
      * request.segments = ...;
      * request.switchIfPossible = ...;
      * request.syncDisplayName = ...;
@@ -38,17 +38,12 @@ declare namespace SparkRequests {
      * var userId = response.userId; 
      * ```
      */
-    class TwitterConnectRequest extends _Request<_TwitterConnectResponse> {
+    class PSNAccountConnectRequest extends _Request<_PSNAccountConnectResponse> {
         /**
-         * The accessSecret is obtained at the same time as the accessToken, and is required to sign requests to Twitter’s services that require the accessToken.
+         * The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
          * @Required No
          */
-        accessSecret: string;
-        /**
-         * The accessToken represents a player’s permission to share access to their account with your application.
-         * @Required No
-         */
-        accessToken: string;
+        authorizationCode: string;
         /**
          * Indicates whether the server should return an error if a new player would have been registered, rather than creating the player.  Defaults to false.
          * @Required No
@@ -64,6 +59,11 @@ declare namespace SparkRequests {
          * @Required No
          */
         errorOnSwitch: boolean;
+        /**
+         * When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
+         * @Required No
+         */
+        redirectUri: string;
         /**
          * An optional segment configuration for this request.
          * @Required No
@@ -83,7 +83,7 @@ declare namespace SparkRequests {
     /**
      * A response containing the auth token
      */
-    class _TwitterConnectResponse extends _Response {
+    class _PSNAccountConnectResponse extends _Response {
         /**
          * 44b297a8-162a-4220-8c14-dad9a1946ad2
          */

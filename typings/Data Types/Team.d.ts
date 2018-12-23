@@ -1,12 +1,8 @@
 declare namespace SparkRequests {
     /**
-     * A nested object that represents the team.
+     * A nested object that represents the team. This object does not contain a list of the members.
      */
     class Team {
-        /**
-         * The team members
-         */
-        members: Player[];
         /**
          * A summary of the owner
          */
