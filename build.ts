@@ -108,9 +108,9 @@ function wirteReferencesDts() {
 	const path = "./references.d.ts";
 	glob(outPath + "**/*.d.ts", (err, files) => {
 		let index = "";
-		files.forEach(file => {
+		for (const file of files) {
 			index += "/// <reference path=\"[file_path]\" />\n".replace("[file_path]", file);
-		});
+		}
 		fs.writeFileSync(path, index);
 	});
 	console.log(path);
@@ -230,21 +230,21 @@ function handleReurestAPI(data: IApiInfo) {
 			data.descriptions.push("### Error Codes");
 			data.descriptions.push("Key | Value | Description");
 			data.descriptions.push(":- | :- | :-");
-			data.errorCodes.forEach(errorCode => {
+			for (const errorCode of data.errorCodes) {
 				const des = [
 					errorCode.Key.replace(/\|/g, "&#124;"),
 					errorCode.Value.replace(/\|/g, "&#124;"),
 					errorCode.Description.replace(/\|/g, "&#124;"),
 				].join(" | ");
 				data.descriptions.push(des);
-			});
+			}
 		}
 		if (data.example.length > 0) {
 			data.descriptions.push("");
 			data.descriptions.push("@example");
-			data.example.forEach(code => {
+			for (const code of data.example) {
 				data.descriptions.push(code);
-			});
+			}
 		}
 		dts += createDes(data.descriptions, level);
 		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";
