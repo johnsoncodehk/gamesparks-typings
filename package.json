@@ -1,5 +1,5 @@
 {
-  "name": "@types/gamesparks-request-api",
+  "name": "@types/gamesparks",
   "version": "1.0.0",
   "description": "",
   "types": "./index.d.ts",
@@ -14,7 +14,7 @@
     "glob": "latest"
   },
   "scripts": {
-    "build": "ts-node build.ts"
+    "build": "cd ./request-api && ts-node build.ts && cd ../cloud-code-api && ts-node build.ts && cd ../realtime-api && ts-node build.ts"
   },
   "author": "",
   "license": "ISC"
