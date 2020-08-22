@@ -1,4 +1,4 @@
-/// <reference path="./references.d.ts" />
+/// <reference path="./request-api/references.d.ts" />
 
 declare namespace SparkRequests {
 

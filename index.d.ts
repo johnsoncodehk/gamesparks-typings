@@ -1,3 +1,3 @@
-/// <reference path="./request-api/index.d.ts" />
-/// <reference path="./cloud-code-api/index.d.ts" />
-/// <reference path="./realtime-api/index.d.ts" />
+/// <reference path="./typings/request-api.d.ts" />
+/// <reference path="./typings/cloud-code-api.d.ts" />
+/// <reference path="./typings/realtime-api.d.ts" />

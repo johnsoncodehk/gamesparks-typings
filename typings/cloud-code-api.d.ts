@@ -1,5 +1,4 @@
-/// <reference path="./references.d.ts" />
-/// <reference path="./patches.ts" />
+/// <reference path="./cloud-code-api/references.d.ts" />
 
 declare type date = any;
 declare type XMLObject = any;

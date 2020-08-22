@@ -1,56 +1,26 @@
-import * as fs from "fs";
 import { JSDOM } from 'jsdom';
-import * as glob from "glob";
+import { convertType, wirteReferencesDts, IDocClass, handleDocClass } from "./utils";
 
 const webUrl = "https://docs.gamesparks.com/api-documentation/";
-const outPath = "./typings/";
+const outPath = "./typings/cloud-code-api/";
 const baseUrl = "https://docs.gamesparks.com";
 const baseHref = "/api-documentation/cloud-code-api/";
 const baseMenuTitle = "Cloud Code API";
-const ingnoreDescriptions = [
-	"@returns example",
-];
-// JSON is exist of es2015
-const typeConverts: { from: string, to: string, }[] =
-	[
-		{ from: "JSON", to: "any" },
-		{ from: "JSON[]", to: "any[]" },
-	];
-
-interface IClassInfo {
-	name: string,
-	folder: string,
-	descriptions: string[],
-	signatures: {
-		text: string,
-		returns: string,
-		deprecated: string,
-		validity: string,
-		descriptions: string[],
-		lastDescriptionIndex: number,
-		params: {
-			name: string,
-			descriptions: string[],
-		}[],
-		example: string,
-		returnsDescription: string,
-	}[],
-}
 
 async function build() {
-	console.log("read...");
+	console.log("# Cloud Code API");
 	const dom = await JSDOM.fromURL(webUrl);
 
 	const subMenus = dom.window.document.getElementsByClassName("sub-menu ");
 	const subMenuPromises = [];
 	for (let i = 0; i < subMenus.length; i++) {
 		const subMenu = subMenus[i];
-		subMenuPromises.push(buildSub(subMenu));
+		subMenuPromises.push(handleSubMenu(subMenu));
 	}
 	await Promise.all(subMenuPromises)
-	wirteReferencesDts();
+	wirteReferencesDts(outPath);
 }
-async function buildSub(subMenu: Element) {
+async function handleSubMenu(subMenu: Element) {
 	const firstChild = subMenu.childNodes[1] as Element;
 	const href = firstChild.attributes.getNamedItem("href")!.nodeValue as string;
 	if (href.indexOf(baseHref) != 0) {
@@ -68,7 +38,7 @@ async function buildSub(subMenu: Element) {
 		}
 	}
 
-	const c: IClassInfo = {
+	const c: IDocClass = {
 		name: "",
 		folder: folder,
 		descriptions: [],
@@ -190,97 +160,7 @@ async function buildSub(subMenu: Element) {
 			continue;
 		}
 	}
-	handleData(c);
-}
-function wirteReferencesDts() {
-	const path = "./references.d.ts";
-	glob(outPath + "**/*.d.ts", (err, files) => {
-		let index = "";
-		for (const file of files) {
-			index += "/// <reference path=\"[file_path]\" />\n".replace("[file_path]", file);
-		}
-		fs.writeFileSync(path, index);
-	});
-	console.log(path);
-}
-function handleData(data: IClassInfo) {
-	if (!fs.existsSync(outPath)) {
-		fs.mkdirSync(outPath);
-	}
-	if (data.folder) {
-		if (!fs.existsSync(outPath + data.folder + "/")) {
-			fs.mkdirSync(outPath + data.folder + "/");
-		}
-	}
-
-	let dts = "";
-	let level = 0;
-	dts += createDes(data.descriptions, level);
-	dts += getLevelSpace(level) + "interface " + data.name + " {\n";
-	level++; {
-		for (let i = 0; i < data.signatures.length; i++) {
-			const signature = data.signatures[i];
-			if (signature.deprecated) {
-				signature.descriptions.push("@deprecated " + signature.deprecated);
-			}
-			if (signature.validity) {
-				signature.descriptions.push("@validity " + signature.validity);
-			}
-			for (const param of signature.params) {
-				signature.descriptions.push("@param " + param.name + " " + param.descriptions[0]);
-				for (let j = 1; j < param.descriptions.length; j++) {
-					signature.descriptions.push(param.descriptions[j]);
-				}
-			}
-			if (signature.returnsDescription) {
-				signature.descriptions.push("@returns " + signature.returnsDescription);
-			}
-			if (signature.example) {
-				signature.descriptions.push("@example");
-				signature.descriptions.push(signature.example);
-			}
-			dts += createDes(signature.descriptions, level);
-			dts += getLevelSpace(level) + signature.text + ": " + signature.returns + "\n"
-		}
-	} level--;
-	dts += getLevelSpace(level) + "}\n";
-
-	const path = outPath + (data.folder ? data.folder + "/" : "") + data.name + ".d.ts";
-	console.log(path);
-	fs.writeFileSync(path, dts);
-}
-function convertType(t: string): string {
-	for (let i = 0; i < typeConverts.length; i++) {
-		const convert = typeConverts[i];
-		if (t == convert.from) {
-			return convert.to;
-		}
-	}
-	return t;
-}
-function createDes(dess: string[], level: number) {
-	if (dess.length == 0) {
-		return "";
-	}
-	for (let i = 0; i < dess.length; i++) {
-		if (dess[i] == "e.g.")
-			dess[i] = "@example";
-	}
-	let des = getLevelSpace(level) + "/**\n";
-	for (let i = 0; i < dess.length; i++) {
-		if (ingnoreDescriptions.indexOf(dess[i]) >= 0) continue;
-		des += getLevelSpace(level) + " * " + dess[i] + "\n";
-	}
-	des += getLevelSpace(level) + " */\n"
-	return des;
-}
-function getLevelSpace(level: number) {
-	let space = "";
-	while (level > 0) {
-		level--;
-		space += "    ";
-	}
-	return space;
+	handleDocClass(outPath, c);
 }
 
 build();

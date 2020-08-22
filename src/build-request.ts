@@ -1,11 +1,13 @@
 import * as fs from "fs";
 import { JSDOM } from 'jsdom';
-import * as glob from "glob";
+import { createDescription, createIndent, wirteReferencesDts } from "./utils";
 
 const webUrl = "https://api.gamesparks.net";
-const outPath = "./typings/";
+const outPath = "./typings/request-api/";
 
-interface IApiInfo {
+build();
+
+interface IApiClass {
 	href: string,
 	title: string,
 	descriptions: string[],
@@ -28,7 +30,7 @@ interface IApiInfo {
 	}[],
 	example: string[],
 }
-interface IDataInfo {
+interface IApiRaw {
 	href: string,
 	title: string,
 	descriptions: string[],
@@ -40,7 +42,7 @@ interface IDataInfo {
 }
 
 async function build() {
-	console.log("read...");
+	console.log("# Request API");
 	const dom = await JSDOM.fromURL(webUrl);
 
 	const contents = dom.window.document.getElementsByClassName("content");
@@ -63,7 +65,7 @@ async function build() {
 				const title = node.textContent as string;
 				if (h1 == "Data Types") {
 					// Data
-					const data: IDataInfo = {
+					const data: IApiRaw = {
 						href: h1,
 						title: title,
 						descriptions: [],
@@ -76,7 +78,7 @@ async function build() {
 				}
 				else {
 					// Request API
-					const api: IApiInfo = {
+					const api: IApiClass = {
 						href: h1,
 						title: title,
 						descriptions: [],
@@ -102,18 +104,7 @@ async function build() {
 			}
 		}
 	}
-	wirteReferencesDts();
-}
-function wirteReferencesDts() {
-	const path = "./references.d.ts";
-	glob(outPath + "**/*.d.ts", (err, files) => {
-		let index = "";
-		for (const file of files) {
-			index += "/// <reference path=\"[file_path]\" />\n".replace("[file_path]", file);
-		}
-		fs.writeFileSync(path, index);
-	});
-	console.log(path);
+	wirteReferencesDts(outPath);
 }
 function getNextDescriptions(content: Node, j: number): string[] {
 	const descriptions: string[] = [];
@@ -178,7 +169,7 @@ function getNextExample(content: Node, current: number): string[] {
 	}
 	return example;
 }
-function handleData(data: IDataInfo) {
+function handleData(data: IApiRaw) {
 	if (!fs.existsSync(outPath)) {
 		fs.mkdirSync(outPath);
 	}
@@ -188,27 +179,27 @@ function handleData(data: IDataInfo) {
 
 	let dts = "";
 	let level = 0;
-	dts += getLevelSpace(level) + "declare namespace SparkRequests {\n";
+	dts += createIndent(level) + "declare namespace SparkRequests {\n";
 	level++; {
-		dts += createDes(data.descriptions, level);
-		dts += getLevelSpace(level) + "class " + data.title + " {\n";
+		dts += createDescription(data.descriptions, level);
+		dts += createIndent(level) + "class " + data.title + " {\n";
 		level++; {
 			for (let i = 0; i < data.parameters.length; i++) {
 				const requestParameter = data.parameters[i];
-				dts += createDes([requestParameter.Description], level);
-				dts += getLevelSpace(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
+				dts += createDescription([requestParameter.Description], level);
+				dts += createIndent(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
 			}
 		} level--;
-		dts += getLevelSpace(level) + "}\n";
+		dts += createIndent(level) + "}\n";
 	} level--;
 
-	dts += getLevelSpace(level) + "}\n";
+	dts += createIndent(level) + "}\n";
 
 	const path = outPath + data.href + "/" + data.title + ".d.ts";
 	fs.writeFileSync(path, dts);
 	console.log(path);
 }
-function handleReurestAPI(data: IApiInfo) {
+function handleReurestAPI(data: IApiClass) {
 	if (!fs.existsSync(outPath)) {
 		fs.mkdirSync(outPath);
 	}
@@ -222,7 +213,7 @@ function handleReurestAPI(data: IApiInfo) {
 
 	let dts = "";
 	let level = 0;
-	dts += getLevelSpace(level) + "declare namespace SparkRequests {\n";
+	dts += createIndent(level) + "declare namespace SparkRequests {\n";
 	level++; {
 		// Resuest
 		if (data.errorCodes.length > 0) {
@@ -246,57 +237,35 @@ function handleReurestAPI(data: IApiInfo) {
 				data.descriptions.push(code);
 			}
 		}
-		dts += createDes(data.descriptions, level);
-		dts += getLevelSpace(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";
+		dts += createDescription(data.descriptions, level);
+		dts += createIndent(level) + "class " + data.title + " extends " + requestExtends + "<" + response + "> {\n";
 		level++; {
 			for (let i = 0; i < data.requestParameters.length; i++) {
 				const requestParameter = data.requestParameters[i];
 				const required = "@Required " + requestParameter.Required;
-				dts += createDes([requestParameter.Description, required], level);
-				dts += getLevelSpace(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
+				dts += createDescription([requestParameter.Description, required], level);
+				dts += createIndent(level) + requestParameter.Parameter + ": " + requestParameter.Type + ";\n"
 			}
 		} level--;
-		dts += getLevelSpace(level) + "}\n";
+		dts += createIndent(level) + "}\n";
 		// Response
-		dts += createDes(data.responseDescriptions, level);
-		dts += getLevelSpace(level) + "class " + response + " extends " + responseExtends + " {\n";
+		dts += createDescription(data.responseDescriptions, level);
+		dts += createIndent(level) + "class " + response + " extends " + responseExtends + " {\n";
 		level++; {
 			for (let i = 0; i < data.responseParameters.length; i++) {
 				const responseParameter = data.responseParameters[i];
-				dts += createDes([responseParameter.Description], level);
-				dts += getLevelSpace(level) + responseParameter.Parameter + ": " + responseParameter.Type + ";\n"
+				dts += createDescription([responseParameter.Description], level);
+				dts += createIndent(level) + responseParameter.Parameter + ": " + responseParameter.Type + ";\n"
 			}
 		} level--;
-		dts += getLevelSpace(level) + "}\n";
+		dts += createIndent(level) + "}\n";
 	} level--;
 
-	dts += getLevelSpace(level) + "}\n";
+	dts += createIndent(level) + "}\n";
 
 	const path = outPath + data.href + "/" + data.title + ".d.ts";
 	fs.writeFileSync(path, dts);
 	console.log(path);
-}
-function createDes(dess: string[], level: number) {
-	if (dess.length == 0) {
-		return "";
-	}
-	let des = getLevelSpace(level) + "/**\n";
-	for (let i = 0; i < dess.length; i++) {
-		if (i > 0) {
-			// des += getLevelSpace(level) + " *\n";
-		}
-		des += getLevelSpace(level) + " * " + dess[i] + "\n";
-	}
-	des += getLevelSpace(level) + " */\n"
-	return des;
-}
-function getLevelSpace(level: number) {
-	let space = "";
-	while (level > 0) {
-		level--;
-		space += "    ";
-	}
-	return space;
 }
 function readTableNode(node: Node) {
 	const tab: any[] = [];
@@ -314,5 +283,3 @@ function readTableNode(node: Node) {
 	}
 	return tab
 }
-
-build();

@@ -11,11 +11,24 @@
     "jsdom": "latest",
     "typescript": "latest",
     "ts-node": "latest",
+    "upath": "latest",
     "glob": "latest"
   },
   "scripts": {
-    "build": "cd ./request-api && ts-node build.ts && cd ../cloud-code-api && ts-node build.ts && cd ../realtime-api && ts-node build.ts"
+    "build-cloud-code": "ts-node ./src/build-cloud-code.ts",
+    "build-request": "ts-node ./src/build-request.ts",
+    "build-realtime": "ts-node ./src/build-realtime.ts",
+    "build": "npm run build-request && npm run build-cloud-code && npm run build-realtime",
+    "publish": "npm run build && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnsoncodehk/gamesparks-typings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johnsoncodehk/gamesparks-typings/issues"
+  },
+  "homepage": "https://github.com/johnsoncodehk/gamesparks-typings#readme",
   "author": "",
   "license": "ISC"
 }
