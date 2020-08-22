@@ -1,5 +1,5 @@
 {
-  "name": "@types/gamesparks",
+  "name": "gamesparks-typings",
   "version": "1.0.0",
   "description": "",
   "types": "./index.d.ts",
