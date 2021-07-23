@@ -1,8 +1,9 @@
 /**
- * Provides read write access to a mongo collection.
- * All methods defined in  SparkMongoCollectionReadOnly are available in this object along with those listed below.
+ * Provides read write access to a mongo collection. 
+ * All methods defined in SparkMongoCollectionReadOnly are available in this object along with those listed below.
  * @example
  * var myRuntimeCollection = Spark.runtimeCollection('runtimetest');
+ * Note: To make sure your game performs and scales well, see GameSparks Best Practices before using these APIs.
  */
 interface SparkMongoCollectionReadWrite {
     /**

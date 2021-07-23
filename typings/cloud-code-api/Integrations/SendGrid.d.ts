@@ -1,8 +1,9 @@
 /**
  * Provides the ability to send emails via SendGrid.
- * You need to have already set up a SendGrid account, when acessing send grid via gamesparks you need to provide your sendgrid username & password
  * @example
- * var mySendGrid = Spark.sendGrid("userName", "password");
+ * var mySendGrid = Spark.sendGrid("SG.SendGridAPIKey");
+ * Before you use SendGrid, we recommend that you get a restricted access SendGrid API key and reserve this key for exclusive use by GameSparks. To learn about SendGrid API keys, see SendGrid: API Keys.
+ * User name and password disabled on 12/9/2020 If you have been authenticating to SendGrid from GameSparks with your user name and password, we recommend that you switch as soon as possible to using an API key as explained above.
  */
 interface SendGrid {
     /**

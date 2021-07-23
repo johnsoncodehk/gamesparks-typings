@@ -324,12 +324,11 @@ interface Spark {
     /**
      * Send an email via the SendGrid email delivery provider
      * @validity All Scripts
-     * @param username your SendGrid accounet username
-     * @param password your SendGrid account password
+     * @param APIKey your SendGrid API key
      * @example
-     * Spark.sendGrid(username, password);
+     * Spark.sendGrid("SG.SendGridAPIKey");
      */
-    sendGrid(username: string, password: string): SendGrid
+    sendGrid(APIKey: string): SendGrid
     /**
      * Utility to schedule execution of a module in the future
      * @validity All Scripts

@@ -1,6 +1,7 @@
 /**
  * An iterator over database results. Doing a find() query on a collection returns a SparkMongoCursor thus:
  * var cursor = collection.find( query );if( cursor.hasNext() ) {var obj = cursor.next();}
+ * Note: To make sure your game performs and scales well, see GameSparks Best Practices before using these APIs.
  */
 interface SparkMongoCursor {
     /**

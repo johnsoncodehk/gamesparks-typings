@@ -2,6 +2,7 @@
  * Provides read only access to a mongo collection.
  * @example
  * var myMetaCollection = Spark.metaCollection('metatest');
+ * Note: To make sure your game performs and scales well, see GameSparks Best Practices before using these APIs.
  */
 interface SparkMongoCollectionReadOnly {
     /**
